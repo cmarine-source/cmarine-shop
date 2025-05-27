@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,14 @@
   <style>
     :root {
       --primary-color: #3F3F3F;
+      --on-primary: #DFDFDF;
+      --primary-container: #F5F5F5;
       --secondary-color: #248DFF;
-      --background-color: #F5F5F5;
-      --text-color: #3F3F3F;
-      --container-color: #FFFFFF;
+      --on-secondary: #FFFFFF;
+      --neutral-80: #CDCDCD;
+      --background-color: #FFFFFF;
+      --font-family: Ubuntu, 'Times New Roman', serif;
       --header-height: 72px;
-      --font-family: Ubuntu, sans-serif;
     }
 
     * {
@@ -23,52 +26,79 @@
 
     body {
       font-family: var(--font-family);
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background-color: var(--primary-container);
+      color: var(--primary-color);
     }
 
     header {
       background-color: var(--secondary-color);
-      color: white;
+      color: var(--on-secondary);
       height: var(--header-height);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5em;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     main {
+      max-width: 1200px;
+      margin: 2rem auto;
       padding: 2rem;
-      max-width: 960px;
-      margin: auto;
-      background-color: var(--container-color);
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 8px;
-      margin-top: 2rem;
+      background-color: var(--background-color);
+      border: 1px solid var(--neutral-80);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     h1, h2, h3 {
-      color: var(--secondary-color);
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      color: var(--primary-color);
+    }
+
+    .section {
+      margin-bottom: 2rem;
     }
 
     footer {
+      background-color: var(--background-color);
       text-align: center;
-      margin-top: 4rem;
-      padding: 1rem;
-      font-size: 0.9em;
+      padding: 1.5rem;
+      font-size: 0.9rem;
       color: #8E8E8E;
+      border-top: 1px solid var(--neutral-80);
     }
   </style>
 </head>
 <body>
   <header>
-    Vicinity Gallery
+    VICINITY GALLERY
   </header>
+
   <main>
-    <h1>Benvenuto!</h1>
-    <p>Questa è una versione statica del layout Shopify che mi hai fornito. I contenuti dinamici e gli script Shopify sono stati rimossi per compatibilità con GitHub Pages.</p>
-    <p>Aggiungi qui le tue sezioni, prodotti, immagini o informazioni personali.</p>
+    <section class="section">
+      <h1>Benvenuto</h1>
+      <p>Questa è una replica statica del tema Shopify da te fornito, adattata per GitHub Pages. Tutti gli script e le funzioni dinamiche sono stati rimossi, ma il layout e i colori originali sono stati mantenuti.</p>
+    </section>
+
+    <section class="section">
+      <h2>Chi siamo</h2>
+      <p>Vicinity Gallery è uno spazio dedicato all'arte, alla moda e all'innovazione visiva. Qui puoi scoprire prodotti unici, eventi esclusivi e contenuti selezionati con cura.</p>
+    </section>
+
+    <section class="section">
+      <h2>Contatti</h2>
+      <p>Email: <a href="mailto:info@vicinitygallery.com">info@vicinitygallery.com</a></p>
+    </section>
   </main>
+
   <footer>
     &copy; 2025 Vicinity Gallery. Tutti i diritti riservati.
   </footer>

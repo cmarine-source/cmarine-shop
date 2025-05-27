@@ -5,107 +5,191 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cmarin Shop - Negozio Online</title>
   <style>
+    /* Reset e base */
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
       margin: 0; padding: 0;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
       color: #333;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
     header {
-      background-color: #0073e6; /* blu, poi lo modifichiamo */
-      padding: 10px 20px;
+      background-color: #d6336c; /* rosso scuro */
+      padding: 15px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: white;
+      box-shadow: 0 4px 8px rgba(214, 51, 108, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    header nav a {
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
       color: white;
-      margin-left: 20px;
-      text-decoration: none;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    nav a {
+      color: white;
       font-weight: 600;
-    }
-    header nav a:hover {
-      text-decoration: underline;
-    }
-    .search-bar {
-      flex-grow: 1;
-      margin: 0 20px;
-    }
-    .search-bar input {
-      width: 100%;
-      padding: 7px 10px;
-      border-radius: 4px;
-      border: none;
       font-size: 16px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
+    nav a:hover {
+      background-color: #ff89a9;
+      color: white;
+    }
+
+    /* Barra di ricerca */
+    .search-container {
+      flex-grow: 1;
+      margin: 0 30px;
+      position: relative;
+    }
+    .search-container input {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: none;
+      font-size: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .search-container input:focus {
+      outline: none;
+      box-shadow: 0 4px 12px rgba(214, 51, 108, 0.7);
+    }
+
+    /* Container principale */
     .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 20px;
+      max-width: 1300px;
+      margin: 40px auto 80px;
+      padding: 0 30px;
     }
+
+    /* Categorie */
     .categories {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
     }
     .categories button {
-      background-color: #ddd;
+      background-color: #6ec1e4; /* celeste */
       border: none;
-      margin-right: 10px;
-      padding: 8px 15px;
-      border-radius: 20px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 700;
       cursor: pointer;
-      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(110, 193, 228, 0.6);
+      transition: background-color 0.3s ease;
+      font-size: 17px;
     }
     .categories button:hover {
-      background-color: #bbb;
+      background-color: #4a9ec9;
     }
+
+    /* Prodotti */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+      gap: 30px;
     }
     .product-card {
       background: white;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
     }
     .product-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px);
+      box-shadow: 0 16px 40px rgba(214, 51, 108, 0.4);
     }
     .product-card img {
-      max-width: 150px;
-      margin-bottom: 10px;
-      border-radius: 5px;
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
     .product-card h3 {
-      margin: 5px 0;
-      font-size: 18px;
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      color: #d6336c;
+      text-align: center;
     }
     .product-card p {
-      margin: 5px 0;
-      color: #666;
-    }
-    .product-card .price {
-      margin-top: auto;
-      font-weight: bold;
-      font-size: 16px;
-      color: #e60023; /* rosso prezzo */
-    }
-    footer {
+      font-size: 15px;
+      color: #555;
       text-align: center;
-      padding: 15px 0;
-      background: #0073e6;
+      margin-bottom: 15px;
+      min-height: 42px;
+    }
+    .price {
+      font-weight: 800;
+      font-size: 20px;
+      color: #0088cc;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #d6336c;
       color: white;
-      margin-top: 40px;
+      text-align: center;
+      padding: 22px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 -4px 8px rgba(214, 51, 108, 0.5);
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .search-container {
+        order: 3;
+        width: 100%;
+        margin: 20px 0 0 0;
+      }
+      nav {
+        order: 2;
+        gap: 15px;
+      }
+      .categories {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .product-card img {
+        width: 140px;
+        height: 140px;
+      }
     }
   </style>
 </head>
@@ -113,9 +197,11 @@
 
 <header>
   <div class="logo">Cmarin Shop</div>
-  <div class="search-bar">
-    <input type="text" placeholder="Cerca prodotti..." />
+
+  <div class="search-container">
+    <input type="text" placeholder="Cerca nel negozio..." />
   </div>
+
   <nav>
     <a href="#">Il mio account</a>
     <a href="#">Carrello</a>
@@ -128,26 +214,33 @@
     <button>T-shirt</button>
     <button>Borse</button>
     <button>Accessori</button>
+    <button>Novità</button>
   </div>
 
   <div class="products">
     <div class="product-card">
-      <img src="https://via.placeholder.com/150" alt="Maglietta rossa" />
-      <h3>Maglietta rossa</h3>
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=180&q=80" alt="Maglietta Rossa" />
+      <h3>Maglietta Rossa</h3>
       <p>100% cotone, taglia M</p>
       <div class="price">€20.00</div>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/150" alt="Borsa in pelle" />
-      <h3>Borsa in pelle</h3>
+      <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=180&q=80" alt="Borsa in Pelle" />
+      <h3>Borsa in Pelle</h3>
       <p>Colore nero, capiente</p>
       <div class="price">€45.00</div>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/150" alt="Cappello estivo" />
-      <h3>Cappello estivo</h3>
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=180&q=80" alt="Cappello Estivo" />
+      <h3>Cappello Estivo</h3>
       <p>Protezione UV, colore beige</p>
       <div class="price">€15.00</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=180&q=80" alt="Sciarpa colorata" />
+      <h3>Sciarpa Colorata</h3>
+      <p>Calda e leggera, colori vivaci</p>
+      <div class="price">€25.00</div>
     </div>
   </div>
 </div>

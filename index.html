@@ -127,10 +127,11 @@
             display: flex;
             justify-content: center; /* Centra gli elementi */
             flex-wrap: wrap;
-            gap: 1rem; /* Spazio tra gli elementi */
+            gap: 0.5rem; /* Ridotto lo spazio tra gli elementi */
             padding: 1rem;
             background-color: #fff;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            height: 120px; /* Altezza fissa per la barra */
         }
 
         .category {
@@ -149,8 +150,8 @@
         }
 
         .category-icon {
-            width: 80px;         /* Aumentata la larghezza */
-            height: 80px;        /* Aumentata l'altezza */
+            width: 96px;         /* Aumentata la larghezza (80% di 120px) */
+            height: 96px;        /* Aumentata l'altezza (80% di 120px) */
             border-radius: 50%;
             margin-bottom: 0.5rem;
             background-color: #eee;
@@ -159,7 +160,7 @@
             justify-content: center;
             font-size: 1.2rem;
             color: #666;
-            border: 0.5px solid black; /* Aggiunto il bordo */
+            border: 2px solid black; /* Aumentato lo spessore del bordo */
         }
 
         /* Responsività (Base) */
@@ -186,7 +187,13 @@
 
             .category-bar {
                 justify-content: center; /* Mantiene l'allineamento centrale */
-                gap: 0.75rem; /* Riduce lo spazio su schermi piccoli */
+                gap: 0.25rem; /* Riduce lo spazio su schermi piccoli */
+                height: auto;   /* Permetti all'altezza di adattarsi */
+            }
+
+            .category-icon {
+                width: 60px;   /* Cerchi più piccoli su schermi piccoli */
+                height: 60px;
             }
         }
     </style>

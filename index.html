@@ -108,15 +108,15 @@
             flex: 1;
             text-align: center;
             position: relative;
-            /* width: 150px;  Aggiungi una larghezza fissa se necessario */
-            /* height: auto;  L'altezza si adatterà proporzionalmente */
+            max-width: 200px; /* Imposta una larghezza massima */
+            height: auto;
         }
 
         .main-header .logo img {
-            max-width: 100%; /* Assicura che l'immagine non superi il contenitore */
-            height: auto; /* Mantiene le proporzioni dell'immagine */
-            display: block; /* Rimuove lo spazio extra sotto l'immagine */
-            margin: 0 auto; /* Centra l'immagine orizzontalmente */
+            max-width: 100%; /* L'immagine non supererà la larghezza del contenitore */
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         .main-header .menu-right {
@@ -201,7 +201,7 @@
             }
 
             .main-header .logo {
-                /* width: 120px;  Adatta la larghezza se necessario */
+                max-width: 150px; /* Ridimensiona ulteriormente su schermi piccoli */
             }
         }
 

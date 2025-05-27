@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <style>
         /* Reset base per una migliore consistenza */
         *,
@@ -82,18 +82,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.7rem 2rem; /* Ridotto leggermente il padding verticale */
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .main-header .menu-left {
             display: flex;
-            align-items: flex-start;
+            align-items: center; /* Allineamento verticale al centro */
             gap: 1.5rem;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
+            flex-direction: row; /* Disposizione orizzontale */
+            justify-content: flex-start; /* Allineamento a sinistra */
+            height: auto; /* Altezza automatica in base al contenuto */
         }
 
         .main-header .menu-left span {
@@ -112,11 +112,11 @@
             text-align: center;
             /* Added position relative */
             position: relative;
-            font-size: 3rem; /* Aumentato ancora la dimensione */
-            font-weight: 700; /* Grassetto più intenso */
-            font-family: 'Lato', sans-serif; /* Font moderno e geometrico */
-            letter-spacing: 0.1em; /* Leggera spaziatura tra le lettere */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Leggera ombra per profondità */
+            font-size: 2rem; /* Dimensione ridotta */
+            font-weight: 600; /* Grassetto leggermente meno intenso */
+            font-family: 'Montserrat', sans-serif; /* Font moderno e geometrico */
+            letter-spacing: 0.08em; /* Leggera spaziatura tra le lettere */
+            /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Ombra rimossa per semplicità */
         }
 
         /* Style for the red C */
@@ -186,12 +186,14 @@
             .main-header {
                 flex-direction: column;
                 text-align: center;
+                padding: 0.5rem 2rem; /* Adattamento padding responsive */
             }
 
             .main-header .menu-left {
                 align-items: center;
                 flex-direction: row;
                 margin-top: 0.5rem;
+                justify-content: center; /* Centra "NEGOZIO" su schermi piccoli */
             }
 
             .category-bar {
@@ -214,9 +216,8 @@
             }
 
             .main-header .logo {
-                font-size: 2.2rem; /* Adattamento per schermi piccoli */
+                font-size: 1.8rem; /* Adattamento per schermi piccoli */
                 letter-spacing: 0.05em;
-                text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
             }
         }
 
@@ -240,7 +241,7 @@
     <div class="utility-bar">
         <div class="utility-left">
             <a href="https://www.instagram.com/cmarine_ciaramaglia?igsh=MTV1MGw1dHNlenk2aw==" target="_blank" rel="noopener noreferrer">
-                @cmarine_ciaramaglia
+                CMARINE
             </a>
         </div>
         <div class="utility-right">

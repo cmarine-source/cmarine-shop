@@ -76,8 +76,8 @@
 
         /* Main Header (Intestazione Principale) */
         .main-header {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: auto 1fr auto; /* Definisce tre colonne: auto (menu), 1fr (logo), auto (spazio vuoto) */
             align-items: center;
             padding: 0.7rem 2rem;
             background-color: #fff;
@@ -91,6 +91,7 @@
             flex-direction: row;
             justify-content: flex-start;
             height: auto;
+            grid-column: 1; /* Posiziona il menu nella prima colonna */
         }
 
         .main-header .menu-left span {
@@ -105,22 +106,21 @@
         }
 
         .main-header .logo {
-            flex: 1;
-            text-align: center; /* Centra il contenuto (l'immagine) all'interno del div .logo */
-            position: relative;
-            max-width: 200px; /* Imposta una larghezza massima */
+            text-align: left; /* Allinea il logo a sinistra all'interno della sua cella */
+            grid-column: 2; /* Posiziona il logo nella seconda colonna */
+            max-width: 200px;
             height: auto;
         }
 
         .main-header .logo img {
-            max-width: 100%; /* L'immagine non supererà la larghezza del contenitore */
+            max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto; /* Centra l'immagine orizzontalmente all'interno del div .logo */
         }
 
         .main-header .menu-right {
-            display: none;
+            grid-column: 3; /* Posiziona lo spazio vuoto nella terza colonna */
+            width: 100px; /* Larghezza approssimativa per bilanciare il menu a sinistra */
         }
 
         /* Category Bar (Barra Categorie) */
@@ -169,16 +169,24 @@
             }
 
             .main-header {
-                flex-direction: column;
+                grid-template-columns: 1fr; /* Su schermi piccoli una sola colonna */
                 text-align: center;
                 padding: 0.5rem 2rem;
             }
 
             .main-header .menu-left {
-                align-items: center;
-                flex-direction: row;
-                margin-top: 0.5rem;
                 justify-content: center;
+                grid-column: 1;
+            }
+
+            .main-header .logo {
+                text-align: center;
+                grid-column: 1;
+                margin-top: 0.5rem;
+            }
+
+            .main-header .menu-right {
+                display: none;
             }
 
             .category-bar {
@@ -201,7 +209,7 @@
             }
 
             .main-header .logo {
-                max-width: 150px; /* Ridimensiona ulteriormente su schermi piccoli */
+                max-width: 150px;
             }
         }
 
@@ -248,11 +256,7 @@
         <div class="logo">
             <img src="https://i.imgur.com/JFeGdD4.jpeg" alt="Logo CMARINE">
         </div>
-
-        <div class="menu-right">
-        </div>
-
-    </header>
+        <div class="menu-right"></div> </header>
 
     <div class="category-bar">
         <div class="category">

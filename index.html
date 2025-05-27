@@ -3,236 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cmarin Shop - Negozio Online</title>
+  <title>Cmarin Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@700;900&display=swap" rel="stylesheet" />
   <style>
     /* Reset base */
     * {
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      margin: 0; padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f3f3f3;
-      color: #111;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
-
     /* Header */
     header {
-      background-color: #232f3e; /* blu scuro */
+      background: #f3f3f3;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      gap: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
+    /* Logo */
     .logo {
-      font-weight: 700;
-      font-size: 28px;
-      color: #ffffff;
-      letter-spacing: 1.5px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 32px;
       cursor: pointer;
       user-select: none;
-      margin-right: 25px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
     }
-
-    /* Barra di ricerca */
+    .logo .red-c {
+      color: #d32f2f; /* rosso acceso */
+      font-weight: 900;
+      font-size: 38px;
+      letter-spacing: 0;
+      line-height: 1;
+      margin-right: 2px;
+      font-style: italic;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .logo .blue-rest {
+      color: #0d47a1; /* blu intenso */
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 1.2px;
+      line-height: 1;
+    }
+    /* Tutte le categorie button */
+    .btn-categories {
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .btn-categories:hover {
+      background-color: #09408b;
+    }
+    .btn-categories svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+    /* Search form */
     .search-bar {
       flex-grow: 1;
       display: flex;
+      align-items: center;
+      position: relative;
     }
     .search-bar input[type="text"] {
       width: 100%;
-      padding: 10px 15px;
-      border: none;
-      font-size: 16px;
+      padding: 10px 16px;
       border-radius: 4px 0 0 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
       outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .search-bar input[type="text"]:focus {
+      border-color: #0d47a1;
+      box-shadow: 0 0 5px #0d47a1;
     }
     .search-bar button {
-      background-color: #febd69; /* giallo Amazon */
+      background-color: #febd69;
       border: none;
-      padding: 10px 16px;
+      padding: 10px 18px;
       border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-weight: 700;
+      color: #333;
+      transition: background-color 0.2s ease;
+    }
+    .search-bar button:hover {
+      background-color: #f7a01b;
+    }
+    /* Carrello */
+    .cart {
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #0d47a1;
+    }
+    .cart svg {
+      width: 24px;
+      height: 24px;
+      fill: #0d47a1;
+    }
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    /* Main content */
+    main {
+      flex-grow: 1;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #0d47a1;
+    }
+    /* Product grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+    }
+    .product-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 14px 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-name {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: #222;
+    }
+    .product-price {
+      font-weight: 900;
+      color: #d32f2f;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .btn-add-cart {
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 700;
       transition: background-color 0.3s ease;
     }
-    .search-bar button:hover {
-      background-color: #f3a847;
+    .btn-add-cart:hover {
+      background-color: #093975;
     }
-
-    /* Menu di destra */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-left: 25px;
-    }
-    .nav-links a {
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover {
-      color: #febd69;
-    }
-
-    /* Main content container */
-    main {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    /* Sezione prodotti */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
-      gap: 24px;
-    }
-    .product-card {
-      background-color: white;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease;
-    }
-    .product-card:hover {
-      box-shadow: 0 4px 14px rgba(0,0,0,0.22);
-    }
-    .product-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: contain;
-      margin-bottom: 12px;
-    }
-    .product-title {
-      font-size: 16px;
-      color: #007185; /* blu Amazon */
-      font-weight: 600;
-      margin-bottom: 6px;
-      min-height: 48px;
-    }
-    .product-desc {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 12px;
-      min-height: 38px;
-    }
-    .product-price {
-      font-weight: 700;
-      font-size: 18px;
-      color: #b12704; /* rosso scuro Amazon */
-      margin-top: auto;
-    }
-
     /* Footer */
     footer {
-      margin-top: 50px;
-      background-color: #232f3e;
-      color: white;
+      background: #f3f3f3;
       text-align: center;
-      padding: 18px 0;
+      padding: 12px 20px;
       font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    /* Responsive */
-    @media(max-width: 600px) {
-      header {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .search-bar {
-        flex-grow: 1;
-        margin: 10px 0;
-      }
-      .nav-links {
-        margin-left: 0;
-        gap: 12px;
-      }
-      .product-card img {
-        height: 140px;
-      }
+      color: #555;
+      margin-top: auto;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="logo">Cmarin Shop</div>
-
-  <div class="search-bar">
-    <input type="text" placeholder="Cerca prodotti, marche e altro..." />
-    <button>🔍</button>
-  </div>
-
-  <nav class="nav-links">
-    <a href="#">Ciao, Accedi</a>
-    <a href="#">Resi e Ordini</a>
-    <a href="#">Carrello</a>
-  </nav>
-</header>
-
-<main>
-  <div class="products">
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=300&q=80" alt="Maglietta Rossa" />
-      <div class="product-title">Maglietta Rossa Uomo</div>
-      <div class="product-desc">100% cotone, taglia M, vestibilità normale</div>
-      <div class="product-price">€19,99</div>
+  <header>
+    <div class="logo" aria-label="Cmarin logo">
+      <span class="red-c">C</span><span class="blue-rest">marin</span>
     </div>
-
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=300&q=80" alt="Borsa in Pelle" />
-      <div class="product-title">Borsa in Pelle Nera</div>
-      <div class="product-desc">Capiente, design elegante e resistente</div>
-      <div class="product-price">€49,99</div>
+    <button class="btn-categories" aria-label="Tutte le categorie">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      Tutte le categorie
+    </button>
+    <form class="search-bar" role="search" aria-label="Cerca prodotti">
+      <input type="text" placeholder="Cerca prodotti..." aria-label="Barra di ricerca" />
+      <button type="submit" aria-label="Cerca">Cerca</button>
+    </form>
+    <div class="cart" aria-label="Carrello acquisti">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14.26l.77-4.58h7.12l.54 3.17H9.08l-.68 3.88H19v-2H7.16zM17.21 6H6.46L5.27 2H1v2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 5 14h12v-2H7.42l.74-4.58H17v-2z"/>
+      </svg>
+      <div class="cart-count" aria-live="polite" aria-atomic="true">0</div>
     </div>
+  </header>
 
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=300&q=80" alt="Cappello Estivo" />
-      <div class="product-title">Cappello Estivo Beige</div>
-      <div class="product-desc">Protezione UV, leggero e traspirante</div>
-      <div class="product-price">€14,99</div>
-    </div>
-
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1542068829-1115f7259450?auto=format&fit=crop&w=300&q=80" alt="Orologio Sportivo" />
-      <div class="product-title">Orologio Sportivo Digitale</div>
-      <div class="product-desc">Impermeabile, funzionalità multiple</div>
-      <div class="product-price">€69,99</div>
-    </div>
-
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1511450732560-2a4a6b8f9c9d?auto=format&fit=crop&w=300&q=80" alt="Scarpe da Corsa" />
-      <div class="product-title">Scarpe da Corsa Blu</div>
-      <div class="product-desc">Comode e leggere, adatte a tutte le superfici</div>
-      <div class="product-price">€59,99</div>
-    </div>
-
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=300&q=80" alt="Zaino Casual" />
-      <div class="product-title">Zaino Casual Nero</div>
-      <div class="product-desc">Perfetto per scuola e lavoro, resistente all'acqua</div>
-      <div class="product-price">€39,99</div>
-    </div>
-  </div>
-</main>
-
-<footer>
-  &copy; 2025
+  <main>
+    <h1>I nostri prodotti</h1>
+    <div class="products-grid" aria-label="Lista prodotti disponibili">
+      <!-- Prodotti esempio -->

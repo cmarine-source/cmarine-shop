@@ -1,144 +1,226 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vicinity Clone</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-    }
-    body {
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-    }
-    header .logo {
-      font-size: 24px;
-      font-weight: 600;
-      color: #007bff;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-    .hero {
-      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 48px;
-      font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-    .section-title {
-      font-size: 28px;
-      font-weight: 600;
-      text-align: center;
-      margin: 40px 0 20px;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 0 30px 60px;
-    }
-    .product {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 15px;
-      text-align: center;
-    }
-    .product img {
-      max-width: 100%;
-      border-radius: 4px;
-    }
-    .product h3 {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #333;
-    }
-    .product p {
-      font-size: 16px;
-      color: #555;
-    }
-    .product .price {
-      font-weight: 600;
-      color: #007bff;
-      margin-top: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
-      border-top: 1px solid #ddd;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">Vfinity</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="hero">
-    New Season Arrivals
-  </div>
-  <h2 class="section-title">Featured Products</h2>
-  <div class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Product 1">
-      <h3>Classic Tee</h3>
-      <p>Soft and stylish cotton tee.</p>
-      <div class="price">€19.99</div>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Product 2">
-      <h3>Sporty Hoodie</h3>
-      <p>Perfect for your active days.</p>
-      <div class="price">€39.99</div>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Product 3">
-      <h3>Minimalist Bag</h3>
-      <p>Carry everything with style.</p>
-      <div class="price">€29.99</div>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Product 4">
-      <h3>Running Sneakers</h3>
-      <p>Comfortable for all-day wear.</p>
-      <div class="price">€59.99</div>
-    </div>
-  </div>
-  <footer>
-    &copy; 2025 Vfinity. All rights reserved.
-  </footer>
-</body>
-</html>
+<html class="js win-magic svg-magic" lang="en" data-magic-ua="chrome" data-magic-ua-ver="136" data-magic-engine="webkit" data-magic-engine-ver="537.36" style="--sizekick--colors-primary-key: #3F3F3F; --sizekick--colors-primary-onKey: #DFDFDF; --sizekick--colors-primary-container: #F5F5F5; --sizekick--colors-primary-onContainer: #3F3F3F; --sizekick--colors-primary-shade: #00000080; --sizekick--colors-secondary-key: #248DFF; --sizekick--colors-secondary-onKey: #FFFFFF; --sizekick--colors-secondary-container: #D3E8FF; --sizekick--colors-secondary-onContainer: #248DFF; --sizekick--colors-neutral-0: #000000; --sizekick--colors-neutral-20: #3F3F3F; --sizekick--colors-neutral-50: #8E8E8E; --sizekick--colors-neutral-60: #9E9E9E; --sizekick--colors-neutral-80: #CDCDCD; --sizekick--colors-neutral-99: #F5F5F5; --sizekick--colors-neutral-100: #FFFFFF; --sizekick--colors-neutral-shade-50: #00000080; --sizekick--colors-neutral-shade-70: #000000B3; --sizekick--colors-accent-50: #248DFF; --sizekick--colors-accent-60: #57A7FF; --sizekick--colors-accent-80: #B3D7FF; --sizekick--colors-accent-90: #CCE4FF; --sizekick--colors-accent-99: #F0F7FF; --sizekick--colors-success-10: #012305; --sizekick--colors-success-40: #07DE1D; --sizekick--colors-success-80: #97FCA1; --sizekick--colors-success-90: #C9FDCE; --sizekick--colors-success-shade: #06ad16cc; --sizekick--colors-warning-40: #B78401; --sizekick--colors-warning-50: #EAA901; --sizekick--colors-warning-70: #FED25F; --sizekick--colors-warning-90: #FEEEC2; --sizekick--colors-error-60: #FE3434; --sizekick--colors-error-80: #FE8989; --sizekick--colors-error-90: #FEBDBD; --sizekick--colors-error-shade-80: #E90101CC; --sizekick--components-input-borderColor: #DFDFDF; --sizekick--fonts-sans-default: Ubuntu, times new roman, times, roman, serif; --header-height: 72px; --announcement-height: 45px;"><head><style id="magic360-css-reset" type="text/css"></style>
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-10804951278"></script><script type="text/javascript" async="" src="//cdn.shopify.com/proxy/47346cb1a36e5890c7f776f66833bae3fb84c15c77e9168b2bac14527a18bdb9/api.goaffpro.com/loader.js?shop=vicinitygallery.myshopify.com&amp;sp-cache-control=cHVibGljLCBtYXgtYWdlPTkwMA"></script><script type="text/javascript" async="" src="https://api.fastbundle.co/scripts/src.js?shop=vicinitygallery.myshopify.com"></script><script type="text/javascript" async="" src="//cdn.shopify.com/proxy/ef5c7d4ff43ec2e86c81bc864571d2a43cb887fad31475a8cb423e540c016694/storage.googleapis.com/adnabu-shopify/online-store/1935709c2abc454f954185fc1715147780.min.js?shop=vicinitygallery.myshopify.com&amp;sp-cache-control=cHVibGljLCBtYXgtYWdlPTkwMA"></script><script type="text/javascript" async="" src="https://cdn.hello-charles.com/charles-satellite/1.x/charles-snippet.js?proxy_vendor=shopify&amp;universe_uri=https://vicinityclo.hello-charles.com&amp;script_id=8e336376-68d4-4d3c-9ba8-6c43d7f7f4ae&amp;shop=vicinitygallery.myshopify.com"></script><script type="text/javascript" async="" src="https://cdn1.judge.me/assets/installed.js?shop=vicinitygallery.myshopify.com"></script><script type="text/javascript" async="" src="https://cdn1.avada.io/flying-pages/module.js?shop=vicinitygallery.myshopify.com"></script><script type="text/javascript" async="" src="https://seo.apps.avada.io/scripttag/avada-seo-installed.js?shop=vicinitygallery.myshopify.com"></script><script type="text/javascript" async="" src="//www.vicinityclo.de/cdn/s/trekkie.storefront.f0d5693ccbd1fc3a366a05ea27b0943896b4a200.min.js"></script><script async="true" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="https://sdk.loyaltylion.net/sdk/start/7c677c94a508d6628e4617230c5420c2.js?t=202542719" crossorigin=""></script><script src="https://sdk.loyaltylion.net/static/2/loader.js?t=2025427" crossorigin=""></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NVWH8ZG"></script><script> window.Shopify = window.Shopify || {theme: {id: 180873822474, role: 'main' } }; window._template = { directory: "", name: "index", suffix: "" } </script> <script src="https://cdn.intelligems.io/28c6ecf46108.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" media="all"><link rel="stylesheet" href="https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/css/main.id-isolated.css" media="all" data-lion-css="theme"><style type="text/css" data-lion-css="theme-configuration">
+          #loyaltylion, .lion-isolator {
+            --lion-primary-color: rgba(0, 0, 0, 1);
+--lion-primary-color-darker1: hsla(0, 0%, 0%, 1);
+--lion-primary-color-darker2: hsla(0, 0%, 0%, 1);
+--lion-primary-color-darker3: hsla(0, 0%, 0%, 1);
+--lion-tier-accent-color: rgba(0, 0, 0, 1);
+--tier-purchase-points-background-color: hsla(0, 0%, 0%, 0.05);
+--lion-tier-purchase-points-border-color: hsla(0, 0%, 0%, 0.2);
+--lion-tier-current-box-shadow-color: hsla(0, 0%, 0%, 0.1);
+--lion-tier-hover-box-shadow-color: hsla(0, 0%, 0%, 0.15);
+--lion-secondary-color: rgba(0, 0, 0, 1);
+--lion-secondary-color-lighter1: hsla(0, 0%, 5%, 1);
+--lion-secondary-color-darker1: hsla(0, 0%, 0%, 1);
+--lion-secondary-color-darker2: hsla(0, 0%, 0%, 1);
+--lion-button-primary-background-color: rgba(0, 0, 0, 1);
+--lion-button-primary-hover-background-color: hsla(0, 0%, 8%, 1);
+--lion-button-primary-active-background-color: hsla(0, 0%, 8%, 1);
+--lion-button-primary-active-shadow-color: hsla(0, 0%, 0%, 1);
+--lion-button-tile-text-color: hsla(0, 0%, 0%, 1);
+--lion-button-primary-text-color: rgba(255, 255, 255, 1);
+--lion-button-neutral-background-color: rgba(0, 0, 0, 1);
+--lion-button-neutral-hover-background-color: hsla(0, 0%, 8%, 1);
+--lion-button-neutral-active-background-color: hsla(0, 0%, 8%, 1);
+--lion-button-neutral-active-shadow-color: hsla(0, 0%, 0%, 1);
+--lion-button-neutral-text-color: rgba(255, 255, 255, 1);
+--lion-button-font-size: 1em;
+--lion-button-padding: 7px 18px;
+--lion-button-border-radius: 0px;
+--lion-section-heading-font-size: 40px;
+--lion-section-heading-text-color: rgba(0, 0, 0, 1);
+--lion-section-heading-line-size: 0px;
+--lion-section-heading-line-color: rgba(0, 0, 0, 1);
+--lion-section-heading-margin: 0 0 20px 0;
+--lion-header-background-color: rgba(255, 255, 255, 1);
+--lion-header-text-color: rgba(0, 0, 0, 1);
+--lion-header-border-radius: 0px;
+--lion-header-nav-link-icon-display: none;
+--lion-header-nav-link-accent-color: rgba(0, 0, 0, 1);
+--lion-header-nav-link-border-color: hsla(0, 0%, 0%, 0.2);
+--lion-header-nav-link-hover-border-color: hsla(0, 0%, 0%, 0.4);
+--lion-header-nav-link-hover-background-color: hsla(0, 0%, 0%, 0.05);
+--lion-header-nav-link-hover-icon-color: rgba(0, 0, 0, 1);
+--lion-header-nav-link-hover-text-color: hsla(0, 0%, 0%, 1);
+--lion-rules-grid-gap: 15px;
+--lion-rules-grid-columns: 5;
+--lion-rules-padding: 20px;
+--lion-rules-background-color: rgba(255, 255, 255, 1);
+--lion-rules-border-color: rgba(224, 227, 229, 1);
+--lion-rules-border-width: 0px;
+--lion-rules-border-radius: 0px;
+--lion-rules-tile-background-color: rgba(239, 239, 239, 1);
+--lion-rules-tile-border-color: rgba(239, 239, 239, 1);
+--lion-rules-tile-border-width: 0px;
+--lion-rules-tile-border-radius: 5px;
+--lion-rule-item-icon-color: rgba(0, 0, 0, 1);
+--lion-rewards-grid-gap: 15px;
+--lion-rewards-grid-columns: 5;
+--lion-rewards-padding: 20px;
+--lion-rewards-background-color: rgba(255, 255, 255, 1);
+--lion-rewards-border-color: rgba(255, 255, 255, 1);
+--lion-rewards-border-width: 0px;
+--lion-rewards-border-radius: 0px;
+--lion-rewards-tile-background-color: rgba(239, 239, 239, 1);
+--lion-rewards-tile-border-color: rgba(239, 239, 239, 1);
+--lion-rewards-tile-border-width: 0px;
+--lion-rewards-tile-border-radius: 5px;
+--lion-reward-item-icon-color: rgba(0, 0, 0, 1);
+--lion-faq-list-gap: 10px;
+--lion-faq-background-color: rgba(255, 255, 255, 1);
+--lion-faq-padding: 20px;
+--lion-faq-border-color: rgba(0, 0, 0, 1);
+--lion-faq-border-width: 0px;
+--lion-faq-border-radius: 0px;
+--lion-faq-question-header-font-weight: normal;
+--lion-faq-question-background-color: rgba(0, 0, 0, 1);
+--lion-faq-question-vertical-padding: 16px;
+--lion-faq-question-horizontal-padding: 16px;
+--lion-faq-question-vertical-border-width: 0px;
+--lion-faq-question-horizontal-border-width: 0px;
+--lion-faq-question-border-color: rgba(0, 0, 0, 1);
+--lion-faq-question-border-radius: 0px;
+--lion-faq-accordion-icon-size: 19px;
+--lion-tier-progress-bar-indicator-color: rgba(0, 0, 0, 1);
+--lion-tier-progress-bar-background-color: rgba(224, 227, 229, 1);
+--lion-tier-progress-bar-height: 8px;
+--lion-tier-progress-bar-track-height: 19px;
+--lion-tier-progress-bar-unfilled-color: rgba(239, 239, 239, 1);
+--lion-tier-progress-bar-fill-color: rgba(209, 167, 67, 1);
+--lion-tier-progress-bar-track-radius: 8px;
+--lion-tier-progress-bar-fill-radius: 8px;
+--lion-tier-progress-bar-step-marker-radius: 50%;
+--lion-tier-progress-bar-step-marker-vertical-offset: 0px;
+--lion-tier-progress-bar-step-marker-height: 50px;
+--lion-tier-progress-bar-step-marker-width: 50px;
+--lion-tier-progress-text-tier-value-color: rgba(0, 0, 0, 1);
+--lion-tier-progress-bar-current-value-vertical-offset: 50px;
+--lion-tier-progress-bar-current-status-marker-vertical-offset: 0px;
+--lion-tier-progress-bar-current-status-marker-height: 26px;
+--lion-tier-progress-bar-current-status-marker-width: 6px;
+--lion-tier-progress-bar-current-status-marker-radius: 1px;
+--lion-tier-progress-bar-current-value-background-color: rgba(239, 239, 239, 1);
+--lion-tier-progress-bar-current-value-padding: 10px;
+--lion-tier-progress-bar-current-value-radius: 20px;
+--lion-tier-progress-text-tier-name-color: rgba(0, 0, 0, 1);
+--lion-tier-progress-text-tier-bound-color: rgba(0, 0, 0, 1);
+--lion-tier-progress-bar-step-label-vertical-offset: 50px;
+          }
+
+          #loyaltylion .lion-header__nav-link--available-rewards:before{mask:none no-repeat center/auto;-webkit-mask:none no-repeat center/contain;-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/heart.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/heart.svg);}
+#loyaltylion .lion-header__nav-link--earn:before{mask:none no-repeat center/auto;-webkit-mask:none no-repeat center/contain;-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/star.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/star.svg);}
+#loyaltylion .lion-header__nav-link--redeem:before{mask:none no-repeat center/auto;-webkit-mask:none no-repeat center/contain;-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/present.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/present.svg);}
+#loyaltylion .lion-header__nav-link--tiers-overview:before{mask:none no-repeat center/auto;-webkit-mask:none no-repeat center/contain;-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/layers.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/layers.svg);}
+#loyaltylion .lion-header__nav-link--account-history:before{mask:none no-repeat center/auto;-webkit-mask:none no-repeat center/contain;-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/history.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/history.svg);}
+#loyaltylion .lion-icon__rule--signup{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/signup.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/signup.svg);}
+#loyaltylion .lion-icon_rule--purchase,#loyaltylion .lion-iconrule--product-purchase,#loyaltylion .lion-iconrule--collection-purchase,#loyaltylion .lion-icon_rule--trustpilot-product-review{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/purchase.svg?v=1729693952) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon_rule--pageview,#loyaltylion .lion-icon_rule--clickthrough{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/tiktok.svg?v=1729693951) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon__rule--referral{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/refer_friend.svg?v=1729693776) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon__rule--birthday{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/happy_birthday.svg?v=1729693951) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon__rule--newsletter-signup{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/mailing_list.svg?v=1729693951) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon_rule--trustpilot-service-review,#loyaltylion .lion-iconrule--shopify-review,#loyaltylion .lion-iconrule--stampedio-review,#loyaltylion .lion-iconrule--review,#loyaltylion .lion-iconrule--feefo-review,#loyaltylion .lion-iconrule--loox-review,#loyaltylion .lion-iconrule--verified-reviews,#loyaltylion .lion-icon_rule--yotpo-review{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/review.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/review.svg);}
+#loyaltylion .lion-icon__rule--twitter-follow{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/twitter.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/twitter.svg);}
+#loyaltylion .lion-icon__rule--facebook-like{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/tiktok_2.svg?v=1729693951) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon_rule--instagram-follow,#loyaltylion .lion-iconrule--instagram-post-hashtag,#loyaltylion .lion-iconrule--instagram-mention,#loyaltylion .lion-icon_rule--instagram-tag-image{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/instagram.svg?v=1729693951) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon_rule--tiktok-follow,#loyaltylion .lion-icon_rule--tiktok-post-hashtag{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/social/tiktok.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/social/tiktok.svg);}
+#loyaltylion .lion-icon__rule--custom{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/whatsapp.svg?v=1729693951) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-icon_reward--cart-discount-voucher,#loyaltylion .lion-iconreward--product-discount-voucher,#loyaltylion .lion-iconreward--collection-discount-voucher,#loyaltylion .lion-iconreward--active-subscription-discount-voucher,#loyaltylion .lion-icon_reward--subscription{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/flat-discount.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/flat-discount.svg);}
+#loyaltylion .lion-icon__reward--product-cart{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/free-product.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/free-product.svg);}
+#loyaltylion .lion-icon__reward--free-shipping-voucher{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/free-shipping.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/free-shipping.svg);}
+#loyaltylion .lion-icon__reward--gift-card{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/gift-card.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rewards/gift-card.svg);}
+#loyaltylion .lion-icon__reward--checkout-redemption{-webkit-mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/bag.svg);mask-image:url(https://sdk-static.loyaltylion.net/static/2/themes/modern/97776c9/img/icons/rules/bag.svg);}
+#loyaltylion .lion-icon__reward--custom{-webkit-mask-image:none;mask-image:none;background:transparent url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/ps5.png?v=1729693957) no-repeat 50% 50%;background-size:contain;}
+#loyaltylion .lion-account-history__points-expiration{display:none;}
+#loyaltylion .lion-faq-list__question-icon{background-image:url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/caret-down_1.svg?v=1728647956);}
+#loyaltylion .lion-faq-list_question[open] .lion-faq-list_question-icon{background-image:url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/caret-up.svg?v=1728648005);}
+#loyaltylion .lion-progress-bar_container,#loyaltylion .lion-progress-bar_fill{display:block;}
+
+#loyaltylion .lion-faq-list_item *{color:white;}#loyaltylion .lion-faq-listquestion-header{text-transform:uppercase;}#loyaltylion .lion-reward-itemcost *,#loyaltylion .lion-reward-itempercent-off,#loyaltylion .lion-rule-itempoints,#loyaltylion .lion-action-button--tile{text-transform:uppercase;}#loyaltylion .lion-rule-itemtitle,#loyaltylion .lion-reward-itemtitle,#loyaltylion .lion-tier-boxtitle,#loyaltylion .lion-tier-boxsub-title{font-family:var(--font-heading-family);text-transform:uppercase;}#loyaltylion .lion-integrated-page-sectionheading-text{font-family:var(--font-heading-family);font-weight:bold;text-transform:uppercase;}#loyaltylion .lion-rule-itemcontent,#loyaltylion .lion-reward-itemcontent{padding-left:10px;padding-right:10px;}@media screen and (max-width:749px){#loyaltylion .lion-rules-list,#loyaltylion .lion-rewards-list{grid-template-columns:repeat(2, 1fr);}}#loyaltylion .lion-tier-overview{background-color:white;gap:15px;}#loyaltylion .lion-tier-box,#loyaltylion .lion-tier-boxheader{background-color:#EFEFEF;color:black;}#loyaltylion .lion-tier-box *,#loyaltylion .lion-tier-boxheader *{color:black;}#loyaltylion .lion-tier-boxposition{display:none;}#loyaltylion .lion-tier-boxheader{padding:20px 0 10px;}#loyaltylion .lion-tier-boxtitle{font-size:28px;padding:0;line-height:1;}#loyaltylion .lion-tier-boxfooter--current{display:none;}#loyaltylion .lion-tier-boxpurchase-rule{text-transform:uppercase;font-family:var(--font-heading-family);}#loyaltylion .lion-tier-boxbenefits-list{text-align:left;list-style-position:inside;padding:20px 15px 40px 15px;}#loyaltylion .lion-tier-benefits-listitem{text-transform:uppercase;background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/check-mark_1_4331d71c-205d-4e39-9f7a-3fd0f0c7fb92.png?v=1729536776');background-size:16px 16px;background-repeat:no-repeat;background-position:0 5px;padding-left:25px;margin-bottom:10px;}#loyaltylion .lion-tier-progress--current-tier-0 .lion-tier-progressbar-section--tier-2,#loyaltylion .lion-tier-progress--current-tier-0 .lion-tier-progressbar-section--tier-3,#loyaltylion .lion-tier-progress--current-tier-0 .lion-tier-progressbar-section--tier-4{display:none;}#loyaltylion .lion-tier-progress--current-tier-0 .lion-tier-progressbar-section--tier-1{flex:0;}#loyaltylion .lion-tier-progress--current-tier-1 .lion-tier-progressbar-section--tier-0,#loyaltylion .lion-tier-progress--current-tier-1 .lion-tier-progressbar-section--tier-3,#loyaltylion .lion-tier-progress--current-tier-1 .lion-tier-progressbar-section--tier-4{display:none;}#loyaltylion .lion-tier-progress--current-tier-1 .lion-tier-progressbar-section--tier-2{flex:0;}#loyaltylion .lion-tier-progress--current-tier-2 .lion-tier-progressbar-section--tier-0,#loyaltylion .lion-tier-progress--current-tier-2 .lion-tier-progressbar-section--tier-1,#loyaltylion .lion-tier-progress--current-tier-2 .lion-tier-progressbar-section--tier-4{display:none;}#loyaltylion .lion-tier-progress--current-tier-2 .lion-tier-progressbar-section--tier-3{flex:0;}#loyaltylion .lion-tier-progress--current-tier-3 .lion-tier-progressbar-section--tier-0,#loyaltylion .lion-tier-progress--current-tier-3 .lion-tier-progressbar-section--tier-1,#loyaltylion .lion-tier-progress--current-tier-3 .lion-tier-progressbar-section--tier-2{display:none;}#loyaltylion .lion-tier-progresscontext--multi{margin-top:0;}#loyaltylion .lion-tier-progress--current-tier-4 .lion-tier-progresscontext--multi{margin-top:60px;}#loyaltylion .lion-tier-progressbar-sectionstep-marker{--lion-tier-progress-bar-step-marker-height:100px;--lion-tier-progress-bar-step-marker-width:100px;}@media screen and (max-width:749px){#loyaltylion .lion-tier-progressbar-sectionstep-marker{--lion-tier-progress-bar-step-marker-height:70px;--lion-tier-progress-bar-step-marker-width:70px;}#loyaltylion .lion-tier-progresscontext.lion-tier-progresscontext--multi{max-width:50%;margin-left:auto;margin-right:auto;}}#loyaltylion .lion-tier-progressbar-sectiontrack{display:flex;align-items:center;}#loyaltylion .lion-tier-progressbar-sectionfill{height:60%;}#loyaltylion .lion-tier-progresscontext--multi *{color:rgb(var(--color-foreground));text-transform:uppercase;}#loyaltylion .lion-tier-progressbar-sectiontier-name{text-transform:uppercase;}@media screen and (max-width:749px){#loyaltylion .lion-tier-boxtitle{font-size:22px;}#loyaltylion .lion-integrated-page-sectionheading-text{font-size:30px;}#loyaltylion .lion-tier-overview,#loyaltylion .lion-rules-list,#loyaltylion .lion-rewards-list,#loyaltylion .lion-faq-list{padding-left:0;padding-right:0;}}@media screen and (min-width:990px){#loyaltylion .lion-tier-progress:not(.lion-tier-progress--current-tier-4){max-width:850px;margin:0 auto;}}#loyaltylion .lion-tier-box--4 .lion-tier-boxpurchase-rule{border-top:1px solid #4d384b0a;border-bottom:1px solid #4d384b0a;}#loyaltylion .lion-tier-progress--current-tier-0{--lion-tier-progress-bar-fill-color:#cd7f32;}#loyaltylion .lion-tier-progress--current-tier-1{--lion-tier-progress-bar-fill-color:#c0c0c0;}#loyaltylion .lion-tier-progress--current-tier-2{--lion-tier-progress-bar-fill-color:#d4af37;}#loyaltylion .lion-tier-progress--current-tier-3{--lion-tier-progress-bar-fill-color:#b9f2ff;}#loyaltylion .lion-tier-progress--current-tier-4{--lion-tier-progress-bar-fill-color:#000000;}#loyaltylion .lion-tier-box--4{--lion-tier-purchase-points-border-color:#f9f9f9;}#loyaltylion .lion-tier-boxheader::before{content:'';height:119px;width:100%;background-size:contain;background-repeat:no-repeat;margin-left:auto;margin-right:auto;background-position:center;margin-bottom:20px;}#loyaltylion .lion-tier-box--0 .lion-tier-boxheader::before,#loyaltylion .lion-tier-progressbar-section--tier-0 .lion-tier-progressbar-sectionstep-marker{background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/vicinity_bronze_v.png?v=1729664744');}#loyaltylion .lion-tier-box--1 .lion-tier-boxheader::before,#loyaltylion .lion-tier-progressbar-section--tier-1 .lion-tier-progressbar-sectionstep-marker{background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/silver_vr.png?v=1729664743');}#loyaltylion .lion-tier-box--2 .lion-tier-boxheader::before,#loyaltylion .lion-tier-progressbar-section--tier-2 .lion-tier-progressbar-sectionstep-marker{background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/gold_vr.png?v=1729664744');}#loyaltylion .lion-tier-box--3 .lion-tier-boxheader::before,#loyaltylion .lion-tier-progressbar-section--tier-3 .lion-tier-progressbar-sectionstep-marker{background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/diamond_vr.png?v=1729664743');}#loyaltylion .lion-tier-progressbar-sectionstep-marker{background-color:var(--lion-tier-progress-bar-unfilled-color);background-size:contain;background-repeat:no-repeat;background-position:center;}#loyaltylion .lion-tier-box--4 .lion-tier-boxheader::before,#loyaltylion .lion-tier-progressbar-section--tier-4 .lion-tier-progressbar-sectionstep-marker{background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/black_vr.png?v=1729664743');}@media screen and (max-width:749px){#loyaltylion .lion-tier-box:not(.opened) .lion-tier-boxpurchase-rule,#loyaltylion .lion-tier-box:not(.opened) .lion-tier-boxbenefits-list,#loyaltylion .lion-tier-box:not(.opened) .lion-tier-boxsub-title{display:none!important;}#loyaltylion .lion-tier-boxheader{display:flex;justify-content:space-between;align-items:center;flex-flow:row wrap;padding:10px;}#loyaltylion .lion-tier-boxheader::before{height:64px;width:64px;margin:0;}#loyaltylion .lion-tier-boxheader::after{content:'';background-image:url(https://cdn.shopify.com/s/files/1/0559/0161/8328/files/down-arrow.png?v=1729669348);height:64px;width:64px;transform:scale(0.5);display:block;background-size:contain;background-repeat:no-repeat;transition:transform 0.3s ease-in-out;}#loyaltylion .lion-tier-box.opened .lion-tier-boxheader::after{transform:scale(0.5) rotate(180deg);}#loyaltylion .lion-tier-box_sub-title{order:4;width:100%;text-align:center;}#loyaltylion .lion-tier-overview{grid-template-columns:1fr;}}#loyaltylion .lion-tier-box--0.lion-tier-box--current{background:linear-gradient(to top right, #b06f2a, #cd7f32, white 40%, #cd7f32, #e6994d);}#loyaltylion .lion-tier-box--1.lion-tier-box--current{background:linear-gradient(
+    to top right,
+    #a8a8a8,
+    #c0c0c0,
+    white 40%,
+    #c0c0c0,
+    #e0e0e0
+  );}#loyaltylion .lion-tier-box--2.lion-tier-box--current{background:linear-gradient(
+    to top right,
+    #b9972c,
+    #d4af37,
+    white 40%,
+    #d4af37,
+    #e7c45e
+  );}#loyaltylion .lion-tier-box--3.lion-tier-box--current{background:linear-gradient(
+    to bottom right,
+    #8fcde0,
+    #b9f2ff,
+    white 40%,
+    #b9f2ff,
+    #d4f8ff
+  );}#loyaltylion .lion-tier-box--4.lion-tier-box--current{background:linear-gradient(to bottom right, #1a1a1a, #000000, white 0%, #000000, white 100%);color:white;}#loyaltylion .lion-tier-box--4.lion-tier-box--current *{color:white;}#loyaltylion .lion-tier-box_header{background-color:inherit;}#loyaltylion .lion-tier-box--4.lion-tier-box--current .lion-tier-benefits-list_item{background-image:url('https://cdn.shopify.com/s/files/1/0559/0161/8328/files/check-mark_2.png?v=1729087207');}
+
+
+        </style><style>.ig-hidden {
+  display: none !important;
+}
+
+.ig-find-replace {
+  border: 3px dashed #2caf2c !important;
+  border-radius: 4px !important;
+}
+
+.ig-find-replace-builder {
+  border: 3px dashed #2caf2c !important;
+  border-radius: 4px !important;
+}
+
+.ig-find-replace-builder:hover {
+  border: 3px dashed #2962ff !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+}
+
+.ig-price-element {
+  background-color: #b8d3ff !important;
+}
+
+.ig-price-element-changed {
+  background-color: #71dd71 !important;
+}
+
+.ig-price-element-1 {
+  background-color: #71dd71 !important;
+}
+
+.ig-price-element-3 {
+  background-color: #1fad1f !important;
+}
+.ig-price-element-4 {
+  background-color: #febf48 !important;
+}
+
+.ig-price-element-5 {
+  background-color: #cb8501 !important;
+}
+
+.ig-price-element-6 {
+  background-color: #e3354d !important;
+  color: white !important;
+}
+
+.ig-price-element-7 {
+  color: white !important;
+  background-color: #a6162a !important;
+}
+
+.ig-price-element-8 {
+  color: white !important;
+  background-color: #a6162a !important;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbml0L2RvbS9pZy1lbGVtZW50L2lnLWVsZW1lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UscUNBQXFDO0VBQ3JDLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLHFDQUFxQztFQUNyQyw2QkFBNkI7QUFDL0I7O0FBRUE7RUFDRSxxQ0FBcUM7RUFDckMsNkJBQTZCO0VBQzdCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRSxvQ0FBb0M7QUFDdEM7QUFDQTtFQUNFLG9DQUFvQztBQUN0Qzs7QUFFQTtFQUNFLG9DQUFvQztBQUN0Qzs7QUFFQTtFQUNFLG9DQUFvQztFQUNwQyx1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSx1QkFBdUI7RUFDdkIsb0NBQW9DO0FBQ3RDOztBQUVBO0VBQ0UsdUJBQXVCO0VBQ3ZCLG9DQUFvQztBQUN0QyIsInNvdXJjZXNDb250ZW50IjpbIi5pZy1oaWRkZW4ge1xuICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XG59XG5cbi5pZy1maW5kLXJlcGxhY2Uge1xuICBib3JkZXI6IDNweCBkYXNoZWQgIzJjYWYyYyAhaW1wb3J0YW50O1xuICBib3JkZXItcmFkaXVzOiA0cHggIWltcG9ydGFudDtcbn1cblxuLmlnLWZpbmQtcmVwbGFjZS1idWlsZGVyIHtcbiAgYm9yZGVyOiAzcHggZGFzaGVkICMyY2FmMmMgIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogNHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5pZy1maW5kLXJlcGxhY2UtYnVpbGRlcjpob3ZlciB7XG4gIGJvcmRlcjogM3B4IGRhc2hlZCAjMjk2MmZmICFpbXBvcnRhbnQ7XG4gIGJvcmRlci1yYWRpdXM6IDRweCAhaW1wb3J0YW50O1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5pZy1wcmljZS1lbGVtZW50IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2I4ZDNmZiAhaW1wb3J0YW50O1xufVxuXG4uaWctcHJpY2UtZWxlbWVudC1jaGFuZ2VkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzcxZGQ3MSAhaW1wb3J0YW50O1xufVxuXG4uaWctcHJpY2UtZWxlbWVudC0xIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzcxZGQ3MSAhaW1wb3J0YW50O1xufVxuXG4uaWctcHJpY2UtZWxlbWVudC0zIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzFmYWQxZiAhaW1wb3J0YW50O1xufVxuLmlnLXByaWNlLWVsZW1lbnQtNCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZWJmNDggIWltcG9ydGFudDtcbn1cblxuLmlnLXByaWNlLWVsZW1lbnQtNSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNjYjg1MDEgIWltcG9ydGFudDtcbn1cblxuLmlnLXByaWNlLWVsZW1lbnQtNiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNlMzM1NGQgIWltcG9ydGFudDtcbiAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG59XG5cbi5pZy1wcmljZS1lbGVtZW50LTcge1xuICBjb2xvcjogd2hpdGUgIWltcG9ydGFudDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2E2MTYyYSAhaW1wb3J0YW50O1xufVxuXG4uaWctcHJpY2UtZWxlbWVudC04IHtcbiAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhNjE2MmEgIWltcG9ydGFudDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style>
+<!-- Start of Shoplift scripts -->
+<!-- 2025-04-08T08:37:14.6665834Z -->
+<style>.shoplift-hide { opacity: 0 !important; }</style>
+<style id="sl-preview-bar-hide">#preview-bar-iframe, #PBarNextFrameWrapper { display: none !important; }</style>
+<script type="text/javascript">(function(rootPath, template, themeRole, themeId, isThemePreview){ /* Generated on 2025-04-24T14:16:43.8292390Z /var z=Object.defineProperty;var j=(m,p,u)=>p in m?z(m,p,{enumerable:!0,configurable:!0,writable:!0,value:u}):m[p]=u;var l=(m,p,u)=>j(m,typeof p!="symbol"?p+"":p,u);(function(){"use strict";var m=" daum[ /]| deusu/| yadirectfetcher|(?:^|[^g])news(?!sapphire)|(?<! (?:channel/|google/))google(?!(app|/google| pixel))|(?<! cu)bots?(?:\\b|_)|(?<!(?: ya| yandex|^job|inapp;) ?)search|(?<!(?:lib))http|(?<![hg]m)score|@[a-z][\\w-]+\\.|\\(\\)|\\.com|\\b\\d{13}\\b|^<|^[\\w \\.\\-\\(?:\\):]+(?:/v?\\d+(?:\\.\\d+)?(?:\\.\\d{1,10})?)?(?:,|$)|^[^ ]{50,}$|^\\d+\\b|^\\w+/[\\w\\(\\)]$|^active|^ad muncher|^amaya|^avsdevicesdk/|^biglotron|^bot|^bw/|^clamav[ /]|^client/|^cobweb/|^custom|^ddg[_-]android|^discourse|^dispatch/\\d|^downcast/|^duckduckgo|^facebook|^getright/|^gozilla/|^hobbit|^hotzonu|^hwcdn/|^jeode/|^jetty/|^jigsaw|^microsoft bits|^movabletype|^mozilla/\\d\\.\\d \\(compatible;?\\)$|^mozilla/\\d\\.\\d \\w$|^navermailapp|^netsurf|^offline|^owler|^postman|^python|^rank|^read|^reed|^rest|^rss|^snapchat|^space bison|^svn|^swcd |^taringa|^thumbor/|^track|^valid|^w3c|^webbandit/|^webcopier|^wget|^whatsapp|^wordpress|^xenu link sleuth|^yahoo|^yandex|^zdm/\\d|^zoom marketplace/|^{{.*}}$|admin|analyzer|archive|ask jeeves/teoma|bit\\.ly/|bluecoat drtr|browsex|burpcollaborator|capture|catch|check|chrome-lighthouse|chromeframe|classifier|clean|cloud|crawl|cypress/|dareboost|datanyze|dejaclick|detect|dmbrowser|download|evc-batch/|feed|firephp|gomezagent|headless|httrack|hubspot marketing grader|hydra|ibisbrowser|images|insight|inspect|iplabel|ips-agent|java(?!;)|library|mail\\.ru/|manager|measure|neustar wpm|node|nutch|offbyone|optimize|pageburst|pagespeed|parser|perl|phantomjs|pingdom|powermarks|preview|proxy|ptst[ /]\\d|reputation|resolver|retriever|rexx;|rigor|rss\\b|scan|scrape|server|sogou|sparkler/|speedcurve|spider|splash|statuscake|synapse|synthetic|tools|torrent|trace|transcoder|url|virtuoso|wappalyzer|watch|webglance|webkit2png|whatcms/|zgrab",p=/bot|spider|crawl|http|lighthouse/i,u;function I(){if(u instanceof RegExp)return u;try{u=new RegExp(m,"i")}catch{u=p}return u}function A(r){return!!r&&I().test(r)}class v{constructor(){l(this,"timestamp");this.timestamp=new Date}}class P extends v{constructor(e,s,i){super();l(this,"type");l(this,"testId");l(this,"hypothesisId");this.type=3,this.testId=e,this.hypothesisId=s,this.timestamp=i}}class x extends v{constructor(e){super();l(this,"type");l(this,"path");this.type=4,this.path=e}}class E extends v{constructor(e){super();l(this,"type");l(this,"cart");this.type=5,this.cart=e}}class w extends Error{constructor(){super();l(this,"isBot");this.isBot=!0}}function H(r,t,e){for(const s of t.selectors){const i=r.querySelectorAll(s.cssSelector);for(let o=0;o<i.length;o++)e(t.testId,t.hypothesisId)}S(r,t,(s,i,o,n,a)=>a(i,o),e)}function L(r,t,e){for(const s of t.selectors)b(r,t.testId,t.hypothesisId,s,e??(()=>{}));S(r,t,b,e??(()=>{}))}function V(r){return r.urlPatterns.reduce((t,e)=>{switch(e.operator){case"contains":return t+.*${e}.*;case"endsWith":return t+.*${e};case"startsWith":return t+${e}.*}},"")}function S(r,t,e,s){new MutationObserver(()=>{for(const o of t.selectors)e(r,t.testId,t.hypothesisId,o,s)}).observe(r.documentElement,{childList:!0,subtree:!0})}function b(r,t,e,s,i){const o=r.querySelectorAll(s.cssSelector);for(let n=0;n<o.length;n++){let a=o.item(n);if(a instanceof HTMLElement&&a.dataset.shoplift!==""){a.dataset.shoplift="";for(const c of s.actions.sort(N))a=R(r,s.cssSelector,a,c)}}return o.length>0&&i?(i(t,e),!0):!1}function R(r,t,e,s){switch(s.type){case"innerHtml":e.innerHTML=s.value;break;case"attribute":q(e,s.scope,s.value);break;case"css":F(r,t,s.value);break;case"js":M(r,e,s);break;case"copy":return $(e);case"remove":O(e);break;case"move":D(e,parseInt(s.value));break}return e}function q(r,t,e){r.setAttribute(t,e)}function F(r,t,e){var i;const s=r.createElement("style");s.innerHTML=${t} { ${e} },(i=r.getElementsByTagName("head")[0])==null||i.appendChild(s)}function M(r,t,e){Function("document","element",use strict; ${e.value})(r,t)}function $(r){const t=r.cloneNode(!0);if(!r.parentNode)throw"Can't copy node outside of DOM";return r.parentNode.insertBefore(t,r.nextSibling),t}function O(r){r.remove()}function D(r,t){if(t===0)return;const e=Array.prototype.slice.call(r.parentElement.children).indexOf(r),s=Math.min(Math.max(e+t,0),r.parentElement.children.length-1);r.parentElement.children.item(s).insertAdjacentElement(t>0?"afterend":"beforebegin",r)}function N(r,t){return k(r)-k(t)}function k(r){return r.type==="copy"||r.type==="remove"?0:1}function g(r,t){return typeof t=="string"&&/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+(?:Z|[+-]\d+)/.test(t)?new Date(t):t}function T(r,t){return t}class _{constructor(t,e,s,i,o,n,a,c,h,d){l(this,"temporarySessionKey","Shoplift_Session");l(this,"essentialSessionKey","Shoplift_Essential");l(this,"analyticsSessionKey","Shoplift_Analytics");l(this,"legacySessionKey");l(this,"cssHideClass");l(this,"testConfigs");l(this,"inactiveTestConfigs");l(this,"testsFilteredByAudience");l(this,"sendPageView");l(this,"shopliftDebug");l(this,"useGtag");l(this,"getCountryTimeout");l(this,"state");l(this,"shopifyAnalyticsId");l(this,"cookie",document.cookie);l(this,"isSyncing",!1);l(this,"fetch");l(this,"localStorageSet");l(this,"localStorageGet");l(this,"sessionStorageSet",window.sessionStorage.setItem.bind(window.sessionStorage));l(this,"sessionStorageGet",window.sessionStorage.getItem.bind(window.sessionStorage));l(this,"urlParams",new URLSearchParams(window.location.search));l(this,"device");l(this,"logHistory");this.shop=t,this.host=e,this.eventHost=s,this.logHistory=[],this.legacySessionKey=SHOPLIFT_SESSION_${this.shop},this.cssHideClass=i?"shoplift-hide":"",this.testConfigs=h.map(y=>({...y,startAt:new Date(y.startAt),statusHistory:y.statusHistory.map(C=>({...C,createdAt:new Date(C.createdAt)}))})),this.inactiveTestConfigs=d,this.sendPageView=!!o,this.shopliftDebug=n===!0,this.useGtag=a===!0,this.fetch=window.fetch.bind(window),this.localStorageSet=window.localStorage.setItem.bind(window.localStorage),this.localStorageGet=window.localStorage.getItem.bind(window.localStorage);const f=this.getDeviceType();this.device=f!=="tablet"?f:"mobile",this.state=this.loadState(),this.shopifyAnalyticsId=this.getShopifyAnalyticsId(),this.testsFilteredByAudience=h.filter(y=>y.status=="active"),this.getCountryTimeout=c===1000?1e3:c,this.log("State Loaded",JSON.stringify(this.state))}async init(){var t;try{if(this.log("Shoplift script initializing"),window.Shopify&&window.Shopify.designMode){this.log("Skipping script for design mode");return}if(window.location.href.includes("slScreenshot=true")){this.log("Skipping script for screenshot");return}if(window.location.hostname.endsWith(".shopifypreview.com")||window.location.hostname.endsWith(".edgemesh.com")){this.log("Skipping script for preview");return}if(window.location.href.includes("isShopliftMerchant")){const s=this.urlParams.get("isShopliftMerchant")==="true";this.log("Setting merchant session to %s",s),this.state.temporary.isMerchant=s,this.persistTemporaryState()}if(this.state.temporary.isMerchant){this.log("Skipping script for merchant"),(t=document.querySelector("#sl-preview-bar-hide"))==null||t.remove();return}if(A(navigator.userAgent)||(this.shopifyAnalyticsId=this.getShopifyAnalyticsId(),this.monitorConsentChange(),this.checkForThemePreview()))return;if(await this.refreshVisitor(this.shopifyAnalyticsId),await this.handleVisitorTest()){this.log("Redirecting for visitor test");return}this.setShoplift(),this.showPage(),await this.finalize(),console.log("SHOPLIFT SCRIPT INITIALIZED!")}catch(e){if(e instanceof w)return;throw e}finally{typeof window.shoplift!="object"&&this.setShopliftStub()}}async finalize(){const t=await this.getCartState();t!==null&&this.queueCartUpdate(t),this.pruneStateAndSave(),await this.syncAllEvents()}setShoplift(){this.log("Setting up public API");const e=this.urlParams.get("slVariant")==="true",s=e?null:this.urlParams.get("slVariant");window.shoplift={isHypothesisActive:async i=>{if(this.log("Script checking variant for hypothesis '%s'",i),e)return this.log("Forcing variant for hypothesis '%s'",i),!0;if(s!==null)return this.log("Forcing hypothesis '%s'",s),i===s;const o=this.testConfigs.find(a=>a.hypotheses.some(c=>c.id===i));if(!o)return this.log("No test found for hypothesis '%s'",i),!1;const n=this.state.essential.visitorTests.find(a=>a.testId===o.id);return n?(this.log("Active visitor test found",i),n.hypothesisId===i):(await this.manuallySplitVisitor(o),this.testConfigs.some(a=>a.hypotheses.some(c=>c.id===i&&this.state.essential.visitorTests.some(h=>h.hypothesisId===c.id))))},setAnalyticsConsent:async i=>{await this.onConsentChange(i,!0)},getVisitorData:()=>({visitor:this.state.analytics.visitor,visitorTests:this.state.essential.visitorTests.filter(i=>!i.isInvalid).map(i=>{const{shouldSendToGa:o,...n}=i;return n})})}}setShopliftStub(){this.log("Setting up stubbed public API");const e=this.urlParams.get("slVariant")==="true",s=e?null:this.urlParams.get("slVariant");window.shoplift={isHypothesisActive:i=>Promise.resolve(e||i===s),setAnalyticsConsent:()=>Promise.resolve(),getVisitorData:()=>({visitor:null,visitorTests:[]})}}async manuallySplitVisitor(t){this.log("Starting manual split for test '%s'",t.id),await this.handleVisitorTest([t]),this.saveState(),this.syncAllEvents()}async handleVisitorTest(t){await this.filterTestsByAudience(this.testConfigs,this.state.analytics.visitor??this.buildBaseVisitor(),this.state.essential.visitorTests);let e=t?t.filter(i=>this.testsFilteredByAudience.some(o=>o.id===i.id)):this.testsForUrl(this.testsFilteredByAudience);if(e.length>0){this.log("Existing visitor on test page");const i=this.getCurrentVisitorHypothesis(e);if(i){this.log("Found current visitor test");const c=this.considerRedirect(i);return c&&(this.log("Redirecting for current visitor test"),this.redirect(i)),c}this.log("No active test relation for test page");const o=this.testsForUrl(this.inactiveTestConfigs.filter(c=>this.testIsPaused(c)&&c.hypotheses.some(h=>this.state.essential.visitorTests.some(d=>d.hypothesisId===h.id)))).map(c=>c.id);if(o.length>0)return this.log("Visitor has paused tests for test page, skipping test assignment: %o",o),!1;if(this.hasThemeAndOtherTestTypes(this.testsFilteredByAudience)){this.log("Store has both theme and non-theme tests");const c=this.visitorActiveTestType();this.log("Current visitor test type is '%s'",c);let h;switch(c){case"templateOrUrlRedirect":this.log("Filtering to non-theme tests"),h=d=>d!=="theme";break;case"theme":this.log("Filtering to theme tests"),h=d=>d==="theme";break;case null:h=Math.random()>.5?(this.log("Filtering to theme tests"),d=>d==="theme"):(this.log("Filtering to non-theme tests"),d=>d!=="theme");break}e=e.filter(d=>d.hypotheses.some(f=>f.isControl&&h(f.type)))}if(e.length===0)return this.log("No tests found"),!1;const n=e[Math.floor(Math.random()*e.length)],a=this.pickHypothesis(n);if(a){this.log("Adding local visitor to test '%s', hypothesis '%s'",n.id,a.id),this.queueAddVisitorToTest(n.id,a);const c=this.considerRedirect(a);return c&&(this.log("Redirecting for new test"),this.redirect(a)),c}this.log("No hypothesis found")}return this.includeInDomTests(),!1}includeInDomTests(){const t=this.getDomTestsForCurrentUrl(),e=this.getVisitorDomHypothesis(t);for(const s of t){this.log("Evaluating dom test '%s'",s.id);const o=e.find(n=>s.hypotheses.some(a=>n.id===a.id))??this.pickHypothesis(s);if(!o){this.log("Failed to pick hypothesis for test");continue}if(o.isControl){this.log("Test has no dom actions to take, detect selector for test inclusion");const n=s.hypotheses.filter(a=>a.id!==o.id).flatMap(a=>{var c;return((c=a.domSelectors)==null?void 0:c.map(h=>({...h,testId:s.id})))??[]});n.length>0&&H(document,{testId:s.id,hypothesisId:o.id,selectors:n},a=>{this.queueAddVisitorToTest(a,o),this.syncAllEvents()});continue}if(!o.domSelectors||o.domSelectors.length===0){this.log("No selectors found, skipping hypothesis");continue}this.log("Watching for selectors"),L(document,{testId:s.id,hypothesisId:o.id,selectors:o.domSelectors},n=>{this.queueAddVisitorToTest(n,o),this.syncAllEvents()})}}considerRedirect(t){if(this.log("Considering redirect for hypothesis '%s'",t.id),t.isControl)return this.log("Skipping redirect for control"),!1;if(t.type==="basicScript"||t.type==="manualScript")return this.log("Skipping redirect for script test"),!1;const e=this.state.essential.visitorTests.find(n=>n.hypothesisId===t.id),s=new URL(window.location.toString()),o=new URLSearchParams(window.location.search).get("view");if(t.type==="theme"){if(!(t.themeId===themeId)){if(this.log("Theme id '%s' is not hypothesis theme ID '%s'",t.themeId,themeId),e&&e.themeId!==t.themeId&&(e.themeId===themeId||!this.isThemePreview()))this.log("On old theme, redirecting and updating local visitor"),e.themeId=t.themeId;else if(this.isThemePreview())return this.log("On non-test theme, skipping redirect"),!1;return this.log("Hiding page to redirect for theme test"),this.hidePage(),!0}return!1}else if(t.type!=="dom"&&t.affix!==template.suffix&&t.affix!==o||t.redirectPath&&!s.pathname.endsWith(t.redirectPath))return this.log("Hiding page to redirect for template test"),this.hidePage(),!0;return this.log("Not redirecting"),!1}redirect(t){if(this.log("Redirecting to hypothesis '%s'",t.id),t.isControl)return;const e=new URL(window.location.toString());if(e.searchParams.delete("view"),t.redirectPath){const s=RegExp("^(/w{2}-w{2})/").exec(e.pathname);if(s&&s.length>1){const i=s[1];e.pathname=${i}${t.redirectPath}}else e.pathname=t.redirectPath}else t.type==="theme"?(e.searchParams.set("_ab","0"),e.searchParams.set("_fd","0"),e.searchParams.set("_sc","1"),e.searchParams.set("preview_theme_id",t.themeId.toString())):t.type!=="urlRedirect"&&e.searchParams.set("view",t.affix);this.queueRedirect(e)}async refreshVisitor(t){if(console.log(${t}:${this.state.essential.isFirstLoad}:${this.testConfigs.some(s=>s.visitorOption!=="all")}),t===null||!this.state.essential.isFirstLoad||!this.testConfigs.some(s=>s.visitorOption!=="all"))return;this.hidePage();const e=await this.getVisitor(t);e&&e.id&&this.updateLocalVisitor(e)}buildBaseVisitor(){return{shopifyAnalyticsId:this.shopifyAnalyticsId,device:this.device,country:null,...this.state.essential.initialState}}getInitialState(){const t=this.getUTMValue("utm_source")??"",e=this.getUTMValue("utm_medium")??"",s=this.getUTMValue("utm_campaign")??"",i=this.getUTMValue("utm_content")??"",o=window.document.referrer,n=this.device;return{createdAt:new Date,utmSource:t,utmMedium:e,utmCampaign:s,utmContent:i,referrer:o,device:n}}checkForThemePreview(){var t;return this.log("Checking for theme preview"),this.isThemePreview()?this.state.essential.visitorTests.some(e=>e.isThemeTest&&this.getHypothesis(e.hypothesisId)&&e.themeId===themeId)?(this.log("On active theme test, removing theme bar"),this.clearThemeBar(!1,!0,this.state),!1):this.state.essential.visitorTests.some(e=>e.isThemeTest&&!this.getHypothesis(e.hypothesisId)&&e.themeId===themeId)?(this.log("Visitor is on an inactive theme test, redirecting to main theme"),this.redirectToMainTheme(),!0):this.state.essential.isFirstLoad?(this.log("No visitor found on theme preview, redirecting to main theme"),this.redirectToMainTheme(),!0):this.inactiveTestConfigs.some(e=>e.hypotheses.some(s=>s.themeId===themeId))?(this.log("Current theme is an inactive theme test, redirecting to main theme"),this.redirectToMainTheme(),!0):this.testConfigs.some(e=>e.hypotheses.some(s=>s.themeId===themeId))?(this.log("Falling back to clearing theme bar"),this.clearThemeBar(!1,!0,this.state),!1):(this.log("No tests on current theme, skipping script"),this.clearThemeBar(!0,!1,this.state),(t=document.querySelector("#sl-preview-bar-hide"))==null||t.remove(),!0):(this.log("Not on theme preview"),this.clearThemeBar(!0,!1,this.state),!1)}redirectToMainTheme(){this.hidePage();const t=new URL(window.location.toString());t.searchParams.set("preview_theme_id",""),this.queueRedirect(t)}testsForUrl(t){const e=new URL(window.location.href),s=this.typeFromTemplate();return t.filter(i=>i.hypotheses.some(o=>o.type!=="dom"&&(o.isControl&&o.type===s&&o.affix===template.suffix||o.type==="theme"||o.isControl&&o.type==="urlRedirect"&&o.redirectPath&&e.pathname.endsWith(o.redirectPath)||o.type==="basicScript"))&&(i.ignoreTestViewParameterEnforcement||!e.searchParams.has("view")||i.hypotheses.map(o=>o.affix).includes(e.searchParams.get("view")??"")))}domTestsForUrl(t){const e=new URL(window.location.href);return t.filter(s=>s.hypotheses.some(i=>i.type==="dom"&&i.domSelectors&&i.domSelectors.some(o=>new RegExp(V(o)).test(e.toString()))))}async filterTestsByAudience(t,e,s){const i=[];let o=e.country;!o&&t.some(n=>n.requiresCountry&&!s.some(a=>a.testId===n.id))&&(this.log("Hiding page to check geoip"),this.hidePage(),o=await this.makeJsonRequest({method:"get",url:${this.eventHost}/api/v0/visitors/get-country,signal:AbortSignal.timeout(this.getCountryTimeout)}).catch(n=>(this.log("Error getting country",n),null)));for(const n of t){this.log("Checking audience for test '%s'",n.id);const a=this.visitorCreatedDuringTestActive(n.statusHistory);(s.some(h=>h.testId===n.id&&(n.device==="all"||n.device===e.device&&n.device===this.device))||this.isTargetAudience(n,e,a,o))&&(this.log("Visitor is in audience for test '%s'",n.id),i.push(n))}this.testsFilteredByAudience=i}isTargetAudience(t,e,s,i){const o=this.getChannel(e);return(t.device==="all"||t.device===e.device&&t.device===this.device)&&(t.visitorOption==="all"||t.visitorOption==="new"&&s||t.visitorOption==="returning"&&!s)&&(t.targetAudiences.length===0||t.targetAudiences.reduce((n,a)=>n||a.reduce((c,h)=>c&&h(e,s,o,i),!0),!1))}visitorCreatedDuringTestActive(t){let e="";for(const s of t){if(this.state.analytics.visitor!==null&&this.state.analytics.visitor.createdAt<s.createdAt||this.state.essential.initialState.createdAt<s.createdAt)break;e=s.status}return e==="active"}getDomTestsForCurrentUrl(){return this.domTestsForUrl(this.testsFilteredByAudience)}getCurrentVisitorHypothesis(t){return t.flatMap(e=>e.hypotheses).find(e=>e.type!=="dom"&&this.state.essential.visitorTests.some(s=>s.hypothesisId===e.id))}getVisitorDomHypothesis(t){return t.flatMap(e=>e.hypotheses).filter(e=>e.type==="dom"&&this.state.essential.visitorTests.some(s=>s.hypothesisId===e.id))}getHypothesis(t){return this.testConfigs.filter(e=>e.hypotheses.some(s=>s.id===t)).map(e=>e.hypotheses.find(s=>s.id===t))[0]}hasThemeTest(t){return t.some(e=>e.hypotheses.some(s=>s.type==="theme"))}hasTestThatIsNotThemeTest(t){return t.some(e=>e.hypotheses.some(s=>s.type!=="theme"&&s.type!=="dom"))}hasThemeAndOtherTestTypes(t){return this.hasThemeTest(t)&&this.hasTestThatIsNotThemeTest(t)}testIsPaused(t){return t.status==="paused"||t.status==="incompatible"||t.status==="suspended"}visitorActiveTestType(){const t=this.state.essential.visitorTests.filter(e=>this.testConfigs.some(s=>s.hypotheses.some(i=>i.id==e.hypothesisId)));return t.length===0?null:t.some(e=>e.isThemeTest)?"theme":"templateOrUrlRedirect"}pickHypothesis(t){let e=Math.random();const s=t.hypotheses.reduce((o,n)=>o+n.visitorCount,0);return t.hypotheses.sort((o,n)=>o.isControl?n.isControl?0:-1:n.isControl?1:0).reduce((o,n)=>{if(o!==null)return o;const c=t.hypotheses.reduce((h,d)=>h&&d.visitorCount>20,!0)?n.visitorCount/s-n.trafficPercentage:0;return e<=n.trafficPercentage-c?n:(e-=n.trafficPercentage,null)},null)}typeFromTemplate(){switch(template.type){case"collection-list":return"collectionList";case"page":return"landing";case"article":case"blog":case"cart":case"collection":case"index":case"product":case"search":return template.type;default:return null}}queueRedirect(t){this.saveState(),window.setTimeout(()=>window.location.assign(t),0)}async syncAllEvents(){const t=async()=>{if(this.isSyncing){window.setTimeout(()=>void(async()=>await t())(),500);return}try{this.isSyncing=!0,await this.syncEvents(),this.syncGAEvents()}finally{this.isSyncing=!1}};await t()}async syncEvents(){var s,i;if(!this.state.essential.consentApproved||!this.shopifyAnalyticsId||this.state.analytics.queue.length===0)return;const t=this.state.analytics.queue.length,e=this.state.analytics.queue.splice(0,t);this.log("Syncing %s events",t);try{const o={shop:this.shop,visitorDetails:{shopifyAnalyticsId:this.shopifyAnalyticsId,device:((s=this.state.analytics.visitor)==null?void 0:s.device)??this.device,country:((i=this.state.analytics.visitor)==null?void 0:i.country)??null,...this.state.essential.initialState},events:this.state.essential.visitorTests.filter(a=>!a.isInvalid&&!a.isSaved).map(a=>new P(a.testId,a.hypothesisId,a.createdAt)).concat(e)},n=await this.sendEvents(o);n!==null&&this.updateLocalVisitor(n)}catch{this.state.analytics.queue.splice(0,0,...e)}finally{this.saveState()}}syncGAEvents(){if(!this.useGtag||!this.state.essential.consentApproved)return;const t=this.state.essential.visitorTests.filter(e=>e.shouldSendToGa);this.log("Syncing %s ga events",length);try{for(const e of t)this.sendGtagEvent(e.testId,e.hypothesisId),e.shouldSendToGa=!1}catch(e){this.log("Failed sending event to gtag",e)}finally{this.persistEssentialState()}}sendGtagEvent(t,e){this.log("Sending gtag event for",t,e);const s={exp_variant_string:SL-${t}-${e}};this.shopliftDebug&&Object.assign(s,{debug_mode:!0}),typeof window.gtag=="function"?gtag("event","experience_impression",s):(this.log("gtag not found, pushing to dataLayer"),window.dataLayer=window.dataLayer||[],window.dataLayer.push({event:"experience_impression",...s}))}updateLocalVisitor(t){let e;({visitorTests:e,...this.state.analytics.visitor}=t);for(const s of this.state.essential.visitorTests.filter(i=>!e.some(o=>o.testId===i.testId)))s.isSaved=!0,s.isInvalid=!0;for(const s of e)this.state.essential.visitorTests.some(o=>o.testId===s.testId)||this.state.essential.visitorTests.push(s);this.state.analytics.visitor.storedAt=new Date}async getVisitor(t){try{return await this.makeJsonRequest({method:"get",url:${this.eventHost}/api/v0/visitors/by-key/${this.shop}/${t}})}catch{return null}}async sendEvents(t){return await this.makeJsonRequest({method:"post",url:${this.eventHost}/api/v0/events,data:JSON.stringify(t)})}async getRemoteVisitor(t){return await this.makeJsonRequest({method:"get",url:${this.eventHost}/api/v0/visitors/${t}})}async updateShopifyAnalyticsId(t,e){return await this.makeJsonRequest({method:"put",url:${this.eventHost}/api/v0/visitors/${t},data:JSON.stringify({shop:this.shop,shopifyAnalyticsId:e})})}getUTMValue(t){const s=decodeURIComponent(window.location.search.substring(1)).split("&");for(let i=0;i<s.length;i++){const o=s[i].split("=");if(o[0]===t)return o[1]||null}return null}hidePage(){this.log("Hiding page"),this.cssHideClass&&!window.document.documentElement.classList.contains(this.cssHideClass)&&(window.document.documentElement.classList.add(this.cssHideClass),setTimeout(this.removeAsyncHide(this.cssHideClass),2e3))}showPage(){this.cssHideClass&&this.removeAsyncHide(this.cssHideClass)()}getDeviceType(){function t(){let s=!1;return function(i){(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(i)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| ||a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(i.substr(0,4)))&&(s=!0)}(navigator.userAgent||navigator.vendor),s}function e(){let s=!1;return function(i){(/android|ipad|playbook|silk/i.test(i)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| ||a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(i.substr(0,4)))&&(s=!0)}(navigator.userAgent||navigator.vendor),s}return t()?"mobile":e()?"tablet":"desktop"}removeAsyncHide(t){return()=>{t&&window.document.documentElement.classList.remove(t)}}async getCartState(){try{let t=await this.makeJsonRequest({method:"get",url:${window.location.origin}/cart.js});return t===null?null:(t.note===null&&(t=await this.makeJsonRequest({method:"post",url:${window.location.origin}/cart/update.js,data:JSON.stringify({note:""})})),t)}catch(t){return this.log("Error sending cart info",t),null}}async makeJsonRequest(t){const e=await this.makeRequest(t);return e===null?null:JSON.parse(await e.text(),g)}async makeRequest(t){const{url:e,method:s,headers:i,data:o,signal:n}=t,a=new Headers;if(i)for(const h in i)a.append(h,i[h]);(!i||!i.Accept)&&a.append("Accept","application/json"),(!i||!i["Content-Type"])&&a.append("Content-Type","application/json"),(this.eventHost.includes("ngrok.io")||this.eventHost.includes("ngrok-free.app"))&&a.append("ngrok-skip-browser-warning","1234");const c=await this.fetch(e,{method:s,headers:a,body:o,signal:n});if(!c.ok){if(c.status===204)return null;if(c.status===422){const h=await c.json();if(typeof h<"u"&&h.isBot)throw new w}throw new Error(Error sending shoplift request ${c.status})}return c}queueAddVisitorToTest(t,e){this.state.essential.visitorTests.some(s=>s.testId===t)||this.state.essential.visitorTests.push({createdAt:new Date,testId:t,hypothesisId:e.id,isThemeTest:e.type==="theme",themeId:e.themeId,isSaved:!1,isInvalid:!1,shouldSendToGa:!0})}queueCartUpdate(t){this.queueEvent(new E(t))}queuePageView(t){this.queueEvent(new x(t))}queueEvent(t){!this.state.essential.consentApproved&&this.state.essential.hasConsentInteraction||this.state.analytics.queue.length>10||this.state.analytics.queue.push(t)}legacyGetLocalStorageVisitor(){const t=this.localStorageGet(this.legacySessionKey);if(t)try{return JSON.parse(t,g)}catch{}return null}pruneStateAndSave(){this.state.essential.visitorTests=this.state.essential.visitorTests.filter(t=>this.testConfigs.some(e=>e.id==t.testId)||this.inactiveTestConfigs.filter(e=>this.testIsPaused(e)).some(e=>e.id===t.testId)),this.saveState()}saveState(){this.persistEssentialState(),this.persistAnalyticsState()}loadState(){const t=this.loadAnalyticsState(),e={analytics:t,essential:this.loadEssentialState(t),temporary:this.loadTemporaryState()},s=this.legacyGetLocalStorageVisitor(),i=this.legacyGetCookieVisitor(),o=[s,i].filter(n=>n!==null).sort((n,a)=>+a.storedAt-+n.storedAt)[0];return e.analytics.visitor===null&&o&&({visitorTests:e.essential.visitorTests,...e.analytics.visitor}=o,e.essential.isFirstLoad=!1,e.essential.initialState={createdAt:o.createdAt,referrer:o.referrer,utmCampaign:o.utmCampaign,utmContent:o.utmContent,utmMedium:o.utmMedium,utmSource:o.utmSource,device:o.device},this.deleteCookie("SHOPLIFT"),this.deleteLocalStorage(this.legacySessionKey)),!e.essential.consentApproved&&e.essential.hasConsentInteraction&&this.deleteLocalStorage(this.analyticsSessionKey),e}loadEssentialState(t){var a;const e=this.loadLocalStorage(this.essentialSessionKey),s=this.loadCookie(this.essentialSessionKey),i=this.getInitialState();(a=t.visitor)!=null&&a.device&&(i.device=t.visitor.device);const o={timestamp:new Date,consentApproved:!1,hasConsentInteraction:!1,debugMode:!1,initialState:i,visitorTests:[],isFirstLoad:!0},n=[e,s].filter(c=>c!==null).sort((c,h)=>+h.timestamp-+c.timestamp)[0]??o;return n.initialState||(t.visitor!==null?n.initialState=t.visitor:(n.initialState=i,n.initialState.createdAt=n.timestamp)),n}loadAnalyticsState(){const t=this.loadLocalStorage(this.analyticsSessionKey),e=this.loadCookie(this.analyticsSessionKey),s={timestamp:new Date,visitor:null,queue:[]};return[t,e].filter(i=>i!==null).sort((i,o)=>+o.timestamp-+i.timestamp)[0]??s}loadTemporaryState(){const t=this.sessionStorageGet(this.temporarySessionKey),e=t?JSON.parse(t,g):null,s=this.loadCookie(this.temporarySessionKey);return e??s??{isMerchant:!1,timestamp:new Date}}persistEssentialState(){this.log("Persisting essential state"),this.state.essential.isFirstLoad=!1,this.state.essential.timestamp=new Date,this.persistLocalStorageState(this.essentialSessionKey,this.state.essential),this.persistCookieState(this.essentialSessionKey,this.state.essential)}persistAnalyticsState(){this.log("Persisting analytics state"),this.state.essential.consentApproved&&(this.state.analytics.timestamp=new Date,this.persistLocalStorageState(this.analyticsSessionKey,this.state.analytics),this.persistCookieState(this.analyticsSessionKey,this.state.analytics))}persistTemporaryState(){this.log("Setting temporary session state"),this.state.temporary.timestamp=new Date,this.sessionStorageSet(this.temporarySessionKey,JSON.stringify(this.state.temporary)),this.persistCookieState(this.temporarySessionKey,this.state.temporary,!0)}loadLocalStorage(t){const e=this.localStorageGet(t);return e===null?null:JSON.parse(e,g)}loadCookie(t){const e=this.getCookie(t);return e===null?null:JSON.parse(e,g)}persistLocalStorageState(t,e){this.localStorageSet(t,JSON.stringify(e))}persistCookieState(t,e,s=!1){const i=JSON.stringify(e),o=s?"":expires=${new Date(new Date().getTime()+864e5*365).toUTCString()};;document.cookie=${t}=${i};domain=.${window.location.hostname};path=/;SameSite=Strict;${o}}deleteCookie(t){const e=new Date(0).toUTCString();document.cookie=${t}=;domain=.${window.location.hostname};path=/;expires=${e};}deleteLocalStorage(t){window.localStorage.removeItem(t)}getChannel(t){var s;return((s=[{"name":"cross-network","test":(v) => new RegExp(".cross-network.", "i").test(v.utmCampaign)},{"name":"direct","test":(v) => v.utmSource === "" && v.utmMedium === ""},{"name":"paid-shopping","test":(v) => (new RegExp("^(?:Google|IGShopping|aax-us-east\.amazon-adsystem\.com|aax\.amazon-adsystem\.com|alibaba|alibaba\.com|amazon|amazon\.co\.uk|amazon\.com|apps\.shopify\.com|checkout\.shopify\.com|checkout\.stripe\.com|cr\.shopping\.naver\.com|cr2\.shopping\.naver\.com|ebay|ebay\.co\.uk|ebay\.com|ebay\.com\.au|ebay\.de|etsy|etsy\.com|m\.alibaba\.com|m\.shopping\.naver\.com|mercadolibre|mercadolibre\.com|mercadolibre\.com\.ar|mercadolibre\.com\.mx|message\.alibaba\.com|msearch\.shopping\.naver\.com|nl\.shopping\.net|no\.shopping\.net|offer\.alibaba\.com|one\.walmart\.com|order\.shopping\.yahoo\.co\.jp|partners\.shopify\.com|s3\.amazonaws\.com|se\.shopping\.net|shop\.app|shopify|shopify\.com|shopping\.naver\.com|shopping\.yahoo\.co\.jp|shopping\.yahoo\.com|shopzilla|shopzilla\.com|simplycodes\.com|store\.shopping\.yahoo\.co\.jp|stripe|stripe\.com|uk\.shopping\.net|walmart|walmart\.com)$", "i").test(v.utmSource) || new RegExp("^(.(([^a-df-z]|^)shop|shopping).)$", "i").test(v.utmCampaign)) && new RegExp("^(.cp.|ppc|retargeting|paid.*)$", "i").test(v.utmMedium)},{"name":"paid-search","test":(v) => new RegExp("^(?:360\.cn|alice|aol|ar\.search\.yahoo\.com|ask|at\.search\.yahoo\.com|au\.search\.yahoo\.com|auone|avg|babylon|baidu|biglobe|biglobe\.co\.jp|biglobe\.ne\.jp|bing|br\.search\.yahoo\.com|ca\.search\.yahoo\.com|centrum\.cz|ch\.search\.yahoo\.com|cl\.search\.yahoo\.com|cn\.bing\.com|cnn|co\.search\.yahoo\.com|comcast|conduit|daum|daum\.net|de\.search\.yahoo\.com|dk\.search\.yahoo\.com|dogpile|dogpile\.com|duckduckgo|ecosia\.org|email\.seznam\.cz|eniro|es\.search\.yahoo\.com|espanol\.search\.yahoo\.com|exalead\.com|excite\.com|fi\.search\.yahoo\.com|firmy\.cz|fr\.search\.yahoo\.com|globo|go\.mail\.ru|google|google-play|hk\.search\.yahoo\.com|id\.search\.yahoo\.com|in\.search\.yahoo\.com|incredimail|it\.search\.yahoo\.com|kvasir|lens\.google\.com|lite\.qwant\.com|lycos|m\.baidu\.com|m\.naver\.com|m\.search\.naver\.com|m\.sogou\.com|mail\.rambler\.ru|mail\.yandex\.ru|malaysia\.search\.yahoo\.com|msn|msn\.com|mx\.search\.yahoo\.com|najdi|naver|naver\.com|ne

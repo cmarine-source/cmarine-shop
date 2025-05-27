@@ -120,12 +120,12 @@
         /* Category Bar (Barra Categorie) */
         .category-bar {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start; /* Changed to flex-start */
             flex-wrap: wrap;
-            padding: 0.25rem; /* Further reduced padding */
+            padding: 0.5rem;
             border-bottom: 1px solid #ddd;
             background: #fff;
-            gap: 0.1rem; /* Further reduced gap */
+            gap: 0.5rem; /* Maintained gap */
         }
 
         .category {
@@ -135,15 +135,17 @@
             font-size: 0.75rem;
             color: #333;
             text-align: center;
-            width: 7%; /* Further reduced width */
+            flex-basis: calc((100% - 8 * 0.5rem) / 9); /* Calculated width */
+            flex-grow: 0;
+            flex-shrink: 0;
         }
 
         .category-icon {
-            width: 65px; /* Further reduced width */
-            height: 65px; /* Further reduced height */
+            width: 70px;
+            height: 70px;
             border: 2px solid #000;
             border-radius: 50%;
-            margin-bottom: 0.2rem; /* Further reduced margin */
+            margin-bottom: 0.3rem;
             background: #f8f8f8;
         }
 
@@ -170,18 +172,19 @@
             }
 
             .category-bar {
-                justify-content: space-around;
-                gap: 0.1rem; /* Further reduced gap */
-                padding: 0.1rem; /* Further reduced padding */
+                justify-content: center; /* Changed to center */
+                gap: 0.3rem;
+                padding: 0.3rem;
             }
 
             .category {
+                flex-basis: auto; /* Reset width */
                 width: auto;
             }
 
             .category-icon {
-                width: 35px; /* Further reduced width */
-                height: 35px; /* Further reduced height */
+                width: 50px;
+                height: 50px;
             }
         }
     </style>

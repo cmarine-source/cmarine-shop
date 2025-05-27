@@ -82,7 +82,7 @@
             padding: 0.7rem 2rem;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            padding-bottom: 50px; /* Aumentato il padding inferiore per fare spazio al logo */
+            padding-bottom: 20px; /* Ripristinato il padding inferiore originale */
         }
 
         .main-header .menu-left {
@@ -111,17 +111,18 @@
             grid-column: 2;
             max-width: 200px;
             height: auto;
+            margin-right: 0;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-            margin-left: auto; /* Spinge il logo verso destra */
         }
 
         .main-header .logo img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin-right: auto; /* Mantiene il logo centrato nella sua area */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .main-header .menu-right {
@@ -140,7 +141,7 @@
             border-bottom: 1px solid #ddd;
             background: #fff;
             gap: 35px;
-            margin-top: 20px; /* Aggiunto un po' di spazio sopra la barra categorie */
+            margin-top: 0; /* Ripristinato il margin-top originale */
         }
 
         .category {
@@ -181,7 +182,7 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding: 0.5rem 2rem;
-                padding-bottom: 45px;
+                padding-bottom: 20px; /* Ripristinato il padding inferiore originale per il mobile */
             }
 
             .main-header .menu-left {
@@ -207,7 +208,7 @@
                 justify-content: center;
                 gap: 20px;
                 padding: 0.3rem;
-                margin-top: 15px;
+                margin-top: 10px; /* Ripristinato il margin-top originale per il mobile */
             }
 
             .category {

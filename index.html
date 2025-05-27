@@ -106,17 +106,18 @@
         }
 
         .main-header .logo {
-            text-align: left;
+            text-align: right; /* Allinea il testo/contenuto a destra */
             grid-column: 2;
             max-width: 200px;
             height: auto;
-            margin-left: 360px; /* Aumentato il margine a 360px */
+            margin-right: 300px; /* Aggiunge un margine a destra per spostare il logo */
         }
 
         .main-header .logo img {
             max-width: 100%;
             height: auto;
             display: block;
+            margin-left: auto; /* Spinge l'immagine a sinistra all'interno del contenitore allineato a destra */
         }
 
         .main-header .menu-right {
@@ -130,7 +131,8 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 0.5rem;
+            padding: 0.5rem; /* Manteniamo un po' di padding orizzontale */
+            padding-top: 0.2rem; /* Ridotto il padding superiore per avvicinare i cerchi */
             border-bottom: 1px solid #ddd;
             background: #fff;
             gap: 35px;
@@ -185,7 +187,8 @@
                 text-align: center;
                 grid-column: 1;
                 margin-top: 0.5rem;
-                margin-left: 0;
+                margin-right: 0; /* Resetta il margine su schermi piccoli */
+                margin-left: auto; /* Forza il centro su schermi piccoli */
             }
 
             .main-header .menu-right {

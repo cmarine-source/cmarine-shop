@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vicinity Header Replica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <style>
         /* Reset base per una migliore consistenza */
         *,
@@ -82,23 +79,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.7rem 2rem; /* Ridotto leggermente il padding verticale */
+            padding: 0.7rem 2rem;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .main-header .menu-left {
             display: flex;
-            align-items: center; /* Allineamento verticale al centro */
+            align-items: center;
             gap: 1.5rem;
-            flex-direction: row; /* Disposizione orizzontale */
-            justify-content: flex-start; /* Allineamento a sinistra */
-            height: auto; /* Altezza automatica in base al contenuto */
+            flex-direction: row;
+            justify-content: flex-start;
+            height: auto;
         }
 
         .main-header .menu-left span {
             font-size: 0.9rem;
-            color: #000; /* Nero più scuro */
+            color: #000;
             cursor: pointer;
             transition: color 0.2s ease-in-out;
         }
@@ -110,28 +107,16 @@
         .main-header .logo {
             flex: 1;
             text-align: center;
-            /* Added position relative */
             position: relative;
-            font-size: 2rem; /* Dimensione ridotta */
-            font-weight: 600; /* Grassetto leggermente meno intenso */
-            font-family: 'Montserrat', sans-serif; /* Font moderno e geometrico */
-            letter-spacing: 0.08em; /* Leggera spaziatura tra le lettere */
-            /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Ombra rimossa per semplicità */
-        }
-
-        /* Style for the red C */
-        .main-header .logo .logo-c {
-            color: #FF3333; /* Rosso leggermente più acceso */
-        }
-
-        /* Style for the blue MARINE */
-        .main-header .logo .logo-marine {
-            color: #29ABE2; /* Blu elettrico leggermente più vivace */
+            /* width: 150px;  Aggiungi una larghezza fissa se necessario */
+            /* height: auto;  L'altezza si adatterà proporzionalmente */
         }
 
         .main-header .logo img {
-            height: 0px;
-            display: none;
+            max-width: 100%; /* Assicura che l'immagine non superi il contenitore */
+            height: auto; /* Mantiene le proporzioni dell'immagine */
+            display: block; /* Rimuove lo spazio extra sotto l'immagine */
+            margin: 0 auto; /* Centra l'immagine orizzontalmente */
         }
 
         .main-header .menu-right {
@@ -186,14 +171,14 @@
             .main-header {
                 flex-direction: column;
                 text-align: center;
-                padding: 0.5rem 2rem; /* Adattamento padding responsive */
+                padding: 0.5rem 2rem;
             }
 
             .main-header .menu-left {
                 align-items: center;
                 flex-direction: row;
                 margin-top: 0.5rem;
-                justify-content: center; /* Centra "NEGOZIO" su schermi piccoli */
+                justify-content: center;
             }
 
             .category-bar {
@@ -216,22 +201,21 @@
             }
 
             .main-header .logo {
-                font-size: 1.8rem; /* Adattamento per schermi piccoli */
-                letter-spacing: 0.05em;
+                /* width: 120px;  Adatta la larghezza se necessario */
             }
         }
 
-        /* Style per il link di Instagram (RIMOSSO ICONA) */
+        /* Style per il link di Instagram */
         .utility-left a {
-            color: #fff; /* Colore del link */
-            text-decoration: none; /* Rimuove la sottolineatura */
-            margin-left: 0.5rem; /* Spazio tra il testo e l'icona */
-            display: flex; /* Per allineare verticalmente icona e testo */
+            color: #fff;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            display: flex;
             align-items: center;
         }
 
         .utility-left a:hover {
-            color: #ccc; /* Colore del link al passaggio del mouse */
+            color: #ccc;
         }
     </style>
 </head>
@@ -240,8 +224,9 @@
 
     <div class="utility-bar">
         <div class="utility-left">
-            <a href="https://www.instagram.com/cmarine_ciaramaglia?igsh=MTV1MGw1dHNlenk2aw==" target="_blank" rel="noopener noreferrer">
-                @cmarine_ciaramaglia
+            <a href="https://www.instagram.com/cmarine_ciaramaglia?igsh=MTV1MGw1dHNlenk2aw==" target="_blank"
+                rel="noopener noreferrer">
+                CMARINE
             </a>
         </div>
         <div class="utility-right">
@@ -261,11 +246,11 @@
             <span>NEGOZIO ▾</span>
         </div>
         <div class="logo">
-            <span class="logo-c">C</span><span class="logo-marine">marine</span>
+            <img src="http://googleusercontent.com/image_generation_content/3" alt="Logo CMARINE" >
         </div>
 
         <div class="menu-right">
-            </div>
+        </div>
 
     </header>
 

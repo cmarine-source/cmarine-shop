@@ -77,7 +77,7 @@
         /* Main Header (Intestazione Principale) */
         .main-header {
             display: grid;
-            grid-template-columns: auto 1fr auto; /* Definisce tre colonne */
+            grid-template-columns: 1fr auto 1fr; /* Modifica le colonne per centrare a destra */
             align-items: center;
             padding: 0.7rem 2rem;
             background-color: #fff;
@@ -108,21 +108,20 @@
 
         .main-header .logo {
             text-align: center;
-            grid-column: 2;
+            grid-column: 2; /* Posiziona il logo nella seconda colonna */
             max-width: 200px;
             height: auto;
-            margin-right: 0;
             position: relative;
             top: 50%; /* Posiziona il bordo superiore al 50% del contenitore */
             transform: translateY(-50%); /* Sposta verticalmente del 50% della sua altezza */
+            margin-left: auto; /* Spinge il logo verso destra */
+            margin-right: auto; /* Centra orizzontalmente nella sua cella */
         }
 
         .main-header .logo img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .main-header .menu-right {
@@ -179,7 +178,7 @@
             }
 
             .main-header {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Torna a una sola colonna per il mobile */
                 text-align: center;
                 padding: 0.5rem 2rem;
                 padding-bottom: 45px; /* Adatta il padding per la versione mobile */
@@ -192,10 +191,10 @@
 
             .main-header .logo {
                 text-align: center;
-                grid-column: 1;
+                grid-column: 1; /* Il logo occupa l'unica colonna */
                 margin-top: 0.5rem;
-                margin-right: 0;
-                margin-left: auto;
+                margin-left: auto; /* Centra il logo nel mobile */
+                margin-right: auto;
                 top: 50%;
                 transform: translateY(-50%);
             }

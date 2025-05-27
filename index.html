@@ -82,7 +82,7 @@
             padding: 0.7rem 2rem;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            padding-bottom: 20px; /* Aggiunto un po' di padding inferiore per lo spazio */
+            padding-bottom: 50px; /* Aumentato il padding inferiore per fare spazio al logo */
         }
 
         .main-header .menu-left {
@@ -113,7 +113,8 @@
             height: auto;
             margin-right: 0;
             position: relative;
-            bottom: -25px; /* Prova con questo valore e regolalo */
+            top: 50%; /* Posiziona il bordo superiore al 50% del contenitore */
+            transform: translateY(-50%); /* Sposta verticalmente del 50% della sua altezza */
         }
 
         .main-header .logo img {
@@ -137,10 +138,10 @@
             flex-wrap: wrap;
             padding: 0.5rem;
             padding-top: 0.2rem;
-            /* margin-top: 10px; Puoi provare anche questo */
             border-bottom: 1px solid #ddd;
             background: #fff;
             gap: 35px;
+            margin-top: 20px; /* Aggiunto un po' di spazio sopra la barra categorie */
         }
 
         .category {
@@ -181,6 +182,7 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding: 0.5rem 2rem;
+                padding-bottom: 45px; /* Adatta il padding per la versione mobile */
             }
 
             .main-header .menu-left {
@@ -194,8 +196,8 @@
                 margin-top: 0.5rem;
                 margin-right: 0;
                 margin-left: auto;
-                position: relative;
-                bottom: -20px; /* Adatta per schermi piccoli se necessario */
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .main-header .menu-right {
@@ -206,6 +208,7 @@
                 justify-content: center;
                 gap: 20px;
                 padding: 0.3rem;
+                margin-top: 15px; /* Adatta lo spazio per la versione mobile */
             }
 
             .category {

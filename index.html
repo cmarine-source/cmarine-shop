@@ -86,11 +86,11 @@
 
         .main-header .menu-left {
             display: flex;
-            align-items: flex-start; /* Modifica qui */
+            align-items: flex-start;
             gap: 1.5rem;
-            flex-direction: column; /* Aggiungi questo */
-            justify-content: center; /* Aggiungi questo */
-            height: 100%; /* Aggiungi questo */
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         }
 
         .main-header .menu-left span {
@@ -114,7 +114,7 @@
         }
 
         .main-header .menu-right {
-            display: none; /* Rimuove le icone */
+            display: none;
         }
 
         /* Category Bar (Barra Categorie) */
@@ -125,6 +125,7 @@
             padding: 1rem;
             border-bottom: 1px solid #ddd;
             background: #fff;
+            gap: 0.75rem; /* Adjusted gap */
         }
 
         .category {
@@ -134,13 +135,13 @@
             font-size: 0.75rem;
             color: #333;
             text-align: center;
-            width: 11%;
+            width: 10%; /* Adjusted width */
         }
 
         .category-icon {
-            width: 90px;
-            height: 90px;
-            border: 1px solid #ccc;
+            width: 80px; /* Adjusted width */
+            height: 80px; /* Adjusted height */
+            border: 2px solid #000; /* Added border */
             border-radius: 50%;
             margin-bottom: 0.5rem;
             background: #f8f8f8;
@@ -170,6 +171,7 @@
 
             .category-bar {
                 justify-content: space-around;
+                gap: 0.5rem; /* Adjusted gap */
             }
 
             .category {
@@ -177,8 +179,8 @@
             }
 
             .category-icon {
-                width: 60px;
-                height: 60px;
+                width: 50px; /* Adjusted width */
+                height: 50px; /* Adjusted height */
             }
         }
     </style>

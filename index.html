@@ -106,18 +106,19 @@
         }
 
         .main-header .logo {
-            text-align: right; /* Allinea il testo/contenuto a destra */
+            text-align: center; /* Allinea il testo/contenuto al centro */
             grid-column: 2;
-            max-width: 100px;
+            max-width: 200px; /* Aumento la larghezza massima per il centraggio */
             height: auto;
-            margin-right: 453px; /* Imposta il margine destro a 1032px */
+            margin-right: 0; /* Resetta il margine destro */
         }
 
         .main-header .logo img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin-left: 1072; /* Spinge l'immagine a sinistra all'interno del contenitore allineato a destra */
+            margin-left: auto; /* Centra l'immagine all'interno del div */
+            margin-right: auto; /* Centra l'immagine all'interno del div */
         }
 
         .main-header .menu-right {
@@ -153,8 +154,8 @@
         }
 
         .category-icon {
-            width: 150px;
-            height: 150px;
+            width: 90px;
+            height: 90px;
             border: 3px solid #000;
             border-radius: 50%;
             margin-bottom: 0.3rem;

@@ -1,157 +1,285 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vicinity Header Replica</title>
-<style>
-  /* Importa i font da Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600&display=swap');
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vicinity Header Replica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Reset base per una migliore consistenza */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  body {
-    margin: 0;
-    font-family: 'Lato', Arial, sans-serif; /* Usa Lato come font principale */
-  }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f8f8; /* Un grigio chiarissimo per uno sfondo più delicato */
+            color: #333; /* Grigio scuro per il testo, meno duro del nero */
+            line-height: 1.6; /* Migliora la leggibilità */
+        }
 
-  /* Utility Bar */
-  .utility-bar {
-    background-color: #000;
-    color: #fff;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 20px; /* Aumenta un po' il padding */
-  }
+        /* Utility Bar (Barra Superiore) */
+        .utility-bar {
+            background-color: #222; /* Grigio molto scuro, quasi nero */
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.6rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-  .utility-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
+        .utility-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-  .utility-left span {
-    display: flex;
-    align-items: center;
-  }
+        .utility-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-  .utility-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
+        .dot-text {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
 
-  .utility-right a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    opacity: 0.8; /* Leggera trasparenza */
-    transition: opacity 0.2s ease-in-out;
-  }
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+        }
 
-  .utility-right a:hover {
-    opacity: 1; /* Rendi più opaco al passaggio del mouse */
-  }
+        /* Icon Bar (Icone Social/Carrello) */
+        .icon-bar a {
+            color: #fff; /* Icone bianche sulla barra nera */
+            font-size: 1rem;
+            margin-left: 0.8rem;
+            transition: color 0.2s ease-in-out; /* Transizione fluida del colore */
+        }
 
-  /* Header Main */
-  header.site-header {
-    background-color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-  }
+        .icon-bar a:hover {
+            color: #ccc; /* Leggermente più chiaro al passaggio del mouse */
+        }
 
-  .logo {
-    flex: 1;
-    text-align: center;
-    padding: 5px 0; /* Aggiungi un po' di padding verticale al logo */
-  }
+        /* Main Header (Intestazione Principale) */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #fff; /* Sfondo bianco per l'header principale */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Leggera ombra per profondità */
+        }
 
-  .logo img {
-    height: 45px;
-  }
+        .main-header .menu-left,
+        .main-header .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* Aumentato lo spazio tra gli elementi del menu */
+        }
 
-  nav.main-nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    gap: 25px;
-    font-weight: 600;
-  }
+        .main-header .menu-left span {
+            font-size: 0.9rem;
+            color: #555; /* Grigio medio per il testo del menu */
+            cursor: pointer; /* Indica che è cliccabile */
+            transition: color 0.2s ease-in-out;
+        }
 
-  nav.main-nav a {
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px; /* Aggiungi padding ai link di navigazione */
-    transition: color 0.2s ease-in-out;
-  }
+        .main-header .menu-left span:hover {
+            color: #222; /* Più scuro al passaggio del mouse */
+        }
 
-  nav.main-nav a:hover {
-    color: #4a90e2;  /* Colore d'accento (blu tenue) al passaggio del mouse */
-  }
+        .main-header .logo {
+            flex: 1;
+            text-align: center;
+        }
 
-  .left-icons {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Allinea le icone a destra */
-    gap: 20px;
-  }
+        .main-header .logo img {
+            height: 30px;
+        }
 
-  .icon-button {
-    color: #333;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s ease-in-out;
-  }
+        .main-header .menu-right a {
+            color: #555;
+            font-size: 1.2rem; /* Icone leggermente più grandi */
+            margin-left: 1.2rem;
+            transition: color 0.2s ease-in-out;
+        }
 
-  .icon-button:hover {
-    opacity: 1;
-  }
-</style>
+        .main-header .menu-right a:hover {
+            color: #222;
+        }
+
+        /* Category Bar (Barra Categorie) */
+        .category-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem; /* Aumentato lo spazio tra le categorie */
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Leggera ombra */
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #555;
+            text-align: center;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .category:hover {
+            color: #222;
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+            background-color: #eee; /* Grigio chiaro per le icone */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem; /* Dimensione delle icone interne */
+            color: #666; /* Colore delle icone interne */
+        }
+
+        /* Responsività (Base) */
+        @media (max-width: 768px) {
+            .utility-bar {
+                justify-content: center; /* Centra gli elementi su schermi piccoli */
+                text-align: center;
+            }
+
+            .utility-right {
+                gap: 0.75rem; /* Riduce lo spazio tra gli elementi a destra */
+            }
+
+            .main-header {
+                flex-direction: column; /* Impila gli elementi verticalmente */
+                text-align: center;
+            }
+
+            .main-header .menu-left,
+            .main-header .menu-right {
+                gap: 0.75rem;
+                margin-top: 0.5rem; /* Aggiunge spazio sopra i menu */
+            }
+
+            .category-bar {
+                gap: 0.75rem; /* Riduce lo spazio tra le categorie */
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="utility-bar">
-  <div class="utility-left">
-    <span>⭐ 4.7/5 based on 5417 reviews</span>
-    <span>• FREE SHIPPING OVER €225</span>
-  </div>
-  <div class="utility-right">
-    <a href="#" aria-label="Search" class="icon-button">
-      🔍
-    </a>
-    <a href="#" aria-label="Wishlist" class="icon-button">
-      ❤️
-    </a>
-    <a href="#" aria-label="Profile" class="icon-button">
-      👤
-    </a>
-    <a href="#" aria-label="Cart" class="icon-button">
-      🛍️
-    </a>
-  </div>
-</div>
+    <div class="utility-bar">
+        <div class="utility-left">
+            <span>⭐ 4.7/5 su 5 basato su 5417 recensioni</span>
+        </div>
+        <div class="utility-right">
+            <span class="dot-text"><span class="dot"></span> SPEDIZIONE GRATUITA SOPRA 225 €</span>
+            <span class="dot-text"><span class="dot"></span> EUR € | GERMANIA</span>
+            <div class="icon-bar">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
 
-<header class="site-header">
-  <nav class="main-nav">
-    <a href="#">SHOP ▾</a>
-    <a href="#">MEMBERS CLUB</a>
-  </nav>
-  <div class="logo">
-    <a href="#"><img src="logo-placeholder.png" alt="Vicinity Logo" /></a>
-  </div>
-  <div class="left-icons">
-    <a href="#" aria-label="Search" class="icon-button">🔍</a>
-    <a href="#" aria-label="Wishlist" class="icon-button">❤️</a>
-    <a href="#" aria-label="Profile" class="icon-button">👤</a>
-    <a href="#" aria-label="Cart" class="icon-button">🛍️</a>
-  </div>
-</header>
+    <header class="main-header">
+        <div class="menu-left">
+            <span>SHOP ▾</span>
+            <span>MEMBERS CLUB</span>
+        </div>
+        <div class="logo">
+            <img src="https://via.placeholder.com/120x30?text=VICINITY" alt="Vicinity Logo" />
+        </div>
+
+        <div class="menu-right">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+
+    </header>
+
+    <div class="category-bar">
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-shoe-sneaker"></i></div>
+            <span>SCARPE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+            <span>DENIM</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-running"></i></div>
+            <span>SHORTS</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-socks"></i></div>
+            <span>MAGLIERIA</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-male"></i></div>
+            <span>T-SHIRT</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-running"></i></div>
+            <span>TUTE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-vest"></i></div>
+            <span>CLASSICI</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-hoodie"></i></div>
+            <span>FELPE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-leather-jacket"></i></div>
+            <span>GIACCHE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-shirt"></i></div>
+            <span>MAGLIE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-shopping-bag"></i></div>
+            <span>BORSE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-baseball-cap"></i></div>
+            <span>CAPPELLI</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"><i class="fas fa-glasses"></i></div>
+            <span>ACCESSORI</span>
+        </div>
+    </div>
 
 </body>
+
 </html>

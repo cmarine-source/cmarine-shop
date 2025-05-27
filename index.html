@@ -109,19 +109,21 @@
             text-align: center;
             /* Added position relative */
             position: relative;
-            font-size: 2.5rem; /* Aumentato la dimensione del font */
-            font-weight: bold;
-            font-family: 'Arial Black', sans-serif; /* Font moderno e incisivo */
+            font-size: 3rem; /* Aumentato ancora la dimensione */
+            font-weight: 700; /* Grassetto più intenso */
+            font-family: 'Montserrat', sans-serif; /* Font moderno e geometrico (assicurati che sia disponibile o incluso) */
+            letter-spacing: 0.1em; /* Leggera spaziatura tra le lettere */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Leggera ombra per profondità */
         }
 
         /* Style for the red C */
         .main-header .logo .logo-c {
-            color: #FF0000; /* Red color */
+            color: #FF3333; /* Rosso leggermente più acceso */
         }
 
         /* Style for the blue MARINE */
         .main-header .logo .logo-marine {
-            color: #007FFF; /* Electric blue color */
+            color: #29ABE2; /* Blu elettrico leggermente più vivace */
         }
 
         .main-header .logo img {
@@ -155,7 +157,6 @@
             flex-basis: auto;
             flex-grow: 0;
             flex-shrink: 0;
-            max-width: none;
             font-weight: 500;
         }
 
@@ -210,7 +211,9 @@
             }
 
             .main-header .logo {
-                font-size: 2rem; /* Dimensione leggermente ridotta per schermi piccoli */
+                font-size: 2.2rem; /* Adattamento per schermi piccoli */
+                letter-spacing: 0.05em;
+                text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
             }
         }
 
@@ -222,7 +225,8 @@
 
     <div class="utility-bar">
         <div class="utility-left">
-            <span></span> </div>
+            <span></span>
+        </div>
         <div class="utility-right">
             <span class="dot-text"><span class="dot"></span> SPEDIZIONE GRATUITA SOPRA €225</span>
             <span class="dot-text"><span class="dot"></span> EUR € | ITALIA</span>

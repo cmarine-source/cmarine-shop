@@ -82,6 +82,7 @@
             padding: 0.7rem 2rem;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding-bottom: 20px; /* Aggiunto un po' di padding inferiore per lo spazio */
         }
 
         .main-header .menu-left {
@@ -106,20 +107,21 @@
         }
 
         .main-header .logo {
-            text-align: center; /* Allinea il testo/contenuto al centro */
+            text-align: center;
             grid-column: 2;
-            max-width: 200px; /* Aumento la larghezza massima per il centraggio */
+            max-width: 200px;
             height: auto;
-            margin-right: 0; /* Resetta il margine destro */
-            margin-bottom: -30px; /* Prova con un valore negativo. Regola a tuo piacimento */
+            margin-right: 0;
+            position: relative;
+            bottom: -25px; /* Prova con questo valore e regolalo */
         }
 
         .main-header .logo img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin-left: auto; /* Centra l'immagine all'interno del div */
-            margin-right: auto; /* Centra l'immagine all'interno del div */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .main-header .menu-right {
@@ -133,8 +135,9 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 0.5rem; /* Manteniamo un po' di padding orizzontale */
-            padding-top: 0.2rem; /* Ridotto il padding superiore per avvicinare i cerchi */
+            padding: 0.5rem;
+            padding-top: 0.2rem;
+            /* margin-top: 10px; Puoi provare anche questo */
             border-bottom: 1px solid #ddd;
             background: #fff;
             gap: 35px;
@@ -189,8 +192,10 @@
                 text-align: center;
                 grid-column: 1;
                 margin-top: 0.5rem;
-                margin-right: 0; /* Resetta il margine su schermi piccoli */
-                margin-left: auto; /* Forza il centro su schermi piccoli */
+                margin-right: 0;
+                margin-left: auto;
+                position: relative;
+                bottom: -20px; /* Adatta per schermi piccoli se necessario */
             }
 
             .main-header .menu-right {

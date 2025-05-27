@@ -125,9 +125,8 @@
         /* Category Bar (Barra Categorie) */
         .category-bar {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly; /* Distribuzione simmetrica */
             flex-wrap: wrap;
-            gap: 1.5rem;
             padding: 1rem;
             background-color: #fff;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -141,6 +140,7 @@
             color: #555;
             text-align: center;
             transition: color 0.2s ease-in-out;
+            width: auto; /* Adatta la larghezza al contenuto */
         }
 
         .category:hover {
@@ -160,11 +160,11 @@
             color: #666;
         }
 
-        /* Rimuovi icone e cerchi per categorie specifiche */
-        .category:nth-child(4) .category-icon, /* MAGLIERIA */
-        .category:nth-child(6) .category-icon, /* TUTE */
-        .category:nth-child(7) .category-icon, /* CLASSICI */
-        .category:nth-child(8) .category-icon  /* FELPE */
+        /* Rimuovi testo per categorie specifiche */
+        .category:nth-child(4) span, /* MAGLIERIA */
+        .category:nth-child(6) span, /* TUTE */
+        .category:nth-child(7) span, /* CLASSICI */
+        .category:nth-child(8) span  /* FELPE */
         {
             display: none;
         }
@@ -192,6 +192,7 @@
             }
 
             .category-bar {
+                justify-content: space-evenly; /* Mantiene la distribuzione su schermi piccoli */
                 gap: 0.75rem;
             }
         }
@@ -208,9 +209,10 @@
             <span class="dot-text"><span class="dot"></span> SPEDIZIONE GRATUITA SOPRA 225 €</span>
             <span class="dot-text"><span class="dot"></span> EUR € | GERMANIA</span>
             <div class="icon-bar">
-                <a href="#"></a> <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </div>
@@ -225,9 +227,10 @@
         </div>
 
         <div class="menu-right">
-            <a href="#"></a> <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-bag"></i></a>
         </div>
 
     </header>
@@ -246,20 +249,24 @@
             <span>SHORTS</span>
         </div>
         <div class="category">
-            <div class="category-icon"></div>  <span>MAGLIERIA</span>
+            <div class="category-icon"></div>
+            <span>MAGLIERIA</span>
         </div>
         <div class="category">
             <div class="category-icon"><i class="fas fa-male"></i></div>
             <span>T-SHIRT</span>
         </div>
         <div class="category">
-            <div class="category-icon"></div>  <span>TUTE</span>
+            <div class="category-icon"></div>
+            <span>TUTE</span>
         </div>
         <div class="category">
-            <div class="category-icon"></div>  <span>CLASSICI</span>
+            <div class="category-icon"></div>
+            <span>CLASSICI</span>
         </div>
         <div class="category">
-            <div class="category-icon"></div>  <span>FELPE</span>
+            <div class="category-icon"></div>
+            <span>FELPE</span>
         </div>
         <div class="category">
             <div class="category-icon"><i class="fas fa-leather-jacket"></i></div>

@@ -3,146 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cmarine Shop</title>
+  <title>Cmarin Shop - Negozio Online</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0; padding: 0;
-      background: #f0f8ff;
-      color: #222;
+      background-color: #f5f5f5;
+      color: #333;
     }
     header {
-      background: #d32f2f; /* rosso */
+      background-color: #0073e6; /* blu, poi lo modifichiamo */
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       color: white;
-      padding: 1rem 2rem;
-      text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2rem;
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
     }
-    nav {
-      background: #0288d1; /* celeste */
-      padding: 0.5rem 2rem;
-      text-align: center;
-    }
-    nav a {
+    header nav a {
       color: white;
-      margin: 0 1rem;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
     }
-    nav a:hover {
+    header nav a:hover {
       text-decoration: underline;
     }
+    .search-bar {
+      flex-grow: 1;
+      margin: 0 20px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 16px;
+    }
     .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .categories {
+      margin-bottom: 20px;
+    }
+    .categories button {
+      background-color: #ddd;
+      border: none;
+      margin-right: 10px;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .categories button:hover {
+      background-color: #bbb;
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: 20px;
     }
-    .product {
+    .product-card {
       background: white;
-      border: 1px solid #ddd;
       border-radius: 8px;
-      overflow: hidden;
+      padding: 15px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s;
     }
-    .product:hover {
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .product-card:hover {
+      transform: scale(1.05);
     }
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
+    .product-card img {
+      max-width: 150px;
+      margin-bottom: 10px;
+      border-radius: 5px;
     }
-    .product-info {
-      padding: 1rem;
+    .product-card h3 {
+      margin: 5px 0;
+      font-size: 18px;
     }
-    .product-info h3 {
-      margin: 0 0 0.5rem 0;
+    .product-card p {
+      margin: 5px 0;
+      color: #666;
     }
-    .product-info p {
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    .price {
-      font-weight: 700;
-      color: #d32f2f;
-      font-size: 1.1rem;
+    .product-card .price {
+      margin-top: auto;
+      font-weight: bold;
+      font-size: 16px;
+      color: #e60023; /* rosso prezzo */
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
-      margin-top: 3rem;
+      padding: 15px 0;
+      background: #0073e6;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Cmarine Shop - Gaeta</h1>
-  </header>
+
+<header>
+  <div class="logo">Cmarin Shop</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Cerca prodotti..." />
+  </div>
   <nav>
-    <a href="#prodotti">Prodotti</a>
-    <a href="#contatti">Contatti</a>
+    <a href="#">Il mio account</a>
+    <a href="#">Carrello</a>
+    <a href="#">Categorie</a>
   </nav>
+</header>
 
-  <main class="container">
-    <section id="prodotti">
-      <h2>Prodotti in vetrina</h2>
-      <div class="products">
+<div class="container">
+  <div class="categories">
+    <button>T-shirt</button>
+    <button>Borse</button>
+    <button>Accessori</button>
+  </div>
 
-        <div class="product">
-          <img src="https://via.placeholder.com/300x200.png?text=Maglietta+Rossa" alt="Maglietta Rossa" />
-          <div class="product-info">
-            <h3>Maglietta Rossa</h3>
-            <p>Maglietta 100% cotone, taglie S-XL.</p>
-            <p class="price">€15,00</p>
-          </div>
-        </div>
+  <div class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Maglietta rossa" />
+      <h3>Maglietta rossa</h3>
+      <p>100% cotone, taglia M</p>
+      <div class="price">€20.00</div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Borsa in pelle" />
+      <h3>Borsa in pelle</h3>
+      <p>Colore nero, capiente</p>
+      <div class="price">€45.00</div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Cappello estivo" />
+      <h3>Cappello estivo</h3>
+      <p>Protezione UV, colore beige</p>
+      <div class="price">€15.00</div>
+    </div>
+  </div>
+</div>
 
-        <div class="product">
-          <img src="https://via.placeholder.com/300x200.png?text=Borsa+Celeste" alt="Borsa Celeste" />
-          <div class="product-info">
-            <h3>Borsa Celeste</h3>
-            <p>Borsa resistente con manici lunghi.</p>
-            <p class="price">€25,00</p>
-          </div>
-        </div>
+<footer>
+  &copy; 2025 Cmarin Shop - Tutti i diritti riservati
+</footer>
 
-        <div class="product">
-          <img src="https://via.placeholder.com/300x200.png?text=Cappellino" alt="Cappellino" />
-          <div class="product-info">
-            <h3>Cappellino</h3>
-            <p>Cappellino regolabile con logo Cmarine.</p>
-            <p class="price">€10,00</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contatti" style="margin-top:3rem;">
-      <h2>Contatti</h2>
-      <p>Via Roma 123, Gaeta</p>
-      <p>Telefono: 0123 456789</p>
-      <p>Email: info@cmarine.it</p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Cmarine Shop - Tutti i diritti riservati
-  </footer>
 </body>
 </html>

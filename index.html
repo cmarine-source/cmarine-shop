@@ -1,53 +1,304 @@
-.main-header .logo {
-    text-align: center;
-    grid-column: 2;
-    max-width: 200px;
-    height: auto;
-    margin-right: 0;
-    position: absolute; /* Cambia da relative a absolute */
-    left: 50%;          /* Posiziona il bordo sinistro al 50% del contenitore */
-    transform: translateX(-50%) translateY(50%); /* Centra orizzontalmente e sposta in basso */
-    bottom: 50%;        /* Posiziona il bordo inferiore al 50% del contenitore */
-}
+<!DOCTYPE html>
+<html lang="it">
 
-.main-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: flex-start; /* Cambia align-items per allineare dall'alto */
-    padding: 0.7rem 2rem;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    min-height: 150px; /* Aggiungi un'altezza minima per fare spazio al logo */
-}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vicinity Header Replica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Reset base per una migliore consistenza */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.category-bar {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0.5rem;
-    padding-top: 0.2rem;
-    border-bottom: 1px solid #ddd;
-    background: #fff;
-    gap: 35px;
-    margin-top: auto; /* Spinge la barra delle categorie in basso */
-}
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
 
-@media (max-width: 768px) {
-    .main-header {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 0.5rem 2rem;
-        min-height: 120px; /* Adatta l'altezza minima per il mobile */
-    }
+        /* Utility Bar (Barra Superiore) */
+        .utility-bar {
+            background-color: #222;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.6rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    .main-header .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateY(50%);
-        bottom: 50%;
-    }
+        .utility-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-    .category-bar {
-        margin-top: auto;
-    }
-}
+        .utility-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dot-text {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Icon Bar (Icone Social/Carrello) */
+        .icon-bar a {
+            color: #fff;
+            font-size: 1rem;
+            margin-left: 0.8rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .icon-bar a:hover {
+            color: #ccc;
+        }
+
+        /* Main Header (Intestazione Principale) */
+        .main-header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: flex-start; /* Cambia align-items per allineare dall'alto */
+            padding: 0.7rem 2rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            min-height: 150px; /* Aggiungi un'altezza minima per fare spazio al logo */
+        }
+
+        .main-header .menu-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-direction: row;
+            justify-content: flex-start;
+            height: auto;
+            grid-column: 1;
+        }
+
+        .main-header .menu-left span {
+            font-size: 0.9rem;
+            color: #000;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .main-header .menu-left span:hover {
+            color: #222;
+        }
+
+        .main-header .logo {
+            text-align: center;
+            grid-column: 2;
+            max-width: 200px;
+            height: auto;
+            margin-right: 0;
+            position: absolute; /* Cambia da relative a absolute */
+            left: 50%;          /* Posiziona il bordo sinistro al 50% del contenitore */
+            transform: translateX(-50%) translateY(50%); /* Centra orizzontalmente e sposta in basso */
+            bottom: 50%;        /* Posiziona il bordo inferiore al 50% del contenitore */
+        }
+
+        .main-header .logo img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-header .menu-right {
+            grid-column: 3;
+            width: auto;
+            justify-self: end;
+        }
+
+        /* Category Bar (Barra Categorie) */
+        .category-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.5rem;
+            padding-top: 0.2rem;
+            border-bottom: 1px solid #ddd;
+            background: #fff;
+            gap: 35px;
+            margin-top: auto; /* Spinge la barra delle categorie in basso */
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #000;
+            text-align: center;
+            width: auto;
+            flex-basis: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-weight: 500;
+        }
+
+        .category-icon {
+            width: 90px;
+            height: 90px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            margin-bottom: 0.3rem;
+            background: #f8f8f8;
+        }
+
+        /* Responsività (Base) */
+        @media (max-width: 768px) {
+            .utility-bar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .utility-right {
+                gap: 0.75rem;
+            }
+
+            .main-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0.5rem 2rem;
+                min-height: 120px; /* Adatta l'altezza minima per il mobile */
+            }
+
+            .main-header .menu-left {
+                justify-content: center;
+                grid-column: 1;
+            }
+
+            .main-header .logo {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                bottom: 50%;
+            }
+
+            .main-header .menu-right {
+                display: none;
+            }
+
+            .category-bar {
+                margin-top: auto;
+            }
+
+            .category {
+                flex-basis: auto;
+                width: auto;
+                max-width: none;
+                font-size: 0.75rem;
+                font-weight: normal;
+            }
+
+            .category-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .main-header .logo {
+                max-width: 150px;
+            }
+        }
+
+        /* Style per il link di Instagram */
+        .utility-left a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .utility-left a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="utility-bar">
+        <div class="utility-left">
+            <a href="https://www.instagram.com/cmarine_ciaramaglia?igsh=MTV1MGw1dHNlenk2aw==" target="_blank"
+                rel="noopener noreferrer">
+                CMARINE
+            </a>
+        </div>
+        <div class="utility-right">
+            <span class="dot-text"><span class="dot"></span> SPEDIZIONE GRATUITA SOPRA €225</span>
+            <span class="dot-text"><span class="dot"></span> EUR € | ITALIA</span>
+            <div class="icon-bar">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="menu-left">
+            <span>NEGOZIO ▾</span>
+        </div>
+        <div class="logo">
+            <img src="https://i.imgur.com/JFeGdD4.jpeg" alt="Logo CMARINE">
+        </div>
+        <div class="menu-right"></div> </header>
+
+    <div class="category-bar">
+        <div class="category">
+            <div class="category-icon"></div><span>SCARPE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>JEANS</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>SHORTS</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>MAGLIE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>CAMICIE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>GIACCHE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>BORSE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>CAPPELLI</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>ACCESSORI</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

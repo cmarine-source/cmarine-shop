@@ -1,258 +1,301 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cmarin Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@700;900&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset base */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.4;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    /* Header */
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Instaround Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&display=swap" rel="stylesheet" />
+<style>
+  /* Reset base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  /* Logo */
+  .logo {
+    font-weight: 900;
+    font-size: 32px;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .logo .red-c {
+    color: #d32f2f;
+    font-style: italic;
+    margin-right: 3px;
+  }
+  .logo .blue-rest {
+    color: #0d47a1;
+  }
+  /* Button Tutte le categorie */
+  .btn-categories {
+    background-color: #0d47a1;
+    border: none;
+    color: #fff;
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn-categories:hover {
+    background-color: #093975;
+  }
+  .btn-categories svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+  }
+  /* Search bar container */
+  .search-container {
+    flex-grow: 1;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  /* Search input */
+  .search-container input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 40px 0 0 40px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .search-container input[type="text"]:focus {
+    border-color: #0d47a1;
+  }
+  /* Search button */
+  .search-container button.search-btn {
+    background: #febd69;
+    border: none;
+    border-radius: 0 40px 40px 0;
+    padding: 12px 25px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .search-container button.search-btn:hover {
+    background-color: #f7a01b;
+  }
+  /* Extra button near search */
+  .search-container button.adv-search-btn {
+    margin-left: 12px;
+    background: #0d47a1;
+    color: white;
+    padding: 10px 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  .search-container button.adv-search-btn:hover {
+    background-color: #093975;
+  }
+  /* Cart */
+  .cart {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0d47a1;
+    font-weight: 700;
+    user-select: none;
+  }
+  .cart svg {
+    width: 26px;
+    height: 26px;
+    fill: #0d47a1;
+  }
+  .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #d32f2f;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Main content */
+  main {
+    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+  main h1 {
+    color: #0d47a1;
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 30px;
+    user-select: none;
+  }
+  /* Products grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap: 28px;
+  }
+  .product-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 3px 7px rgb(0 0 0 / 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .product-card:hover {
+    box-shadow: 0 8px 18px rgb(0 0 0 / 0.12);
+  }
+  .product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  .product-info {
+    padding: 15px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .product-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  .product-price {
+    font-size: 18px;
+    font-weight: 900;
+    color: #d32f2f;
+    margin-bottom: 15px;
+  }
+  .btn-add-cart {
+    background: #0d47a1;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-add-cart:hover {
+    background-color: #093975;
+  }
+  /* Footer */
+  footer {
+    background: #f7f7f7;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    color: #666;
+    user-select: none;
+  }
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
     header {
-      background: #f3f3f3;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      gap: 10px;
+      padding: 15px 15px;
     }
-    /* Logo */
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 900;
-      font-size: 32px;
-      cursor: pointer;
-      user-select: none;
-      display: flex;
-      align-items: center;
-      gap: 0;
-      flex-shrink: 0;
-    }
-    .logo .red-c {
-      color: #d32f2f; /* rosso acceso */
-      font-weight: 900;
-      font-size: 38px;
-      letter-spacing: 0;
-      line-height: 1;
-      margin-right: 2px;
-      font-style: italic;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .logo .blue-rest {
-      color: #0d47a1; /* blu intenso */
-      font-weight: 700;
-      font-size: 32px;
-      letter-spacing: 1.2px;
-      line-height: 1;
-    }
-    /* Tutte le categorie button */
     .btn-categories {
-      background-color: #0d47a1;
-      color: white;
-      border: none;
-      padding: 10px 14px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      user-select: none;
-      transition: background-color 0.2s ease;
-      flex-shrink: 0;
+      padding: 8px 12px;
+      font-size: 13px;
     }
-    .btn-categories:hover {
-      background-color: #09408b;
+    .search-container button.adv-search-btn {
+      display: none;
     }
-    .btn-categories svg {
-      width: 16px;
-      height: 16px;
-      fill: white;
-    }
-    /* Search form */
-    .search-bar {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    .search-bar input[type="text"] {
-      width: 100%;
-      padding: 10px 16px;
-      border-radius: 4px 0 0 4px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-    .search-bar input[type="text"]:focus {
-      border-color: #0d47a1;
-      box-shadow: 0 0 5px #0d47a1;
-    }
-    .search-bar button {
-      background-color: #febd69;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      font-weight: 700;
-      color: #333;
-      transition: background-color 0.2s ease;
-    }
-    .search-bar button:hover {
-      background-color: #f7a01b;
-    }
-    /* Carrello */
-    .cart {
-      position: relative;
-      cursor: pointer;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      color: #0d47a1;
-    }
-    .cart svg {
-      width: 24px;
-      height: 24px;
-      fill: #0d47a1;
-    }
-    .cart-count {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background-color: #d32f2f;
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-    }
-    /* Main content */
-    main {
-      flex-grow: 1;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-weight: 900;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #0d47a1;
-    }
-    /* Product grid */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-    }
-    .product-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-      transition: box-shadow 0.2s ease;
-    }
-    .product-card:hover {
-      box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
-    }
-    .product-image {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-    .product-info {
-      padding: 14px 16px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .product-name {
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 6px;
-      color: #222;
-    }
-    .product-price {
-      font-weight: 900;
-      color: #d32f2f;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .btn-add-cart {
-      background-color: #0d47a1;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: background-color 0.3s ease;
-    }
-    .btn-add-cart:hover {
-      background-color: #093975;
-    }
-    /* Footer */
-    footer {
-      background: #f3f3f3;
-      text-align: center;
-      padding: 12px 20px;
-      font-size: 14px;
-      color: #555;
-      margin-top: auto;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <header>
-    <div class="logo" aria-label="Cmarin logo">
+    <div class="logo" aria-label="Instaround logo">
       <span class="red-c">C</span><span class="blue-rest">marin</span>
     </div>
     <button class="btn-categories" aria-label="Tutte le categorie">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
       Tutte le categorie
     </button>
-    <form class="search-bar" role="search" aria-label="Cerca prodotti">
+    <div class="search-container">
       <input type="text" placeholder="Cerca prodotti..." aria-label="Barra di ricerca" />
-      <button type="submit" aria-label="Cerca">Cerca</button>
-    </form>
+      <button class="search-btn" aria-label="Cerca">Cerca</button>
+      <button class="adv-search-btn" aria-label="Cerca avanzata">Cerca Avanzata</button>
+    </div>
     <div class="cart" aria-label="Carrello acquisti">
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14.26l.77-4.58h7.12l.54 3.17H9.08l-.68 3.88H19v-2H7.16zM17.21 6H6.46L5.27 2H1v2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 5 14h12v-2H7.42l.74-4.58H17v-2z"/>
+        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14.26l.84-2.66h7.16c.41 0 .78-.25.93-.63l3.24-7.06-1.82-.83L15.38 9H8.5L7.16 14.26z"/>
       </svg>
-      <div class="cart-count" aria-live="polite" aria-atomic="true">0</div>
+      <div class="cart-count">3</div>
     </div>
   </header>
-
   <main>
-    <h1>I nostri prodotti</h1>
-    <div class="products-grid" aria-label="Lista prodotti disponibili">
-      <!-- Prodotti esempio -->
+    <h1>Prodotti in evidenza</h1>
+    <div class="products-grid">
+      <div class="product-card" tabindex="0">
+        <img class="product-image" src="https://picsum.photos/id/101/400/300" alt="Prodotto 1" />
+        <div class="product-info">
+          <div class="product-name">Auricolari Wireless</div>
+          <div class="product-price">€49,99</div>
+          <button class="btn-add-cart" aria-label="Aggiungi Auricolari Wireless al carrello">Aggiungi al carrello</button>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img class="product-image" src="https://picsum.photos/id/102/400/300" alt="Prodotto 2" />
+        <div class="product-info">
+          <div class="product-name">Smartwatch Fitness</div>
+          <div class="product-price">€129,99</div>
+          <button class="btn-add-cart" aria-label="Aggiungi Smartwatch Fitness al carrello">Aggiungi al carrello</button>
+        </div>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img class="product-image" src="https://picsum.photos/id/103/400/300" alt="Prodotto 3" />
+        <div class="product-info">
+          <div class="product-name">Zaino da Viaggio</div>
+          <div class="product-price">€59,90</div>
+          <button class="btn-add-cart" aria-label="Aggiungi Zaino da Viaggio al carrello">Aggiungi al carrello</button>
+        </div>

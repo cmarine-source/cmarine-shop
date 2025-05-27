@@ -109,10 +109,23 @@
             text-align: center;
             /* Added position relative */
             position: relative;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Style for the red C */
+        .main-header .logo .logo-c {
+            color: #FF0000; /* Red color */
+        }
+
+        /* Style for the blue MARINE */
+        .main-header .logo .logo-marine {
+            color: #007FFF; /* Electric blue color */
         }
 
         .main-header .logo img {
-            height: 30px;
+            height: 0px;
+            display: none;
         }
 
         .main-header .menu-right {
@@ -194,6 +207,23 @@
                 width: 60px;
                 height: 60px;
             }
+
+            .main-header .logo {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Style per il link di Instagram */
+        .utility-left a {
+            color: #fff; /* Colore del link */
+            text-decoration: none; /* Rimuove la sottolineatura */
+            margin-left: 0.5rem; /* Spazio tra il testo e l'icona */
+            display: flex; /* Per allineare verticalmente icona e testo */
+            align-items: center;
+        }
+
+        .utility-left a:hover {
+            color: #ccc; /* Colore del link al passaggio del mouse */
         }
     </style>
 </head>
@@ -202,11 +232,13 @@
 
     <div class="utility-bar">
         <div class="utility-left">
-            <span>⭐ 4.7/5 su 5 basato su 5417 recensioni</span>
+            <a href="https://www.instagram.com/cmarine_ciaramaglia?igsh=MTV1MGw1dHNlenk2aw==" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram fa-lg"></i> CMARINE
+            </a>
         </div>
         <div class="utility-right">
             <span class="dot-text"><span class="dot"></span> SPEDIZIONE GRATUITA SOPRA €225</span>
-            <span class="dot-text"><span class="dot"></span> EUR € | ITALIA</span>
+            <span class="dot-text"><span class="dot"></span> EUR € | GERMANIA</span>
             <div class="icon-bar">
                 <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-user"></i></a>
@@ -221,7 +253,7 @@
             <span>NEGOZIO ▾</span>
         </div>
         <div class="logo">
-            <img src="https://via.placeholder.com/120x30?text=VICINITY" alt="Vicinity Logo" />
+            <span class="logo-c">C</span><span class="logo-marine">MARINE</span>
         </div>
 
         <div class="menu-right">
@@ -231,7 +263,8 @@
 
     <div class="category-bar">
         <div class="category">
-            <div class="category-icon"></div><span>SCARPE</span>  </div>
+            <div class="category-icon"></div><span>SCARPE</span>
+        </div>
         <div class="category">
             <div class="category-icon"></div><span>JEANS</span>
         </div>
@@ -239,22 +272,22 @@
             <div class="category-icon"></div><span>SHORTS</span>
         </div>
         <div class="category">
-            <div class="category-icon"></div><span>MAGLIE</span>
+            <div class="category-icon"></div><span>MAGLIERIA</span>
         </div>
         <div class="category">
-            <div class="category-icon"></div><span>CAMICIE</span>
+            <div class="category-icon"></div><span>T-SHIRT</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>TUTE</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>CLASSICI</span>
+        </div>
+        <div class="category">
+            <div class="category-icon"></div><span>FELPE</span>
         </div>
         <div class="category">
             <div class="category-icon"></div><span>GIACCHE</span>
-        </div>
-        <div class="category">
-            <div class="category-icon"></div><span>BORSE</span>
-        </div>
-        <div class="category">
-            <div class="category-icon"></div><span>CAPPELLI</span>
-        </div>
-        <div class="category">
-            <div class="category-icon"></div><span>ACCESSORI</span>
         </div>
     </div>
 

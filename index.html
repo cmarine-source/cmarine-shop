@@ -7,8 +7,7 @@
   <title>Vicinity Header Replica - Ancora più in alto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    *, *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -19,12 +18,8 @@
       background-color: #f8f8f8;
       color: #333;
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* Utility Bar */
     .utility-bar {
       background-color: #222;
       color: #fff;
@@ -88,7 +83,6 @@
       color: #ccc;
     }
 
-    /* Header */
     .main-header {
       display: flex;
       flex-direction: column;
@@ -98,80 +92,15 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       position: relative;
       z-index: 5;
-      margin-top: -25px;
+      margin-top: -25px; /* tira il blocco header più su, sopra la utility bar */
     }
 
-    /* Menu Header */
-    .menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 0.2rem 0;
-      margin-bottom: 0;
-      position: relative;
-    }
-
-    .menu-left-header {
-      position: relative;
-    }
-
-    .menu-left-header span {
-      font-size: 0.9rem;
-      color: #000;
-      cursor: pointer;
-      transition: color 0.2s ease-in-out;
-      position: relative;
-      top: 30px;
-      user-select: none;
-    }
-
-    .menu-left-header span:hover {
-      color: #222;
-    }
-
-    /* Dropdown Menu NEGOZIO */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 55px;
-      left: 0;
-      background-color: #fff;
-      min-width: 140px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
-      z-index: 20;
-      padding: 0.5rem 0;
-    }
-
-    .dropdown-content a {
-      color: #000;
-      padding: 0.6rem 1rem;
-      text-decoration: none;
-      display: block;
-      font-size: 0.9rem;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Logo */
     .logo-container-header {
       text-align: center;
       margin-bottom: 0;
-      margin-top: -50px;
+      margin-top: -50px; /* spostato leggermente più in basso rispetto a -55px */
       position: relative;
-      top: -5px;
+      top: -5px; /* sovrapposizione leggera sulla utility bar */
       z-index: 6;
     }
 
@@ -182,21 +111,42 @@
       margin: 0 auto;
     }
 
-    /* Category Bar */
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0.2rem 0;
+      margin-bottom: 0;
+    }
+
+    .menu-left-header span {
+      font-size: 0.9rem;
+      color: #000;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+      position: relative;
+      top: 30px; /* sposta il tasto verso il basso di 30px */
+    }
+
+    .menu-left-header span:hover {
+      color: #222;
+    }
+
     .category-bar {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       padding: 0 0.5rem 0;
+      /* border-bottom: 1px solid #ddd; */ /* riga rimossa */
       background: #fff;
       gap: 35px;
       width: 100%;
-      margin-top: -30px;
+      margin-top: -30px; /* attaccata quasi completamente al logo */
       margin-bottom: 0;
       position: relative;
-      top: -3px;
+      top: -3px; /* leggerissima sovrapposizione */
       z-index: 5;
-      /* Removed border-bottom */
     }
 
     .category {
@@ -211,12 +161,6 @@
       flex-grow: 0;
       flex-shrink: 0;
       font-weight: 500;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .category:hover {
-      color: #007BFF;
     }
 
     .category-icon {
@@ -232,51 +176,9 @@
       font-size: 1.2rem;
     }
 
-    /* Search Bar */
-    .search-container {
-      position: relative;
-      margin-left: auto;
-      margin-right: 2rem;
-      top: 30px;
-    }
-
-    .search-container input[type="text"] {
-      padding: 5px 30px 5px 10px;
-      border-radius: 15px;
-      border: 1px solid #ccc;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-
-    .search-container input[type="text"]:focus {
-      border-color: #007BFF;
-    }
-
-    .search-container .fa-search {
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #aaa;
-      pointer-events: none;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: auto;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
       .main-header {
-        padding: 0 1rem 0;
+        padding: 0 2rem 0;
       }
 
       .logo-container-header img {
@@ -302,17 +204,6 @@
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-      }
-
-      .search-container {
-        margin: 10px 0 0 0;
-        width: 100%;
-        top: 0;
-        margin-left: 0;
-      }
-
-      .search-container input[type="text"] {
-        width: 100%;
       }
     }
   </style>
@@ -341,33 +232,46 @@
 
   <header class="main-header">
     <div class="menu-header">
-      <div class="menu-left-header dropdown">
+      <div class="menu-left-header">
         <span>NEGOZIO ▾</span>
-        <div class="dropdown-content">
-          <a href="#">Scarpe</a>
-          <a href="#">Jeans</a>
-          <a href="#">Maglie</a>
-          <a href="#">Accessori</a>
-        </div>
       </div>
-
-      <div class="search-container">
-        <input type="text" placeholder="Cerca..." aria-label="Barra di ricerca" />
-        <i class="fas fa-search"></i>
-      </div>
-
       <div class="menu-right-header">
-        <!-- Potresti aggiungere altro qui -->
       </div>
     </div>
-
     <div class="logo-container-header">
       <img src="https://i.imgur.com/DPt3YQ7.png" alt="Logo CMARINE" />
     </div>
-
     <div class="category-bar">
       <div class="category">
         <div class="category-icon"></div><span>SCARPE</span>
       </div>
       <div class="category">
-        <div class="
+        <div class="category-icon"></div><span>JEANS</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>SHORTS</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>MAGLIE</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>CAMICIE</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>GIACCHE</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>BORSE</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>CAPPELLI</span>
+      </div>
+      <div class="category">
+        <div class="category-icon"></div><span>ACCESSORI</span>
+      </div>
+    </div>
+  </header>
+
+</body>
+
+</html>

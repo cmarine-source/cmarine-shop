@@ -1,259 +1,282 @@
-/* css/style.css */
+<!DOCTYPE html>
+<html lang="it">
 
-/* Reset base per una migliore consistenza */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vicinity Header Replica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Reset base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    line-height: 1.6;
-    margin: 0; /* Assicurati che non ci siano margini di default */
-}
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
 
-/* Utility Bar (Barra Superiore) */
-.utility-bar {
-    background-color: #222;
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 0.6rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
+        /* Utility Bar */
+        .utility-bar {
+            background-color: #222;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.6rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-.utility-left {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
+        .utility-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-.utility-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
+        .utility-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-.dot-text {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
+        .dot-text {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
 
-.dot {
-    width: 6px;
-    height: 6px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-}
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+        }
 
-/* Icon Bar (Icone Social/Carrello) */
-.icon-bar a {
-    color: #fff;
-    font-size: 1rem;
-    margin-left: 0.8rem;
-    transition: color 0.2s ease-in-out;
-}
+        .icon-bar a {
+            color: #fff;
+            font-size: 1rem;
+            margin-left: 0.8rem;
+            transition: color 0.2s ease-in-out;
+        }
 
-.icon-bar a:hover {
-    color: #ccc;
-}
+        .icon-bar a:hover {
+            color: #ccc;
+        }
 
-/* Main Header (Intestazione Principale) */
-.main-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center; /* Modificato da flex-start per allineamento verticale al centro */
-    padding: 0.7rem 2rem;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    min-height: auto; /* Rimosso l'altezza fissa per adattabilità */
-}
+        .utility-left a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
 
-.main-header .menu-left {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-direction: row;
-    justify-content: flex-start;
-    height: auto;
-    grid-column: 1;
-}
+        .utility-left a:hover {
+            color: #ccc;
+        }
 
-.main-header .menu-left span {
-    font-size: 0.9rem;
-    color: #000;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-}
+        /* Main Header */
+        .main-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 2rem 1rem; /* Puoi modificare il padding se vuoi */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
 
-.main-header .menu-left span:hover {
-    color: #222;
-}
+        .logo-container-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            top: -20px; /* sposta il logo 20px verso l'alto */
+        }
 
-.main-header .logo {
-    text-align: center;
-    grid-column: 2;
-    max-width: 150px; /* Ridotto la larghezza massima del logo per schermi piccoli */
-    height: auto;
-    margin: 100px auto; /* Ridotto margine superiore per alzare il logo */
-    position: static; /* Rimosso il posizionamento assoluto per un layout più flessibile */
-    transform: none;
-}
+        .logo-container-header img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* centra orizzontalmente */
+        }
 
-.main-header .logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centra l'immagine del logo */
-}
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0.5rem 0;
+        }
 
-.main-header .menu-right {
-    grid-column: 3;
-    width: auto;
-    justify-self: end;
-}
+        .menu-left-header {
+            /* Stili per il menu a sinistra */
+        }
 
-/* Category Bar (Barra Categorie) */
-.category-bar {
-    display: flex;
-    justify-content: flex-start; /* Allineamento a sinistra per schermi piccoli */
-    flex-wrap: nowrap; /* Impedisce il wrapping di default */
-    overflow-x: auto; /* Permette lo scorrimento orizzontale su schermi piccoli */
-    padding: 0.5rem 1rem;
-    padding-top: 0.2rem;
-    border-bottom: 1px solid #ddd;
-    background: #fff;
-    gap: 20px; /* Ridotto il gap tra le categorie */
-    margin-top: -10px; /* Margine negativo per alzare la barra categorie */
-}
+        .menu-right-header {
+            /* Stili per il menu a destra (se presente) */
+        }
 
-.category {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.8rem; /* Ridotto la dimensione del font */
-    color: #000;
-    text-align: center;
-    width: auto;
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 0;
-    font-weight: 500;
-    margin-right: 15px; /* Aggiunto un po' di margine a destra */
-}
+        .menu-left-header span {
+            font-size: 0.9rem;
+            color: #000;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
 
-.category-icon {
-    width: 60px; /* Ridotto la dimensione dell'icona */
-    height: 60px; /* Ridotto la dimensione dell'icona */
-    border: 2px solid #000; /* Ridotto lo spessore del bordo */
-    border-radius: 50%;
-    margin-bottom: 0.2rem;
-    background: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .menu-left-header span:hover {
+            color: #222;
+        }
 
-.category-icon::before {
-    content: ''; /* Puoi aggiungere icone qui tramite CSS se necessario */
-    /* Esempio:
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-color: #333;
-    border-radius: 50%;
-    */
-}
+        /* Category Bar */
+        .category-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            background: #fff;
+            gap: 35px;
+            width: 100%;
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
 
-/* Responsività (Media Queries) */
-@media (max-width: 768px) {
-    .utility-bar {
-        justify-content: center;
-        text-align: center;
-    }
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #000;
+            text-align: center;
+            width: auto;
+            flex-basis: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-weight: 500;
+        }
 
-    .utility-left {
-        order: 2; /* Sposta a destra/sotto su schermi piccoli */
-        margin-top: 0.5rem;
-    }
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            margin-bottom: 0.3rem;
+            background: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
 
-    .utility-right {
-        order: 1; /* Sposta a sinistra/sopra su schermi piccoli */
-        gap: 0.75rem;
-    }
+        /* Responsività */
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 0.5rem 2rem 0;
+            }
 
-    .main-header {
-        grid-template-columns: 1fr; /* Layout a una colonna */
-        text-align: center;
-        padding: 0.5rem 1rem;
-    }
+            .logo-container-header {
+                top: -10px; /* meno spostamento su schermi piccoli */
+            }
 
-    .main-header .menu-left {
-        justify-content: center;
-        grid-column: 1;
-        margin-bottom: 0.5rem;
-    }
+            .logo-container-header img {
+                max-width: 150px;
+            }
 
-    .main-header .logo {
-        margin-bottom: 0;
-    }
+            .category-bar {
+                padding: 0.5rem;
+                gap: 20px;
+            }
 
-    .main-header .menu-right {
-        justify-self: center;
-        display: block; /* Potresti voler mostrare qualcosa qui su mobile */
-    }
+            .category-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
 
-    .category-bar {
-        margin-top: 1rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
+            .category span {
+                font-size: 0.75rem;
+            }
 
-    .category {
-        font-size: 0.75rem;
-        margin-right: 10px;
-    }
+            .menu-header {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
 
-    .category-icon {
-        width: 50px;
-        height: 50px;
-    }
-}
+<body>
 
-@media (max-width: 480px) {
-    .utility-bar {
-        flex-direction: column;
-    }
+    <div class="utility-bar">
+        <div class="utility-left">
+            <a href="https://www.instagram.com/cmarine_ciaramaglia?igsh=MTV1MGw1dHNlenk2aw==" target="_blank"
+                rel="noopener noreferrer">
+                CMARINE
+            </a>
+        </div>
+        <div class="utility-right">
+            <span class="dot-text"><span class="dot"></span> SPEDIZIONE GRATUITA SOPRA €225</span>
+            <span class="dot-text"><span class="dot"></span> EUR € | ITALIA</span>
+            <div class="icon-bar">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
 
-    .utility-left {
-        margin-top: 0.25rem;
-    }
+    <header class="main-header">
+        <div class="menu-header">
+            <div class="menu-left-header">
+                <span>NEGOZIO ▾</span>
+            </div>
+            <div class="menu-right-header">
+            </div>
+        </div>
+        <div class="logo-container-header">
+            <img src="https://i.imgur.com/DPt3YQ7.png" alt="Logo CMARINE">
+        </div>
+        <div class="category-bar">
+            <div class="category">
+                <div class="category-icon"></div><span>SCARPE</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>JEANS</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>SHORTS</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>MAGLIE</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>CAMICIE</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>GIACCHE</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>BORSE</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>CAPPELLI</span>
+            </div>
+            <div class="category">
+                <div class="category-icon"></div><span>ACCESSORI</span>
+            </div>
+        </div>
+    </header>
 
-    .utility-right {
-        gap: 0.5rem;
-    }
+</body>
 
-    .main-header .menu-left span {
-        font-size: 0.9rem;
-    }
-
-    .category {
-        font-size: 0.7rem;
-        margin-right: 5px;
-    }
-
-    .category-icon {
-        width: 40px;
-        height: 40px;
-    }
-}
+</html>

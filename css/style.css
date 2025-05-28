@@ -105,7 +105,7 @@ body {
     grid-column: 2;
     max-width: 150px; /* Ridotto la larghezza massima del logo per schermi piccoli */
     height: auto;
-    margin: 5px auto; /* Ridotto margine superiore per alzare il logo */
+    margin: 200px auto; /* Ridotto margine superiore per alzare il logo */
     position: static; /* Rimosso il posizionamento assoluto per un layout più flessibile */
     transform: none;
 }

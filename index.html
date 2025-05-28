@@ -8,26 +8,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         /* Reset base */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f8f8; color: #333; line-height: 1.6; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
 
         /* Utility Bar */
-        .utility-bar { background-color: #222; color: #fff; font-size: 0.75rem; padding: 0.6rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .utility-left { display: flex; align-items: center; gap: 0.75rem; }
-        .utility-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-        .dot-text { display: flex; align-items: center; gap: 0.4rem; }
-        .dot { width: 6px; height: 6px; background-color: #fff; border-radius: 50%; display: inline-block; }
-        .icon-bar a { color: #fff; font-size: 1rem; margin-left: 0.8rem; transition: color 0.2s ease-in-out; }
-        .icon-bar a:hover { color: #ccc; }
-        .utility-left a { color: #fff; text-decoration: none; margin-left: 0.5rem; display: flex; align-items: center; }
-        .utility-left a:hover { color: #ccc; }
+        .utility-bar {
+            background-color: #222;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.6rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .utility-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .utility-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dot-text {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .icon-bar a {
+            color: #fff;
+            font-size: 1rem;
+            margin-left: 0.8rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .icon-bar a:hover {
+            color: #ccc;
+        }
+
+        .utility-left a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .utility-left a:hover {
+            color: #ccc;
+        }
 
         /* Main Header */
         .main-header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 2rem 1rem; /* Aumentato il padding superiore e ridotto quello inferiore */
+            padding: 0.5rem 2rem 1rem; /* Ridotto padding superiore per alzare logo */
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             position: relative;
@@ -35,30 +96,22 @@
 
         .logo-container-header {
             text-align: center;
-            margin-bottom: 1rem; /* Aumentato lo spazio tra il logo e la barra delle categorie */
+            margin-bottom: 1rem;
         }
 
         .logo-container-header img {
             max-width: 200px;
             height: auto;
             display: block;
-            margin: 3 auto;
+            margin: 0 auto;
         }
 
         .menu-header {
             display: flex;
-            justify-content: space-between; /* Distribuisce lo spazio tra i menu */
+            justify-content: space-between;
             align-items: center;
-            width: 100%; /* Occupare tutta la larghezza */
+            width: 100%;
             padding: 0.5rem 0;
-        }
-
-        .menu-left-header {
-            /* Stili per il menu a sinistra */
-        }
-
-        .menu-right-header {
-            /* Stili per il menu a destra (se presente) */
         }
 
         .menu-left-header span {
@@ -83,7 +136,7 @@
             gap: 35px;
             width: 100%;
             padding-bottom: 1rem;
-            margin-bottom: 0.5rem; /* Aggiunto un po' di margine inferiore alla barra */
+            margin-bottom: 0.5rem;
         }
 
         .category {
@@ -101,16 +154,16 @@
         }
 
         .category-icon {
-            width: 70px; /* Ridotto la dimensione delle icone */
-            height: 70px; /* Ridotto la dimensione delle icone */
-            border: 2px solid #000; /* Bordo più sottile */
+            width: 70px;
+            height: 70px;
+            border: 2px solid #000;
             border-radius: 50%;
             margin-bottom: 0.3rem;
             background: #f8f8f8;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.2rem; /* Puoi aggiungere icone Font Awesome qui se vuoi */
+            font-size: 1.2rem;
         }
 
         /* Responsività */
@@ -174,10 +227,10 @@
                 <span>NEGOZIO ▾</span>
             </div>
             <div class="menu-right-header">
-                </div>
+            </div>
         </div>
         <div class="logo-container-header">
-            <img src="https://i.imgur.com/DPt3YQ7.png" alt="Logo CMARINE">
+            <img src="https://i.imgur.com/DPt3YQ7.png" alt="Logo CMARINE" />
         </div>
         <div class="category-bar">
             <div class="category">
@@ -213,4 +266,3 @@
 </body>
 
 </html>
-

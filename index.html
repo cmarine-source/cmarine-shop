@@ -25,17 +25,17 @@
         /* Main Header */
         .main-header {
             display: flex;
-            flex-direction: column; /* Cambia a colonna per impilare logo e barra categorie */
-            align-items: center; /* Centra orizzontalmente gli elementi */
-            padding: 1rem 2rem 0; /* Aggiunge un po' di padding in alto */
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 2rem 1rem; /* Aumentato il padding superiore e ridotto quello inferiore */
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: relative; /* Necessario per il posizionamento assoluto del logo */
+            position: relative;
         }
 
         .logo-container-header {
             text-align: center;
-            margin-bottom: 0.5rem; /* Spazio tra il logo e la barra delle categorie */
+            margin-bottom: 1rem; /* Aumentato lo spazio tra il logo e la barra delle categorie */
         }
 
         .logo-container-header img {
@@ -81,8 +81,9 @@
             border-bottom: 1px solid #ddd;
             background: #fff;
             gap: 35px;
-            width: 100%; /* Occupare tutta la larghezza */
-            padding-bottom: 1rem; /* Aggiunge un po' di spazio sotto */
+            width: 100%;
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem; /* Aggiunto un po' di margine inferiore alla barra */
         }
 
         .category {

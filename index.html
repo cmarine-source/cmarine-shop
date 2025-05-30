@@ -1,1 +1,133 @@
+<!DOCTYPE html><html lang="it"><head><title>My Dora Site</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" class="favicon-tab" type="image/png" href="/favicon.ico">
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
+      #dora-root {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+    <style>
+      #loading {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+      }
+
+      #loading img {
+        width: 58px;
+        height: 58px;
+      }
+    </style>
+    <script>
+      window.__ENV = {"RELEASE_VERSION":"da4277c3","BUILD_COMMIT_SHA":"da4277c3992000f3a65a63cac0549c959f97c66d","TARGET":"online","HOME_HOST":"www.dora.run","RUN_HOST":"dora.run","PREVIEW_HOST":"preview.dora.run","SWIMLANE_HOST":"","API_HOST":"api-us.dora.run","NEO_API_HOST":"neo-api.dora.run","CDN_NEO_API_HOST":"cdn-neo-api.dora.run","STATIC_ASSETS_HOST":"cdn-static-e.dora.run","USER_ASSETS_HOST":"cdn-design-e.dora.run","CDN_IMGS_HOST":"cdn-imgs.dora.run","CDN_PUBLIC_DOC_HOST":"cdn-public-document-dora-e.dora.run","REALTIME_HOST":"realtime-next-us.dora.run"};
+      window.__ASSET_PREFIX = 'https://cdn-static-e.dora.run/dora_runner_web';
+      window.__ASSET_MANIFEST = {"main.dart.js":"main.dart.ee4468a1.js","threed_renderer/build/editor.js.LICENSE.txt":"threed_renderer.e578ddea/build/editor.js.LICENSE.txt","threed_renderer/build/glbCompress.js":"threed_renderer.e578ddea/build/glbCompress.js","threed_renderer/build/runner.js":"threed_renderer.e578ddea/build/runner.js","threed_renderer/build/editor.js":"threed_renderer.e578ddea/build/editor.js","threed_renderer/build/chunk.bundle.js":"threed_renderer.e578ddea/build/chunk.bundle.js","threed_renderer/build/runner.js.LICENSE.txt":"threed_renderer.e578ddea/build/runner.js.LICENSE.txt","public/error_pages/internal_error.html":"public/error_pages/internal_error.5610c2b8.html","public/error_pages/not_found.html":"public/error_pages/not_found.32a93b53.html","public/previewer.css":"public/previewer.d2c4671b.css","public/loading.gif":"public/loading.6330c237.gif","public/made_in_dora/tag_icon_white.webp":"public/made_in_dora/tag_icon_white.91514bb1.webp","public/made_in_dora/ai_tag_icon_white.png":"public/made_in_dora/ai_tag_icon_white.1717c340.png","public/made_in_dora/tag_icon.png":"public/made_in_dora/tag_icon.9712852f.png","public/made_in_dora/ai_tag_icon.png":"public/made_in_dora/ai_tag_icon.74d52789.png","public/made_in_dora/ai_tag_bg.png":"public/made_in_dora/ai_tag_bg.1ad890be.png","public/previewer.js":"public/previewer.3d926f51.js"};
+    </script>
+    <script>
+      function setCookie(name, value, days) {
+  var expires = '';
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = '; expires=' + date.toUTCString();
+  }
+  let domain = '';
+  if (window.location.hostname.includes('test.dora.run')) {
+    domain = '; domain=.test.dora.run';
+  } else if (window.location.hostname.includes('prerelease.dora.run')) {
+    domain = '; domain=.prerelease.dora.run';
+  } else if (window.location.hostname.includes('dora.run')) {
+    domain = '; domain=.dora.run';
+  }
+  document.cookie =
+    name + '=' + encodeURIComponent(value) + expires + '; path=/' + domain;
+}
+
+const utmUrlParamKeys = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_content',
+  'utm_term',
+];
+
+const doraUrlParamKeys = ['coupon'];
+
+try {
+  var urlParams = new URLSearchParams(window.location.search);
+  let pscd = urlParams.get('pscd');
+  let ps_partner_key = urlParams.get('ps_partner_key');
+  let ps_xid = urlParams.get('ps_xid');
+  let gsxid = urlParams.get('gsxid');
+  let gspk = urlParams.get('gspk');
+  if (ps_partner_key && ps_xid && gsxid && gspk) {
+    setCookie('pscd', pscd, 30);
+    setCookie('ps_partner_key', ps_partner_key, 30);
+    setCookie('ps_xid', ps_xid, 30);
+    setCookie('gsxid', gsxid, 30);
+    setCookie('growSumoPartnerKey', gspk, 30);
+    setCookie('ps_mode', 'trackingV2', 30);
+  }
+  for (const key of utmUrlParamKeys) {
+    if (urlParams.has(key)) {
+      setCookie(key, urlParams.get(key), 30);
+    }
+  }
+  for (const urlParamKey of doraUrlParamKeys) {
+    const key = `dora_${urlParamKey}`;
+    const value = urlParams.get(urlParamKey);
+    if (value) setCookie(key, value, 30);
+  }
+} catch (error) {}
+
+    </script>
+   
+    <script src="https://cdn-static-e.dora.run/dora_runner_web/threed_renderer.e578ddea/build/runner.js"></script>
+   
+   
+   
+    <script defer="" src="https://cdn-static-e.dora.run/dora_runner_web/main.dart.ee4468a1.js"></script>
+  <script>window.DORA_PROJECT_PREPARATION="{\"summary\":{},\"editorVersion\":\"v2\",\"releaseVersion\":\"bf1dc99cdf1422041f7083d5834b7aaa\",\"domain\":\"0helrxwp.dora.run\",\"name\":\"Untitled 1\",\"id\":\"2395608\",\"api\":{\"/action\":{\"version\":\"2272e51c-09c4-46cb-a069-743d656237a8\"},\"/project/get\":{\"version\":\"bf1dc99cdf1422041f7083d5834b7aaa\"},\"/meta\":{\"version\":\"e7b7de85-58bd-48f5-aab1-5a13079e25a2\"}}}";</script><script>window.doraAppTitle="Homepage: Negozio surf anni '70.
+Header: Logo sx, menu (Uomo, Donna, Bambino, Accessori, Saldi) dx, icone carrello/account.
+Hero: Spiaggia tramonto, titolo 'Summer Vibes', sottotitolo 'Nuova collezione', pulsante 'Acquista'.
+Categorie: 4 (Uomo, Donna, Bambino, Accessori), griglia 2x2, colori vivaci.";</script><meta property="og:type" content="website">
+        <meta property="og:title" content="My Dora Site">
+        <meta property="og:description" content="Made in Dora">
+        <meta property="og:image" content="https://cdn-static-e.dora.run/public/image_placeholder.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="My Dora Site">
+        <meta name="twitter:description" content="Made in Dora">
+        <meta name="twitter:image" content="https://cdn-static-e.dora.run/public/image_placeholder.png">
+        </head>
+
+  <body>
+    <div id="loading" style="display: none; z-index: 100;">
+        <picture>
+        <img src="https://cdn-static-e.dora.run/dora_runner_web/public/loading.6330c237.gif" alt="loading" style="opacity: 1;">
+        </picture>
+    </div>
+    <div id="dora-root"><d-view style="pointer-events: auto; position: absolute; inset: 0px;"><d-scroll-wrapper style="position: absolute; width: 100%; height: 100%;"><d-scrollable style="position: absolute; width: 100%; height: 100%; overflow: auto;"><d-scroll-extent style="position: absolute; width: 100%; height: 4825.44px;"><d-scroll-viewport style="position: sticky; inset: 0px; display: block; overflow: hidden; width: 1258px; height: 954px;"><d-content style="position: absolute; width: 100%; height: 4825.44px; transform: translate3d(0px, 0px, 0px);"><d-layout style="position: absolute; margin: 0px; pointer-events: auto; border-radius: 0px; background: linear-gradient(rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%); opacity: 1; display: block; transform: translate(0px, 0px); width: 1273px; height: 4825.44px;"><d-scroll-wrapper style="position: absolute; width: 100%; height: 100%; overflow: visible; border-radius: 0px;"><d-scrollable style="position: absolute; width: 100%; height: 100%; scrollbar-width: none; overflow: visible;"><d-scroll-extent style="position: absolute; width: 100%; height: 100%;"><d-scroll-viewport style="position: absolute; inset: 0px; display: block; overflow: visible; width: 1273px; height: 4825px;"><d-content style="position: absolute; width: 100%; height: 100%;"><d-layout style="position: absolute; margin: 0px; pointer-events: auto; border-radius: 0px; background: linear-gradient(rgb(255, 249, 244) 0%, rgb(255, 249, 244) 100%); opacity: 1; display: block; transform: translate(0px, 4457.4px); width: 1273px; height: 368px;"><d-scroll-wrapper style="position: absolute; width: 100%; height: 100%; overflow: visible; border-radius: 0px;"><d-scrollable style="position: absolute; width: 100%; height: 100%; scrollbar-width: none; overflow: visible;"><d-scroll-extent style="position: absolute; width: 100%; height: 100%;"><d-scroll-viewport style="position: absolute; inset: 0px; display: block; overflow: visible; width: 1273px; height: 368px;"><d-content style="position: absolute; width: 100%; height: 100%;"><d-layout style="position: absolute; margin: 0px; pointer-events: none; border-radius: 0px; background: none; opacity: 1; display: block; transform: translate(348.9px, 120px); width: 824.109px; height: 147px;"><d-scroll-wrapper style="position: absolute; width: 100%; height: 100%; overflow: visible; border-radius: 0px;"><d-scrollable style="position: absolute; width: 100%; height: 100%; scrollbar-width: none; overflow: visible;"><d-scroll-extent style="position: absolute; width: 100%; height: 100%;"><d-scroll-viewport style="position: absolute; inset: 0px; display: block; overflow: visible; width: 824px; height: 147px;"><d-content style="position: absolute; width: 100%; height: 100%;"><d-layout style="position: absolute; margin: 0px; pointer-events: none; border-radius: 0px; background: none; opacity: 1; display: block; transform: translate(549.4px, 0px); width: 274.703px; height: 147px;"><d-scroll-wrapper style="position: absolute; width: 100%; height: 100%; overflow: visible; border-radius: 0px;"><d-scrollable style="position: absolute; width: 100%; height: 100%; scrollbar-width: none; overflow: visible;"><d-scroll-extent style="position: absolute; width: 100%; height: 100%;"><d-scroll-viewport style="position: absolute; inset: 0px; display: block; overflow: visible; width: 275px; height: 147px;"><d-content style="position: absolute; width: 100%; height: 100%;"><d-layout-text style="position: absolute; margin: 0px; pointer-events: auto; overflow: visible; opacity: 1; display: block; transform: translate(0px, 131px); width: 67.5469px; height: 16px;"><d-layout-flex style="display: flex; width: 100%; height: 100%; justify-content: flex-start; align-items: flex-start;"><d-text style="overflow-wrap: break-word; white-space: pre-wrap; max-width: 100%; max-height: 100%; background: none; color: rgb(138, 135, 137); font-family: Inter; font-size: 16px; line-height: 100%; font-weight: 400; font-style: normal; text-align: left;">Pinterest</d-text></d-layout-flex></d-layout-text><d-layout-text style="position: absolute; margin: 0px; pointer-events: auto

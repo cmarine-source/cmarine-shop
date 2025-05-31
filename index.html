@@ -166,50 +166,211 @@
                 padding: 0.75rem 1.5rem; /* Riduciamo il padding del bottone */
             }
 
-            /* Modifiche per il footer su mobile */
+            /* Footer per mobile - DISPOSIZIONE ORIZZONTALE CON COLLAPSE */
             footer {
-                padding-top: 6px; /* Riduciamo il padding superiore */
-                padding-bottom: 6px; /* Riduciamo il padding inferiore */
+                padding: 10px 0;
+                text-align: center;
+                background-color: #222; /* Mantiene il colore di sfondo */
+                color: #eee; /* Mantiene il colore del testo */
             }
 
-            footer .grid.grid-cols-1.md\:grid-cols-3.lg\:grid-cols-3 > div > h3 {
-                font-size: 1rem; /* Riduciamo la dimensione dei titoli del footer */
-                margin-bottom: 0.5rem;
-                padding-bottom: 0.25rem;
+            footer > div.footer-columns {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto; /* Permette lo scorrimento orizzontale */
+                justify-content: space-around; /* Distribuisce lo spazio tra le colonne */
+                align-items: flex-start; /* Allinea gli elementi in alto */
+                padding: 10px;
             }
 
-            footer .grid.grid-cols-1.md\:grid-cols-3.lg\:grid-cols-3 > div > ul > li > a {
-                font-size: 0.8rem; /* Riduciamo la dimensione dei link del footer */
+            footer > div.footer-columns > div {
+                flex: 1 1 auto; /* Distribuisce lo spazio equamente tra le colonne */
+                min-width: 120px; /* Aumenta la larghezza minima per ospitare i nuovi titoli */
+                text-align: center;
             }
 
-            footer .mt-12.mb-8 > h3 {
-                font-size: 1.1rem; /* Riduciamo il titolo della newsletter */
-                margin-top: 1rem;
-                margin-bottom: 0.75rem;
+            footer h3 {
+                font-size: 0.9rem;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: white;
+                cursor: pointer; /* Indica che è cliccabile */
+            }
+
+            footer ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: none; /* Inizialmente nascosto */
+            }
+
+            footer ul.active {
+                display: block; /* Mostra quando la sezione è attiva */
+            }
+
+            footer li {
+                margin-bottom: 3px;
+            }
+
+            footer li a {
+                color: #ccc;
+                text-decoration: none;
+                font-size: 0.7rem;
+                display: block; /* Rende l'intero elemento cliccabile */
+                padding: 5px 0; /* Aggiunge un po' di spazio verticale */
+            }
+
+            footer li a:hover {
+                text-decoration: underline;
+                color: white;
+            }
+
+            footer .mt-12.mb-8 {
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            footer .mt-12.mb-8 h3 {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+
+            footer .mt-12.mb-8 > div.max-w-md.mx-auto.flex {
+                flex-direction: column;
+                align-items: center;
             }
 
             footer .mt-12.mb-8 > div.max-w-md.mx-auto.flex > input[type="email"] {
-                font-size: 0.8rem; /* Riduciamo la dimensione del testo dell'input email */
+                width: 100%;
+                padding: 0.4rem;
+                margin-bottom: 5px;
+                font-size: 0.7rem;
             }
 
             footer .mt-12.mb-8 > div.max-w-md.mx-auto.flex > button {
-                font-size: 0.8rem; /* Riduciamo la dimensione del testo del bottone della newsletter */
-                padding: 0.5rem 1rem;
+                width: 100%;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
             }
 
-            footer .border-t.border-gray-800.pt-6.flex.flex-col.md\:flex-row.justify-between.items-center > p {
-                font-size: 0.7rem; /* Riduciamo la dimensione del testo del copyright */
+            footer .border-t.border-gray-800.pt-6 {
+                border-top: none;
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
 
-            footer .border-t.border-gray-800.pt-6.flex.flex-col.md\:flex-row.justify-between.items-center > div.flex.space-x-4 > i {
-                font-size: 1.5rem; /* Riduciamo leggermente le icone di pagamento */
+            footer .border-t.border-gray-800.pt-6 p {
+                font-size: 0.6rem;
+                margin-bottom: 5px;
             }
+
+            footer .border-t.border-gray-800.pt-6 > div.flex.space-x-4 {
+                justify-content: center;
+            }
+
+            footer .border-t.border-gray-800.pt-6 > div.flex.space-x-4 > i {
+                font-size: 1rem;
+            }
+        }
+
+        /* Stili generali (potrebbero essere sovrascritti dalla media query per mobile) */
+        footer {
+            background-color: #222;
+            color: #eee;
+            padding: 40px 0;
+            text-align: left;
+        }
+
+        footer h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: white;
+            border-bottom: 2px solid #555; /* Linea celeste */
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        footer li a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+
+        footer .social-icons a {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-right: 10px;
+        }
+
+        footer .social-icons a:hover {
+            color: white;
+        }
+
+        footer .newsletter-form input[type="email"] {
+            padding: 10px;
+            border: 1px solid #555;
+            border-radiu }s: 5px;
+            margin-right: 10px;
+            color: #ccc;
+            background-color: #333;
+        }
+
+        footer .newsletter-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer .newsletter-form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer .copyright {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+            text-align: center; /* Allinea al centro il copyright */
+        }
+
+        footer .payment-icons {
+            text-align: center; /* Allinea al centro le icone di pagamento */
+            margin-top: 10px;
+        }
+
+        footer .payment-icons i {
+            font-size: 1.5rem;
+            color: #777;
+            margin-left: 10px;
         }
 
         .category-image-container {
             border: 2.5px solid black;
-        }
-    </style>
+       </style>
 </head>
 <body class="bg-gray-50">
     <header class="sticky top-0 z-50 bg-white shadow-sm">
@@ -240,7 +401,7 @@
         <div class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 lg:grid-cols-11 gap-6 md:gap-8">
             <a href="#" class="category-circle flex flex-col items-center">
                 <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Scarpe" class="h-full w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Scarpe" class="h-full w-full object-cover">
                 </div>
                 <span class="mt-2 text-sm font-medium">SCARPE</span>
             </a>
@@ -263,7 +424,7 @@
                 <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
                     <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Top" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">TOP</span>
+                <span class="mt-2 text-sm font-medium">T-SHIRT</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
@@ -273,7 +434,7 @@
                 <span class="mt-2 text-sm font-medium">CAMICIE</span>
             </a>
 
-           <a href="#" class="category-circle flex flex-col items-center">
+            <a href="#" class="category-circle flex flex-col items-center">
                 <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
                     <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Giacche" class="h-full w-full object-cover">
                 </div>
@@ -317,7 +478,7 @@
         </div>
     </section><section class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="banner relative rounded-lg overflow-hidden">
+            <div class="banner relative rounded-lg overflow-hidden">
                 <div class="absolute inset-0 banner-overlay"></div>
                 <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="New Arrivals" class="w-full h-64 md:h-80 object-cover">
                 <div class="absolute top-4 left-4 text-white">
@@ -532,60 +693,99 @@
                     <p class="text-gray-600">$79.99</p>
                 </div>
             </a>
-        </div><footer class="bg-gray-900 text-white pt-12 pb-8 px-4 md:px-8 lg:px-16 mt-16">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-            <div class="mb-8 md:col-span-1 lg:col-span-1">
-                <h3 class="text-lg font-semibold mb-4 text-blue-400 border-b border-blue-400 pb-2">Follow Us</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white flex items-center"><i class="fab fa-facebook-f mr-2"></i> Facebook</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white flex items-center"><i class="fab fa-instagram mr-2"></i> Instagram</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white flex items-center"><i class="fab fa-tiktok mr-2"></i> TikTok</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white flex items-center"><i class="fab fa-twitter mr-2"></i> Twitter</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white flex items-center"><i class="fab fa-pinterest-p mr-2"></i> Pinterest</a></li>
-                </ul>
-            </div>
-
-            <div class="mb-8 md:col-span-1 lg:col-span-1">
-                <h3 class="text-lg font-semibold mb-4 text-blue-400 border-b border-blue-400 pb-2">Information</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Imprint</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Shipping</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Help Center</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Returns</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Jobs</a></li>
-                </ul>
-            </div>
-
-            <div class="mb-8 md:col-span-1 lg:col-span-1">
-                <h3 class="text-lg font-semibold mb-4 text-blue-400 border-b border-blue-400 pb-2">Terms & Conditions</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Terms & Conditions</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Refund Policy</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Terms</a></li>
-                    <li><a href="#" class="footer-link text-gray-400 hover:text-white">Privacy Setting</a></li>
-                </ul>
-            </div>
+             </div><footer class="bg-black text-white py-12">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="mobile-collapse">
+            <h3 id="followUsHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2">Follow Us</h3>
+            <ul id="followUsLinks" class="text-gray-400">
+                <li><a href="[Link to Cmarine's Facebook account]" target="_blank" class="hover:text-white">Facebook</a></li>
+                <li><a href="[Link to Cmarine's Instagram account]" target="_blank" class="hover:text-white">Instagram</a></li>
+                <li><a href="[Link to Cmarine's TikTok account]" target="_blank" class="hover:text-white">TikTok</a></li>
+                <li><a href="[Link to Cmarine's Twitter account]" target="_blank" class="hover:text-white">Twitter</a></li>
+                <li><a href="[Link to Cmarine's Pinterest account]" target="_blank" class="hover:text-white">Pinterest</a></li>
+            </ul>
         </div>
-
-        <div class="mt-12 mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-center text-blue-400">Subscribe to Our Newsletter</h3>
-            <div class="max-w-md mx-auto flex">
-                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-2 rounded-l-lg focus:outline-none text-gray-900">
-                <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-r-lg transition duration-300">Subscribe</button>
-            </div>
+        <div class="mobile-collapse">
+            <h3 id="informationHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2">Information</h3>
+            <ul id="informationLinks" class="text-gray-400">
+                <li><a href="#" class="hover:text-white">Imprint</a></li>
+                <li><a href="#" class="hover:text-white">Shipping</a></li>
+                <li><a href="#" class="hover:text-white">Help Center</a></li>
+                <li><a href="#" class="hover:text-white">Returns</a></li>
+                <li><a href="#" class="hover:text-white">Jobs</a></li>
+            </ul>
         </div>
-
-        <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-500 text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 Cmarine. All rights reserved.</p>
-            <div class="flex space-x-4">
-                <i class="fab fa-cc-visa text-2xl text-gray-400"></i>
-                <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
-                <i class="fab fa-cc-paypal text-2xl text-gray-400"></i>
-                <i class="fab fa-cc-apple-pay text-2xl text-gray-400"></i>
-            </div>
+        <div class="mobile-collapse">
+            <h3 id="termsConditionHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2">Terms & Condition</h3>
+            <ul id="termsConditionLinks" class="text-gray-400">
+                <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-white">Terms</a></li>
+                <li><a href="#" class="hover:text-white">Privacy Setting</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center mt-8">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 Cmarine. All rights reserved.</p>
+        <div class="flex space-x-4">
+            <i class="fab fa-cc-visa text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-paypal text-2xl text-gray-400"></i>
+            <i class="fab fa-cc-apple-pay text-2xl text-gray-400"></i>
         </div>
     </div>
 </footer>
 
+<style>
+    /* Stili per schermi più grandi (desktop) - Mostra le liste */
+    @media (min-width: 769px) {
+        footer .mobile-collapse ul {
+            display: block !important; /* Rende le liste sempre visibili su desktop */
+        }
+        footer .mobile-collapse h3 {
+            cursor: default; /* Rimuove il cursore "puntatore" su desktop */
+        }
+    }
+
+    /* Stili per schermi più piccoli (mobile) - Nascondi le liste inizialmente e gestisci il click */
+    @media (max-width: 768px) {
+        footer .mobile-collapse ul {
+            display: none; /* Nasconde le liste su mobile */
+        }
+    }
+
+    /* Stili generali per il footer */
+    footer .text-blue-400 {
+        color: #60a5fa; /* Tailwind's blue-400 */
+    }
+    footer .border-blue-400 {
+        border-color: #60a5fa; /* Tailwind's blue-400 */
+    }
+    footer .text-gray-400 {
+        color: #a1a1aa; /* Tailwind's gray-400 */
+    }
+    footer .hover\:text-white:hover {
+        color: #ffffff; /* Tailwind's white */
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const collapseElements = document.querySelectorAll('.mobile-collapse');
+
+        collapseElements.forEach(collapseElement => {
+            const header = collapseElement.querySelector('h3');
+            const list = collapseElement.querySelector('ul');
+
+            if (header && list) {
+                header.addEventListener('click', function() {
+                    // Verifica se siamo su mobile (larghezza massima 768px)
+                    if (window.innerWidth <= 768) {
+                        list.style.display = list.style.display === 'none' ? 'block' : 'none';
+                    }
+                });
+            }
+        });
+    });
+</script>

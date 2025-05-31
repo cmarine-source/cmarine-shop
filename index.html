@@ -381,17 +381,95 @@
             </div>
 
             <div class="flex items-center space-x-6">
-                <a href="#" class="text-gray-600 hover:text-gray-900">
-                    <i class="fas fa-search text-xl"></i>
+                <style>
+  :root {
+    --stroke-w: 2; /* Cambia lo spessore qui */
+  }
+  .search-icon svg circle,
+  .search-icon svg line {
+    stroke-width: var(--stroke-w);
+  }
+</style>
+<style>
+  :root {
+    --stroke-w: 3; /* Cambia lo spessore qui */
+  }
+  .search-icon svg circle,
+  .search-icon svg line {
+    stroke-width: var(--stroke-w);
+  }
+</style>
+
+<a href="#" class="search-icon inline-block w-7 h-7 text-black">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="w-full h-full">
+    <circle cx="11" cy="11" r="7" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+</a>
+     </a>
+                <style>
+  :root {
+    --stroke-w: 3; /* Cambia lo spessore qui */
+  }
+  .bookmark-icon svg path {
+    stroke-width: var(--stroke-w);
+  }
+</style>
+
+<a href="#" class="bookmark-icon inline-block w-7 h-7 text-black">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linejoin="round" viewBox="0 0 24 24" class="w-full h-full">
+    <path d="M6 4v16l6-6 6 6V4z" />
+  </svg>
+</a>
+
                 </a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">
-                    <i class="fas fa-heart text-xl"></i>
+                <style>
+  :root {
+    --stroke-w: 1.9; /* Cambia lo spessore qui */
+  }
+  .search-icon svg circle,
+  .search-icon svg line {
+    stroke-width: var(--stroke-w);
+  }
+</style>
+
+<style>
+  :root {
+    --stroke-w: 1.9; /* Cambia lo spessore qui */
+  }
+  .cart-icon svg path,
+  .cart-icon svg circle {
+    stroke-width: var(--stroke-w);
+  }
+</style>
+
+<a href="#" class="cart-icon inline-block w-7 h-7 text-black">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" class="w-full h-full">
+    <circle cx="9" cy="21" r="1" />
+    <circle cx="20" cy="21" r="1" />
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+  </svg>
+</a>
+
+
                 </a>
-                <a href="#" class="text-gray-600 hover:text-gray-900 relative">
-                    <i class="fas fa-shopping-bag text-xl"></i>
-                </a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">
-                    <i class="fas fa-user text-xl"></i>
+                <style>
+  :root {
+    --stroke-w: 1.9; /* Cambia questo valore per regolare lo spessore */
+  }
+  .hamburger-icon svg line {
+    stroke-width: var(--stroke-w);
+  }
+</style>
+
+<a href="#" class="hamburger-icon inline-block w-7 h-7 text-black">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="w-full h-full">
+    <line x1="3" y1="7" x2="19" y2="7" />
+    <line x1="3" y1="12" x2="19" y2="12" />
+    <line x1="3" y1="17" x2="19" y2="17" />
+  </svg>
+</a>
+
                 </a>
             </div>
         </div>
@@ -736,3 +814,5 @@
         </div>
     </div>
 </footer>
+
+         

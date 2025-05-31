@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cmarine - Fashion E-commerce</title>
+    <title>Cmarine - E-commerce di Moda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,6 +15,12 @@
 
         .category-circle {
             transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-right: 8px;
+        }
+
+        .category-circle:last-child {
+            margin-right: 0;
         }
 
         .category-circle:hover {
@@ -23,6 +29,13 @@
 
         .product-card {
             transition: all 0.3s ease;
+            flex-shrink: 0; /* Impedisce alle card prodotto di ridursi troppo */
+            margin-right: 16px; /* Aggiunge spazio tra le card prodotto */
+            width: 160px; /* Imposta una larghezza fissa per le card nel layout orizzontale */
+        }
+
+        .product-card:last-child {
+            margin-right: 0;
         }
 
         .product-card:hover {
@@ -55,9 +68,141 @@
             height: 400px;
         }
 
+        /* Stili per la barra di scorrimento orizzontale su WebKit */
+        ::-webkit-scrollbar {
+            height: 2px; /* Altezza della barra di scorrimento */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: black; /* Colore del "pollice" (la parte che trascini) */
+            border-radius: 1px; /* Bordo arrotondato del pollice */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent; /* Sfondo della "traccia" (dove scorre il pollice) */
+        }
+
+        /* Stile generale per i link "View All" */
+        .text-blue-800.hover\:underline {
+            background-color: black;
+            color: white;
+            padding: 6px 12px; /* Regola il padding a tuo piacimento */
+            border-radius: 4px; /* Aggiunge un leggero arrotondamento */
+            text-decoration: none !important; /* Rimuove la sottolineatura di default */
+            transition: background-color 0.3s ease; /* Aggiunge una transizione per l'hover */
+        }
+
+        .text-blue-800.hover\:underline:hover {
+            background-color: #333; /* Scurisce leggermente all'hover */
+        }
+
         @media (max-width: 768px) {
             .footwear-banner {
                 height: 250px;
+            }
+
+            /* Modifica per i cerchi delle categorie */
+            .grid.grid-cols-3.sm\:grid-cols-6.md\:grid-cols-9.lg\:grid-cols-11 {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 8px;
+                padding-bottom: 10px;
+            }
+
+            .category-circle .rounded-full {
+                height: 60px;
+                width: 60px;
+            }
+            .category-circle .rounded-full.md\:h-20 {
+                height: 70px;
+            }
+            .category-circle .rounded-full.md\:w-20 {
+                width: 70px;
+            }
+
+            .category-circle span {
+                font-size: 0.8rem;
+                margin-top: 6px;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            /* Modifica per le griglie dei prodotti (NEW ARRIVAL, BESTSELLER, SUMMER ITEMS) */
+            .grid.grid-cols-2.sm\:grid-cols-3.md\:grid-cols-4.lg\:grid-cols-5 {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 16px;
+                padding-bottom: 15px; /* Spazio per l'indicatore di scorrimento */
+            }
+
+            /* Imposta una larghezza minima per le card prodotto nel layout orizzontale */
+            .grid.grid-cols-2.sm\:grid-cols-3.md\:grid-cols-4.lg\:grid-cols-5 > .product-card {
+                width: 160px; /* Larghezza fissa per le card */
+            }
+
+            /* Modifiche per i banner su mobile */
+            .grid.grid-cols-1.md\:grid-cols-2.gap-6 > .banner {
+                height: auto; /* Rimuove l'altezza fissa per adattarsi al contenuto */
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-2.gap-6 > .banner > img {
+                height: 200px; /* Altezza più contenuta per l'immagine del banner su mobile */
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-2.gap-6 > .banner .absolute.top-4.left-4 > h3 {
+                font-size: 1.5rem; /* Riduciamo la dimensione del titolo del banner */
+            }
+
+            .relative.w-full.h-screen.min-h-\[500px\].overflow-hidden.mt-8 .absolute.inset-0.flex.items-center.justify-center.text-center.text-white.px-4 > .max-w-2xl > h1 {
+                font-size: 2.5rem; /* Riduciamo il titolo principale dell'hero banner */
+            }
+
+            .relative.w-full.h-screen.min-h-\[500px\].overflow-hidden.mt-8 .absolute.inset-0.flex.items-center.justify-center.text-center.text-white.px-4 > .max-w-2xl > a {
+                font-size: 0.9rem; /* Riduciamo la dimensione del testo del bottone dell'hero banner */
+                padding: 0.75rem 1.5rem; /* Riduciamo il padding del bottone */
+            }
+
+            /* Modifiche per il footer su mobile */
+            footer {
+                padding-top: 6px; /* Riduciamo il padding superiore */
+                padding-bottom: 6px; /* Riduciamo il padding inferiore */
+            }
+
+            footer .grid.grid-cols-1.md\:grid-cols-3.lg\:grid-cols-3 > div > h3 {
+                font-size: 1rem; /* Riduciamo la dimensione dei titoli del footer */
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.25rem;
+            }
+
+            footer .grid.grid-cols-1.md\:grid-cols-3.lg\:grid-cols-3 > div > ul > li > a {
+                font-size: 0.8rem; /* Riduciamo la dimensione dei link del footer */
+            }
+
+            footer .mt-12.mb-8 > h3 {
+                font-size: 1.1rem; /* Riduciamo il titolo della newsletter */
+                margin-top: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            footer .mt-12.mb-8 > div.max-w-md.mx-auto.flex > input[type="email"] {
+                font-size: 0.8rem; /* Riduciamo la dimensione del testo dell'input email */
+            }
+
+            footer .mt-12.mb-8 > div.max-w-md.mx-auto.flex > button {
+                font-size: 0.8rem; /* Riduciamo la dimensione del testo del bottone della newsletter */
+                padding: 0.5rem 1rem;
+            }
+
+            footer .border-t.border-gray-800.pt-6.flex.flex-col.md\:flex-row.justify-between.items-center > p {
+                font-size: 0.7rem; /* Riduciamo la dimensione del testo del copyright */
+            }
+
+            footer .border-t.border-gray-800.pt-6.flex.flex-col.md\:flex-row.justify-between.items-center > div.flex.space-x-4 > i {
+                font-size: 1.5rem; /* Riduciamo leggermente le icone di pagamento */
             }
         }
 
@@ -83,7 +228,6 @@
                 </a>
                 <a href="#" class="text-gray-600 hover:text-gray-900 relative">
                     <i class="fas fa-shopping-bag text-xl"></i>
-                    
                 </a>
                 <a href="#" class="text-gray-600 hover:text-gray-900">
                     <i class="fas fa-user text-xl"></i>
@@ -93,75 +237,87 @@
     </header>
 
     <section class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 gap-4 md:gap-6">
+        <div class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 lg:grid-cols-11 gap-6 md:gap-8">
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Shoes" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Scarpe" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">SHOES</span>
+                <span class="mt-2 text-sm font-medium">SCARPE</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
                     <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Jeans" class="h-full w-full object-cover">
                 </div>
                 <span class="mt-2 text-sm font-medium">JEANS</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1036&q=80" alt="Shorts" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1036&q=80" alt="Pantaloncini" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">SHORTS</span>
+                <span class="mt-2 text-sm font-medium">PANTALONCINI</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Tops" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Top" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">T-SHIRTS</span>
+                <span class="mt-2 text-sm font-medium">TOP</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Shirts" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Camicie" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">SHIRTS</span>
+                <span class="mt-2 text-sm font-medium">CAMICIE</span>
+            </a>
+
+           <a href="#" class="category-circle flex flex-col items-center">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Giacche" class="h-full w-full object-cover">
+                </div>
+                <span class="mt-2 text-sm font-medium">GIACCA</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jackets" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Borse" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">JACKET</span>
+                <span class="mt-2 text-sm font-medium">BORSE</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Bags" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cappelli" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">BAGS</span>
+                <span class="mt-2 text-sm font-medium">CAPPELLI</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Hats" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Accessori" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">HATS</span>
+                <span class="mt-2 text-sm font-medium">ACCESSORI</span>
             </a>
 
             <a href="#" class="category-circle flex flex-col items-center">
-                <div class="rounded-full overflow-hidden h-20 w-20 md:h-24 md:w-24 bg-gray-100 flex items-center justify-center category-image-container">
-                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Accessories" class="h-full w-full object-cover">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1599527853190-5724c498b122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Costumi" class="h-full w-full object-cover">
                 </div>
-                <span class="mt-2 text-sm font-medium">ACCESSORIES</span>
+                <span class="mt-2 text-sm font-medium">COSTUMI</span>
+            </a>
+
+            <a href="#" class="category-circle flex flex-col items-center">
+                <div class="rounded-full overflow-hidden h-16 w-16 md:h-20 md:w-20 bg-gray-100 flex items-center justify-center category-image-container">
+                    <img src="https://images.unsplash.com/photo-1625852328484-5f9415f38869?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Ciabatte" class="h-full w-full object-cover">
+                </div>
+                <span class="mt-2 text-sm font-medium">CIABATTE</span>
             </a>
         </div>
-    </section>
-
-    <section class="container mx-auto px-4 py-8">
+    </section><section class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="banner relative rounded-lg overflow-hidden">
+<div class="banner relative rounded-lg overflow-hidden">
                 <div class="absolute inset-0 banner-overlay"></div>
                 <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG0dG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="New Arrivals" class="w-full h-64 md:h-80 object-cover">
                 <div class="absolute top-4 left-4 text-white">
@@ -432,3 +588,4 @@
         </div>
     </div>
 </footer>
+

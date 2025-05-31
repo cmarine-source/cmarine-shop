@@ -4250,9 +4250,9 @@ video {
                 }, 500);
 
               </script></body></html><div id="popular-searches" style="
-  position: absolute; 
-  top: 165px;  
-  left: 20px;  
+  position: absolute;
+  top: 165px;
+  left: 20px;
   padding: 0;
   font-family: Arial, sans-serif;
   z-index: 1000;
@@ -4260,14 +4260,16 @@ video {
 ">
   <strong style="font-size: 20px;">POPULAR SEARCHES</strong>
   <div class="items" style="
-    display: flex; 
-    gap: 20px; 
-    flex-wrap: nowrap; 
-    margin-top: 5px; 
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-top: 5px;
     font-size: 14px;
     overflow-x: auto;
     padding-bottom: 4px;
     -webkit-overflow-scrolling: touch;
+    position: relative;
+    align-items: flex-end; /* per allineare la linea alla base */
   ">
     <span style="white-space: nowrap;">TRACKSUITS</span>
     <span style="white-space: nowrap;">JEANS</span>
@@ -4278,20 +4280,39 @@ video {
     <span style="white-space: nowrap;">SWIMSUITS</span>
     <span style="white-space: nowrap;">FLIP-FLOPS</span>
     <span style="white-space: nowrap;">ACCESSORIES</span>
+
+    <div class="underline"></div>
   </div>
 </div>
 
 <style>
-  /* Linea sottile solo per schermi max 768px (tablet e telefoni) */
+  /* Spessore linea (puoi cambiare il valore qui) */
+  :root {
+    --underline-thickness: 0px;
+    --underline-length: 0px;
+  }
+
+  /* linea corta scorribile sotto gli items solo max 768px */
   @media (max-width: 768px) {
     #popular-searches .items {
-      border-bottom: 1px solid black;
+      border-bottom: none;
+      position: relative;
+    }
+    #popular-searches .items .underline {
+      flex-shrink: ; /* non si restringe */
+      height: var(--underline-thickness);
+      width: var(--underline-length);
+      background-color: black;
+      margin-left: 0; /* linea all'inizio */
+      margin-bottom: 0; /* allineata in basso */
+      align-self: flex-end;
+      /* Posizionata dentro lo scroll */
+      /* Non assoluta per scorrere con gli elementi */
     }
   }
-  /* Nessuna linea per schermi più grandi */
   @media (min-width: 769px) {
-    #popular-searches .items {
-      border-bottom: none;
+    #popular-searches .items .underline {
+      display: none;
     }
   }
 </style>

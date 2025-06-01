@@ -4416,26 +4416,27 @@ video {
 
 </body>
 </html>
-
 <footer class="bg-black text-white py-12 mt-16">
   <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="mobile-collapse">
-      <button id="followUsHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2 bg-transparent border-none w-full text-left">
+      <button id="followUsHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 pb-2 relative underline-button">
         Follow Us
+        <span class="underline-line"></span>
       </button>
-      <ul id="followUsLinks" class="text-gray-400 hidden md:block">
+      <ul id="followUsLinks" class="text-gray-400 hidden">
         <li><a href="[Link to Cmarine's Facebook account]" target="_blank" class="hover:text-white">Facebook</a></li>
         <li><a href="[Link to Cmarine's Instagram account]" target="_blank" class="hover:text-white">Instagram</a></li>
-        <li><a href="#" class="hover:text-white">TikTok</a></li>
+        <li><a href="" class="hover:text-white">TikTok</a></li>
         <li><a href="https://seeklogo.com/images/H/havaianas-logo-62F436574B-seeklogo.com.png" target="_blank" class="hover:text-white">Twitter</a></li>
         <li><a href="[Link to Cmarine's Pinterest account]" target="_blank" class="hover:text-white">Pinterest</a></li>
       </ul>
     </div>
     <div class="mobile-collapse">
-      <button id="informationHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2 bg-transparent border-none w-full text-left">
+      <button id="informationHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 pb-2 relative underline-button">
         Information
+        <span class="underline-line"></span>
       </button>
-      <ul id="informationLinks" class="text-gray-400 hidden md:block">
+      <ul id="informationLinks" class="text-gray-400 hidden">
         <li><a href="#" class="hover:text-white">Imprint</a></li>
         <li><a href="#" class="hover:text-white">Shipping</a></li>
         <li><a href="#" class="hover:text-white">Help Center</a></li>
@@ -4444,10 +4445,11 @@ video {
       </ul>
     </div>
     <div class="mobile-collapse">
-      <button id="termsConditionHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2 bg-transparent border-none w-full text-left">
+      <button id="termsConditionHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 pb-2 relative underline-button">
         Terms & Condition
+        <span class="underline-line"></span>
       </button>
-      <ul id="termsConditionLinks" class="text-gray-400 hidden md:block">
+      <ul id="termsConditionLinks" class="text-gray-400 hidden">
         <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
         <li><a href="#" class="hover:text-white">Refund Policy</a></li>
         <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
@@ -4465,52 +4467,50 @@ video {
       <i class="fab fa-cc-apple-pay text-2xl text-gray-400"></i>
     </div>
   </div>
-
-  <style>
-    .mobile-collapse button {
-      -webkit-user-select: none; /* Safari */
-      -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* IE10+/Edge */
-      user-select: none; /* Standard */
-      outline: none;
-    }
-    .mobile-collapse button:focus {
-      outline: none;
-      box-shadow: none;
-    }
-    /* Nasconde le liste su mobile (default) */
-    .mobile-collapse ul {
-      transition: max-height 0.3s ease;
-      overflow: hidden;
-    }
-    .mobile-collapse ul.hidden {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      visibility: hidden;
-    }
-    .mobile-collapse ul.visible {
-      max-height: 1000px; /* abbastanza alto per mostrare */
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      visibility: visible;
-    }
-  </style>
-
-  <script>
-    document.querySelectorAll('.mobile-collapse button').forEach(button => {
-      button.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          const ul = button.nextElementSibling;
-          if (ul.classList.contains('visible')) {
-            ul.classList.remove('visible');
-            ul.classList.add('hidden');
-          } else {
-            ul.classList.remove('hidden');
-            ul.classList.add('visible');
-          }
-        }
-      });
-    });
-  </script>
 </footer>
+
+<style>
+  .mobile-collapse button {
+    position: relative;
+    border: none;
+    background: none;
+    padding-bottom: 0.5rem;
+    user-select: none;
+    font-weight: 600;
+  }
+  .underline-button {
+    display: inline-block;
+  }
+  .underline-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px; /* stesso spessore per tutte */
+    background-color: #3b82f6; /* blu */
+    border-radius: 1px;
+    width: 100%; /* stessa larghezza testo */
+  }
+
+  /* Nascondi sottosezioni di default */
+  .mobile-collapse ul {
+    display: none;
+  }
+
+  /* Quando visibile */
+  .mobile-collapse ul.active {
+    display: block;
+  }
+</style>
+
+<script>
+  // Toggle visibilità sottosezioni cliccando sui bottoni, solo da mobile
+  const buttons = document.querySelectorAll('.mobile-collapse button');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        const ul = button.nextElementSibling;
+        ul.classList.toggle('active');
+      }
+    });
+  });
+</script>

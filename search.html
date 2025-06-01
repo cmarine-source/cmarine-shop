@@ -4315,59 +4315,103 @@ video {
       display: none;
     }
   }
-</style><!-- CONTENITORE IMMAGINI GRANDI -->
-<div id="categories-images" style="
-  margin-top: 90px;
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-">
+</style><!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scroll con spazio scrollbar</title>
+  <style>
+    /* Wrapper esterno per creare margine ai lati */
+    #wrapper {
+      padding: 0 20px;
+      margin-top: 90px;
+    }
 
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=1" alt="TRACKSUITS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">TRACKSUITS</div>
+    /* Contenitore immagini scrollabile */
+    #categories-images {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px; /* spazio sotto per scrollbar */
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Singolo contenitore immagine + testo */
+    .image-item {
+      flex: 0 0 auto;
+      width: 400px;
+      text-align: center;
+    }
+
+    /* Immagini */
+    .image-item img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+    }
+
+    /* Titoli sotto immagine */
+    .image-item div {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="wrapper">
+    <div id="categories-images">
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=1" alt="TRACKSUITS" />
+        <div>TRACKSUITS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=2" alt="JEANS" />
+        <div>JEANS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=3" alt="FOOTWEAR" />
+        <div>FOOTWEAR</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=4" alt="T-SHIRTS" />
+        <div>T-SHIRTS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=5" alt="SHORTS" />
+        <div>SHORTS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=6" alt="BOTTOMS" />
+        <div>BOTTOMS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=7" alt="SWIMSUITS" />
+        <div>SWIMSUITS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=8" alt="FLIP-FLOPS" />
+        <div>FLIP-FLOPS</div>
+      </div>
+
+      <div class="image-item">
+        <img src="https://picsum.photos/400/400?random=9" alt="ACCESSORIES" />
+        <div>ACCESSORIES</div>
+      </div>
+    </div>
   </div>
 
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=2" alt="JEANS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">JEANS</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=3" alt="FOOTWEAR" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">FOOTWEAR</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=4" alt="T-SHIRTS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">T-SHIRTS</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=5" alt="SHORTS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">SHORTS</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=6" alt="BOTTOMS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">BOTTOMS</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=7" alt="SWIMSUITS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">SWIMSUITS</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=8" alt="FLIP-FLOPS" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">FLIP-FLOPS</div>
-  </div>
-
-  <div style="flex: 0 0 auto; text-align: center; width: 400px;">
-    <img src="https://picsum.photos/400/400?random=9" alt="ACCESSORIES" style="width: 400px; height: 400px; object-fit: cover; border-radius: 16px;">
-    <div style="font-size: 20px; margin-top: 10px;">ACCESSORIES</div>
-  </div>
-</div>
+</body>
+</html>

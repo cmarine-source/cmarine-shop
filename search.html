@@ -4420,18 +4420,22 @@ video {
 <footer class="bg-black text-white py-12 mt-16">
   <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="mobile-collapse">
-      <h3 id="followUsHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2">Follow Us</h3>
-      <ul id="followUsLinks" class="text-gray-400">
+      <button id="followUsHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2 bg-transparent border-none w-full text-left">
+        Follow Us
+      </button>
+      <ul id="followUsLinks" class="text-gray-400 hidden md:block">
         <li><a href="[Link to Cmarine's Facebook account]" target="_blank" class="hover:text-white">Facebook</a></li>
         <li><a href="[Link to Cmarine's Instagram account]" target="_blank" class="hover:text-white">Instagram</a></li>
-        <li><a href="">TikTok</a></li>
+        <li><a href="#" class="hover:text-white">TikTok</a></li>
         <li><a href="https://seeklogo.com/images/H/havaianas-logo-62F436574B-seeklogo.com.png" target="_blank" class="hover:text-white">Twitter</a></li>
         <li><a href="[Link to Cmarine's Pinterest account]" target="_blank" class="hover:text-white">Pinterest</a></li>
       </ul>
     </div>
     <div class="mobile-collapse">
-      <h3 id="informationHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2">Information</h3>
-      <ul id="informationLinks" class="text-gray-400">
+      <button id="informationHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2 bg-transparent border-none w-full text-left">
+        Information
+      </button>
+      <ul id="informationLinks" class="text-gray-400 hidden md:block">
         <li><a href="#" class="hover:text-white">Imprint</a></li>
         <li><a href="#" class="hover:text-white">Shipping</a></li>
         <li><a href="#" class="hover:text-white">Help Center</a></li>
@@ -4440,8 +4444,10 @@ video {
       </ul>
     </div>
     <div class="mobile-collapse">
-      <h3 id="termsConditionHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2">Terms & Condition</h3>
-      <ul id="termsConditionLinks" class="text-gray-400">
+      <button id="termsConditionHeader" class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2 bg-transparent border-none w-full text-left">
+        Terms & Condition
+      </button>
+      <ul id="termsConditionLinks" class="text-gray-400 hidden md:block">
         <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
         <li><a href="#" class="hover:text-white">Refund Policy</a></li>
         <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
@@ -4461,49 +4467,50 @@ video {
   </div>
 
   <style>
-    /* Nasconde le liste su mobile e mostra su desktop */
-    .mobile-collapse ul {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    /* Quando attivo (cliccato) la lista si espande */
-    .mobile-collapse h3.active + ul {
-      max-height: 500px;
-    }
-
-    /* Su desktop (min-width 768px) le liste sono sempre visibili e header non cliccabile */
-    @media (min-width: 768px) {
-      .mobile-collapse ul {
-        max-height: none !important;
-        overflow: visible !important;
-      }
-      .mobile-collapse h3 {
-        cursor: default !important;
-      }
-    }
-
-    /* Rimuovi linea blu al passaggio del mouse sui titoli */
-    .mobile-collapse h3 {
+    .mobile-collapse button {
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard */
       outline: none;
     }
-    .mobile-collapse h3:focus,
-    .mobile-collapse h3:hover {
+    .mobile-collapse button:focus {
       outline: none;
       box-shadow: none;
-      border-color: #3b82f6; /* mantiene il bordo blu, se vuoi rimuoverlo metti 'transparent' */
+    }
+    /* Nasconde le liste su mobile (default) */
+    .mobile-collapse ul {
+      transition: max-height 0.3s ease;
+      overflow: hidden;
+    }
+    .mobile-collapse ul.hidden {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      visibility: hidden;
+    }
+    .mobile-collapse ul.visible {
+      max-height: 1000px; /* abbastanza alto per mostrare */
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      visibility: visible;
     }
   </style>
 
   <script>
-    document.querySelectorAll('.mobile-collapse h3').forEach(header => {
-      header.addEventListener('click', () => {
-        if (window.innerWidth < 768) {  // solo su mobile
-          header.classList.toggle('active');
+    document.querySelectorAll('.mobile-collapse button').forEach(button => {
+      button.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          const ul = button.nextElementSibling;
+          if (ul.classList.contains('visible')) {
+            ul.classList.remove('visible');
+            ul.classList.add('hidden');
+          } else {
+            ul.classList.remove('hidden');
+            ul.classList.add('visible');
+          }
         }
       });
     });
   </script>
-
 </footer>

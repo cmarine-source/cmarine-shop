@@ -1,1 +1,204 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .action-card:hover {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <!-- Header Section -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">How can we help?</h1>
+            <p class="text-lg text-gray-600">Here you will find answers to all your questions</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="mb-10">
+            <div class="relative max-w-2xl mx-auto">
+                <input type="text" placeholder="Search..." 
+                    class="w-full py-4 px-6 border border-gray-300 rounded-lg shadow-sm search-input focus:border-blue-500 transition duration-200">
+                <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Action Cards -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm action-card transition duration-200 cursor-pointer">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-user text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">SET UP YOUR ACCOUNT</h3>
+                        <p class="text-gray-600">Login or Register your Account.</p>
+                    </div>
+                    <div class="ml-auto self-center text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm action-card transition duration-200 cursor-pointer">
+                <div class="flex items-start">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-headset text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">SUBMIT A REQUEST</h3>
+                        <p class="text-gray-600">Our Team is ready to assist you.</p>
+                    </div>
+                    <div class="ml-auto self-center text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+<div class="mb-12">
+    <div class="text-center mb-6">
+        <h2 class="text-xl font-semibold text-gray-900">Everything at one place</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+        <!-- Category Cards -->
+
+                <div class="bg-white border border-gray-200 rounded-lg p-5 category-card transition duration-200 cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-info-circle text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900">GENERAL INFORMATION</h3>
+                        </div>
+                        <div class="ml-auto text-gray-400">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 category-card transition duration-200 cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-truck text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900">ORDERS & SHIPPING</h3>
+                        </div>
+                        <div class="ml-auto text-gray-400">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 category-card transition duration-200 cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-credit-card text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900">PAYMENT</h3>
+                        </div>
+                        <div class="ml-auto text-gray-400">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 category-card transition duration-200 cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-exchange-alt text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900">RETURN & EXCHANGES</h3>
+                        </div>
+                        <div class="ml-auto text-gray-400">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 category-card transition duration-200 cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-exclamation-triangle text-red-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900">COMPLAINT</h3>
+                        </div>
+                        <div class="ml-auto text-gray-400">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 category-card transition duration-200 cursor-pointer">
+                    <div class="flex items-center">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-envelope text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900">CONTACT US</h3>
+                        </div>
+                        <div class="ml-auto text-gray-400">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- More Information Section -->
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-12 text-center">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">More Information</h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">Can't find what you're looking for? Explore our comprehensive documentation or reach out to our support team for personalized assistance.</p>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-sm mb-12">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">JOIN OUR NEWSLETTER</h3>
+                <p class="text-gray-600">Get early access for our future product releases and be always in the know!</p>
+            </div>
+            <div class="max-w-md mx-auto">
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" 
+                        class="flex-grow py-3 px-4 border border-gray-300 rounded-l-lg focus:border-blue-500 focus:outline-none">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-r-lg transition duration-200">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Line -->
+        <div class="text-center text-gray-500 text-sm border-t border-gray-200 pt-6">
+            <p>OUR HELPLINE HOURS: Monday to Friday: 8:00am - 6:00pm CET</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -4415,3 +4415,99 @@ video {
 
 </body>
 </html>
+<footer class="bg-black text-white py-12 mt-16">
+  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Follow Us -->
+    <div class="mobile-collapse">
+      <h3 
+        id="followUsHeader" 
+        class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2"
+        onclick="toggleSection('followUsLinks')"
+        aria-expanded="false"
+        aria-controls="followUsLinks"
+        role="button"
+        tabindex="0"
+        onkeydown="if(event.key==='Enter' || event.key===' ') toggleSection('followUsLinks')"
+      >
+        Follow Us
+      </h3>
+      <ul id="followUsLinks" class="text-gray-400 hidden">
+        <li><a href="#" class="hover:text-white">Facebook</a></li>
+        <li><a href="#" class="hover:text-white">Instagram</a></li>
+        <li><a href="#" class="hover:text-white">TikTok</a></li>
+        <li><a href="#" class="hover:text-white">Twitter</a></li>
+        <li><a href="#" class="hover:text-white">Pinterest</a></li>
+      </ul>
+    </div>
+
+    <!-- Information -->
+    <div class="mobile-collapse">
+      <h3 
+        id="informationHeader" 
+        class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2"
+        onclick="toggleSection('informationLinks')"
+        aria-expanded="false"
+        aria-controls="informationLinks"
+        role="button"
+        tabindex="0"
+        onkeydown="if(event.key==='Enter' || event.key===' ') toggleSection('informationLinks')"
+      >
+        Information
+      </h3>
+      <ul id="informationLinks" class="text-gray-400 hidden">
+        <li><a href="#" class="hover:text-white">Imprint</a></li>
+        <li><a href="#" class="hover:text-white">Shipping</a></li>
+        <li><a href="#" class="hover:text-white">Help Center</a></li>
+        <li><a href="#" class="hover:text-white">Returns</a></li>
+        <li><a href="#" class="hover:text-white">Jobs</a></li>
+      </ul>
+    </div>
+
+    <!-- Terms & Condition -->
+    <div class="mobile-collapse">
+      <h3 
+        id="termsConditionHeader" 
+        class="text-lg font-semibold mb-4 cursor-pointer text-blue-400 border-b border-blue-400 pb-2"
+        onclick="toggleSection('termsConditionLinks')"
+        aria-expanded="false"
+        aria-controls="termsConditionLinks"
+        role="button"
+        tabindex="0"
+        onkeydown="if(event.key==='Enter' || event.key===' ') toggleSection('termsConditionLinks')"
+      >
+        Terms & Condition
+      </h3>
+      <ul id="termsConditionLinks" class="text-gray-400 hidden">
+        <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+        <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-white">Terms</a></li>
+        <li><a href="#" class="hover:text-white">Privacy Setting</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center mt-8 px-8">
+    <p class="text-gray-500 text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 Cmarine. All rights reserved.</p>
+    <div class="flex space-x-4">
+      <i class="fab fa-cc-visa text-2xl text-gray-400"></i>
+      <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
+      <i class="fab fa-cc-paypal text-2xl text-gray-400"></i>
+      <i class="fab fa-cc-apple-pay text-2xl text-gray-400"></i>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const list = document.getElementById(id);
+      const isHidden = list.classList.contains('hidden');
+      if (isHidden) {
+        list.classList.remove('hidden');
+        document.getElementById(id.replace('Links','Header')).setAttribute('aria-expanded', 'true');
+      } else {
+        list.classList.add('hidden');
+        document.getElementById(id.replace('Links','Header')).setAttribute('aria-expanded', 'false');
+      }
+    }
+  </script>
+</footer>

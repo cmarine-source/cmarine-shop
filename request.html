@@ -12,7 +12,7 @@
       margin-top: 0.25rem;
       display: none;
     }
-  </style>
+ </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
   <div
@@ -28,72 +28,71 @@
           to you as soon as possible.
         </p>
       </div>
-
       <form
         id="supportForm"
-        class="space-y-5"
-        action="https://formspree.io/f/xrbkgqlb"
+        action="https://formspree.io/f/xvgrorwd"
         method="POST"
-        enctype="multipart/form-data"
-      <!-- Email -->
-      <div>
-        <label for="email" class="block font-medium text-gray-700">Email address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="your@email.com"
-          required
-          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <p id="emailError" class="error-message">Please enter a valid email address.</p>
-      </div>
-
-      <!-- Subject -->
-      <div>
-        <label for="subject" class="block font-medium text-gray-700">Subject</label>
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          placeholder="Brief summary of your request"
-          required
-          minlength="5"
-          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <p id="subjectError" class="error-message">Subject must be at least 5 characters.</p>
-      </div>
-
-      <!-- Description -->
-      <div>
-        <label for="description" class="block font-medium text-gray-700">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          rows="5"
-          placeholder="Describe your issue in detail"
-          required
-          minlength="10"
-          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
-        ></textarea>
-        <p id="descriptionError" class="error-message">Description must be at least 10 characters.</p>
-      </div>
-
-      <!-- Submit -->
-      <button
-        type="submit"
-        id="submitBtn"
-        disabled
-        class="w-full bg-blue-600 text-white font-medium py-3 rounded-md opacity-50 cursor-not-allowed transition"
       >
-        Submit request
-      </button>
+        <!-- Email -->
+        <div class="mb-6">
+          <label for="email" class="block font-medium text-gray-700">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <p id="emailError" class="error-message">Please enter a valid email address.</p>
+        </div>
 
-      <!-- Success Message -->
-      <p id="successMessage" class="hidden text-green-600 font-semibold mt-4 text-center">
-        Request submitted successfully!
-      </p>
-    </form>
+        <!-- Subject -->
+        <div class="mb-6">
+          <label for="subject" class="block font-medium text-gray-700">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Brief summary of your request"
+            required
+            minlength="5"
+            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <p id="subjectError" class="error-message">Subject must be at least 5 characters.</p>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label for="description" class="block font-medium text-gray-700">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="5"
+            placeholder="Describe your issue in detail"
+            required
+            minlength="10"
+            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+          ></textarea>
+          <p id="descriptionError" class="error-message">Description must be at least 10 characters.</p>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          id="submitBtn"
+          disabled
+          class="w-full bg-blue-600 text-white font-medium py-3 rounded-md opacity-50 cursor-not-allowed transition mt-6"
+        >
+          Submit request
+        </button>
+
+        <!-- Success Message -->
+        <p id="successMessage" class="hidden text-green-600 font-semibold mt-4 text-center">
+          Request submitted successfully!
+        </p>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -194,22 +193,33 @@
         return;
       }
 
+      // Submit tramite Formspree
+      fetch(form.action, {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: new FormData(form)
+      }).then(response => {
+        if (response.ok) {
+          submitBtn.textContent = "Submitted!";
+          form.reset();
+          touched.email = false;
+          touched.subject = false;
+          touched.description = false;
+          validateForm();
+          successMessage.classList.remove("hidden");
+        } else {
+          response.json().then(data => {
+            alert(data.error || "Submission failed. Please try again.");
+          });
+        }
+      }).catch(() => {
+        alert("Submission failed. Please try again.");
+      });
+
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
-
-      setTimeout(() => {
-        submitBtn.textContent = "Submit request";
-        submitBtn.disabled = false;
-        form.reset();
-
-        // Reset touched on reset
-        touched.email = false;
-        touched.subject = false;
-        touched.description = false;
-
-        validateForm();
-        successMessage.classList.remove("hidden");
-      }, 1500);
     });
 
     // Initial validation (no errors shown)

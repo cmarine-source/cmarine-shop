@@ -3,52 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Support</title>
+  <title>Submit a Request</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
   <style>
-    /* Custom styles */
-    .file-input-label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border-radius: 6px;
-      border: 1px solid #d1d5db;
-      background-color: #f9fafb;
-      color: #374151;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .file-input-label:hover {
-      background-color: #f3f4f6;
-    }
-    .file-name {
-      margin-left: 10px;
-      color: #6b7280;
-      font-size: 14px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 200px;
-    }
-    .success-message,
     .error-message {
-      transition: all 0.3s ease;
-    }
-    .spinner {
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      color: #dc2626; /* rosso */
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
     }
   </style>
 </head>
@@ -73,170 +35,185 @@
         action="https://formspree.io/f/xrbkgqlb"
         method="POST"
         enctype="multipart/form-data"
+      <!-- Email -->
+      <div>
+        <label for="email" class="block font-medium text-gray-700">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <p id="emailError" class="error-message">Please enter a valid email address.</p>
+      </div>
+
+      <!-- Subject -->
+      <div>
+        <label for="subject" class="block font-medium text-gray-700">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Brief summary of your request"
+          required
+          minlength="5"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <p id="subjectError" class="error-message">Subject must be at least 5 characters.</p>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="block font-medium text-gray-700">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          placeholder="Describe your issue in detail"
+          required
+          minlength="10"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+        ></textarea>
+        <p id="descriptionError" class="error-message">Description must be at least 10 characters.</p>
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        id="submitBtn"
+        disabled
+        class="w-full bg-blue-600 text-white font-medium py-3 rounded-md opacity-50 cursor-not-allowed transition"
       >
-        <div id="formMessage" class="hidden text-center p-3 rounded"></div>
+        Submit request
+      </button>
 
-        <!-- Email Field -->
-        <div>
-          <label
-            for="email"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Email address</label
-          >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            class="w-full border border-gray-300 rounded-md px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-          />
-        </div>
-
-        <!-- Subject Field -->
-        <div>
-          <label
-            for="subject"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Subject</label
-          >
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="Brief summary of your request"
-            required
-            minlength="3"
-            class="w-full border border-gray-300 rounded-md px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-          />
-        </div>
-
-        <!-- Description Field -->
-        <div>
-          <label
-            for="description"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Description</label
-          >
-          <textarea
-            id="description"
-            name="message"
-            rows="6"
-            placeholder="Describe your issue in detail"
-            required
-            minlength="10"
-            class="w-full border border-gray-300 rounded-md px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-y"
-          ></textarea>
-          <p
-            id="descriptionError"
-            class="mt-1 text-sm text-red-600 hidden"
-          >
-            Please provide a detailed description (at least 10 characters).
-          </p>
-        </div>
-
-        <!-- Attachment Field -->
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1"
-            >Attachment (optional)</label
-          >
-     
-
-        <!-- Submit Button -->
-        <div class="pt-2">
-          <button
-            type="submit"
-            id="submitBtn"
-            disabled
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
-          >
-            <span id="submitText">Submit request</span>
-            <span id="submitSpinner" class="hidden ml-2">
-              <i class="fas fa-spinner spinner"></i>
-            </span>
-          </button>
-        </div>
-      </form>
-    </div>
+      <!-- Success Message -->
+      <p id="successMessage" class="hidden text-green-600 font-semibold mt-4 text-center">
+        Request submitted successfully!
+      </p>
+    </form>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("supportForm");
-      const submitBtn = document.getElementById("submitBtn");
-      const submitText = document.getElementById("submitText");
-      const submitSpinner = document.getElementById("submitSpinner");
-      const formMessage = document.getElementById("formMessage");
+    const form = document.getElementById("supportForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successMessage = document.getElementById("successMessage");
 
-      const email = document.getElementById("email");
-      const subject = document.getElementById("subject");
-      const description = document.getElementById("description");
-      const attachment = document.getElementById("attachment");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    const description = document.getElementById("description");
 
-      const descriptionError = document.getElementById("descriptionError");
-      const fileError = document.getElementById("fileError");
-      const fileName = document.getElementById("fileName");
+    const emailError = document.getElementById("emailError");
+    const subjectError = document.getElementById("subjectError");
+    const descriptionError = document.getElementById("descriptionError");
 
-      // Aggiorna testo file scelto
-      attachment.addEventListener("change", function () {
-        if (this.files.length > 0) {
-          const file = this.files[0];
+    // Track if user has interacted with fields
+    const touched = {
+      email: false,
+      subject: false,
+      description: false,
+    };
 
-          if (file.size > 5 * 1024 * 1024) {
-            fileError.textContent = "File size exceeds 5MB limit.";
-            fileError.classList.remove("hidden");
-            this.value = "";
-            fileName.textContent = "No file chosen";
-          } else {
-            fileError.classList.add("hidden");
-            // Qui testo sparisce (non mostra nome)
-            fileName.textContent = "";
-          }
-        } else {
-          fileName.textContent = "No file chosen";
-          fileError.classList.add("hidden");
-        }
-        validateForm();
-      });
+    // Validation functions
+    function validateEmail() {
+      const val = email.value.trim();
+      const isValid = val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      if (touched.email) {
+        emailError.style.display = isValid ? "none" : "block";
+      } else {
+        emailError.style.display = "none";
+      }
+      return isValid;
+    }
 
-      // Validazione live campi
-      [email, subject, description].forEach((field) => {
-        field.addEventListener("input", validateForm);
-      });
+    function validateSubject() {
+      const val = subject.value.trim();
+      const isValid = val.length >= 5;
+      if (touched.subject) {
+        subjectError.style.display = isValid ? "none" : "block";
+      } else {
+        subjectError.style.display = "none";
+      }
+      return isValid;
+    }
 
-      function validateForm() {
-        let isValid = true;
+    function validateDescription() {
+      const val = description.value.trim();
+      const isValid = val.length >= 10;
+      if (touched.description) {
+        descriptionError.style.display = isValid ? "none" : "block";
+      } else {
+        descriptionError.style.display = "none";
+      }
+      return isValid;
+    }
 
-        if (!email.checkValidity()) {
-          isValid = false;
-        }
+    // Enable/disable submit button based on validation (even if no errors shown yet)
+    function validateForm() {
+      const emailValid = validateEmail();
+      const subjectValid = validateSubject();
+      const descriptionValid = validateDescription();
 
-        if (subject.value.length < 3) {
-          isValid = false;
-        }
+      const allValid = emailValid && subjectValid && descriptionValid;
 
-        if (description.value.length < 10) {
-          descriptionError.classList.remove("hidden");
-          isValid = false;
-        } else {
-          descriptionError.classList.add("hidden");
-        }
+      submitBtn.disabled = !allValid;
+      submitBtn.classList.toggle("opacity-50", !allValid);
+      submitBtn.classList.toggle("cursor-not-allowed", !allValid);
 
-        if (
-          attachment.files.length > 0 &&
-          attachment.files[0].size > 5 * 1024 * 1024
-        ) {
-          isValid = false;
-        }
-
-        submitBtn.disabled = !isValid;
-        return isValid;
+      if (allValid) {
+        successMessage.classList.add("hidden");
       }
 
-      // Puoi aggiungere qui gestione invio form (es. con fetch o ajax) se vuoi
+      return allValid;
+    }
 
-      validateForm(); // iniziale
+    // Set touched true on first input interaction, then validate
+    function onFieldInput(field) {
+      if (!touched[field]) {
+        touched[field] = true;
+      }
+      validateForm();
+    }
+
+    // Add input listeners
+    email.addEventListener("input", () => onFieldInput("email"));
+    subject.addEventListener("input", () => onFieldInput("subject"));
+    description.addEventListener("input", () => onFieldInput("description"));
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Force all fields touched to show errors if any
+      touched.email = true;
+      touched.subject = true;
+      touched.description = true;
+
+      if (!validateForm()) {
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      setTimeout(() => {
+        submitBtn.textContent = "Submit request";
+        submitBtn.disabled = false;
+        form.reset();
+
+        // Reset touched on reset
+        touched.email = false;
+        touched.subject = false;
+        touched.description = false;
+
+        validateForm();
+        successMessage.classList.remove("hidden");
+      }, 1500);
     });
+
+    // Initial validation (no errors shown)
+    validateForm();
   </script>
 </body>
 </html>
